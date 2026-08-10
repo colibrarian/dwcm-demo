@@ -62,6 +62,7 @@
     .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
     .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px}
     .edot{width:7px;height:7px;border-radius:50%;background:var(--cyan);animation:pulse 1.9s ease-in-out infinite}
+    .oa-badge{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.04em;color:var(--mag);border:1px solid rgba(255,45,212,.28);background:rgba(255,45,212,.07);padding:6px 14px;border-radius:999px;margin-bottom:16px}
     h1{font-size:clamp(36px,5vw,58px);font-weight:900;letter-spacing:-.025em;line-height:1.07;margin-bottom:22px}
     .hg{position:relative;display:inline-block;color:var(--cyan)}
     .hg::after{content:attr(data-t);position:absolute;left:2px;top:2px;color:var(--mag);clip-path:inset(0 0 60% 0);opacity:.55;animation:glitch 5s steps(1) infinite}
@@ -122,6 +123,7 @@
     /* EU strip */
     .eustrip{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 22px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.025);margin-top:36px}
     .eustrip img{height:30px;object-fit:contain;filter:brightness(.8)}
+    .jspa-ph{height:30px;padding:0 12px;display:flex;align-items:center;border:1px dashed rgba(255,255,255,.22);border-radius:8px;font-size:9px;font-weight:700;letter-spacing:.03em;color:#ffcf7a;white-space:nowrap}
     .eut{font-size:11.5px;color:var(--muted);line-height:1.55;flex:1}
     .kabadge{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);background:var(--cd);border:1px solid rgba(0,212,239,.22);padding:5px 13px;border-radius:999px;white-space:nowrap}
 
@@ -153,6 +155,42 @@
     .olink{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--cyan);border:1px solid rgba(0,212,239,.25);background:rgba(0,212,239,.06);padding:7px 14px;border-radius:999px;align-self:flex-start;transition:all .2s}
     .olink:hover{background:rgba(0,212,239,.14);border-color:rgba(0,212,239,.44)}
     .olink.dis{opacity:.4;pointer-events:none}
+    a.oc{text-decoration:none;color:inherit}
+    a.oc .olink{margin-top:4px}
+    .ccentral{display:block;text-decoration:none;color:inherit;margin-top:20px;padding:32px;border-radius:var(--r);border:1px solid rgba(255,45,212,.25);background:linear-gradient(135deg,rgba(255,45,212,.06),rgba(0,212,239,.04));transition:border-color .25s,transform .25s}
+    .ccentral:hover{border-color:rgba(255,45,212,.5);transform:translateY(-2px)}
+    .ccbadge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mag);background:var(--md);border:1px solid rgba(255,45,212,.28);padding:5px 12px;border-radius:999px;margin-bottom:14px}
+    .cctitle{font-size:19px;font-weight:900;letter-spacing:-.015em;margin-bottom:6px}
+    .ccsub{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.5}
+    .campchaos{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;padding:20px 10px 30px;position:relative}
+    .campcard{display:block;width:220px;padding:24px 22px 22px;margin:0 -20px 26px;border-radius:18px;border:1px solid var(--border);background:var(--card);text-decoration:none;color:inherit;box-shadow:0 16px 38px rgba(0,0,0,.45);cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s;position:relative}
+    .campcard:hover{transform:rotate(0deg) translateY(-10px) scale(1.06) !important;box-shadow:0 26px 60px rgba(0,0,0,.55);border-color:rgba(0,212,239,.4);z-index:20 !important}
+    .campcard.cc1{transform:rotate(-6deg) translateY(10px);z-index:1}
+    .campcard.cc2{transform:rotate(4deg) translateY(-14px);z-index:2}
+    .campcard.cc3{transform:rotate(-3deg) translateY(18px);z-index:3}
+    .ccicon{font-size:26px;display:block;margin-bottom:10px}
+    .cctag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.05em;color:var(--cyan);background:var(--cd);border:1px solid rgba(0,212,239,.22);padding:4px 10px;border-radius:999px;margin-bottom:12px}
+    .ccname{font-size:14.5px;font-weight:800;line-height:1.3;margin-bottom:3px}
+    .ccorg{font-size:12px;color:var(--muted);margin-bottom:14px}
+    .ccgo{font-size:11.5px;font-weight:700;color:var(--mag)}
+    @media(max-width:880px){
+      .campchaos{flex-direction:column;align-items:center;padding-top:8px}
+      .campcard{margin:0 0 16px;transform:none !important}
+      .campcard:hover{transform:translateY(-4px) !important}
+    }
+    .lt-banner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;text-decoration:none;color:inherit;padding:32px 36px;border-radius:24px;border:1px solid rgba(0,212,239,.22);background:linear-gradient(120deg,rgba(0,212,239,.06),rgba(255,45,212,.05));position:relative;overflow:hidden;transition:border-color .25s,transform .25s}
+    .lt-banner:hover{border-color:rgba(0,212,239,.45);transform:translateY(-2px)}
+    .lt-banner::before{content:'';position:absolute;inset:-40% -10%;background:radial-gradient(circle,rgba(255,45,212,.10),transparent 60%);pointer-events:none}
+    .lt-left{position:relative;z-index:1}
+    .lt-dots{display:flex;gap:6px;margin-bottom:14px}
+    .lt-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15)}
+    .lt-dots span:nth-child(1){background:var(--cyan)}
+    .lt-dots span:nth-child(2){background:var(--cyan);opacity:.55}
+    .lt-kicker{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
+    .lt-banner h3{font-size:21px;font-weight:900;letter-spacing:-.01em;margin-bottom:8px}
+    .lt-desc{font-size:13px;color:var(--muted);max-width:46ch;margin:0}
+    .lt-cta{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:#03131a;background:linear-gradient(90deg,var(--cyan),var(--mag));padding:13px 26px;border-radius:999px;white-space:nowrap;flex-shrink:0}
+    @media(max-width:600px){.lt-banner{padding:26px 22px;flex-direction:column;align-items:flex-start}.lt-cta{width:100%;justify-content:center}}
     .oth--photo{aspect-ratio:4/5}
     .oth--photo::after{content:none;animation:none;background:none}
     .oth-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
@@ -188,13 +226,18 @@
     .leaflet-popup-content{margin:12px 16px;font-family:'Plus Jakarta Sans',sans-serif}
 
     /* GALLERY */
-    .gg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .gi{aspect-ratio:1/1;border-radius:14px;overflow:hidden;position:relative;border:1px solid var(--border);cursor:pointer;transition:transform .28s ease,border-color .28s,box-shadow .28s}
-    .gi:hover{transform:scale(1.03);border-color:rgba(0,212,239,.28);box-shadow:0 20px 56px rgba(0,0,0,.55);z-index:2}
+    .gg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:8px 4px 4px}
+    .gi{aspect-ratio:1/1;border-radius:14px;overflow:hidden;position:relative;border:1px solid var(--border);cursor:pointer;box-shadow:0 12px 28px rgba(0,0,0,.4);transition:transform .32s cubic-bezier(.2,.8,.2,1),box-shadow .32s,border-color .32s}
     .gi-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-    .gnum{position:absolute;bottom:9px;right:11px;z-index:3;font-size:9px;font-weight:700;color:rgba(255,255,255,.55);text-shadow:0 1px 4px rgba(0,0,0,.6)}
-    .ghl{position:absolute;inset:0;z-index:4;background:rgba(0,212,239,.08);opacity:0;transition:opacity .25s;display:flex;align-items:center;justify-content:center;font-size:22px}
-    .gi:hover .ghl{opacity:1}
+    .gi:hover{transform:rotate(0deg) scale(1.08) translateY(-6px) !important;box-shadow:0 26px 50px rgba(0,0,0,.55);border-color:rgba(0,212,239,.35);z-index:10}
+    .gi:nth-child(8n+1){transform:rotate(-3deg) translateY(5px)}
+    .gi:nth-child(8n+2){transform:rotate(2.5deg) translateY(-7px)}
+    .gi:nth-child(8n+3){transform:rotate(-1.5deg) translateY(7px)}
+    .gi:nth-child(8n+4){transform:rotate(3deg) translateY(-4px)}
+    .gi:nth-child(8n+5){transform:rotate(2deg) translateY(6px)}
+    .gi:nth-child(8n+6){transform:rotate(-2.5deg) translateY(-5px)}
+    .gi:nth-child(8n+7){transform:rotate(1.5deg) translateY(4px)}
+    .gi:nth-child(8n+8){transform:rotate(-2deg) translateY(-6px)}
 
     /* LIGHTBOX */
     .lb{display:none;position:fixed;inset:0;z-index:999;background:rgba(7,9,14,.93);backdrop-filter:blur(28px);align-items:center;justify-content:center;padding:40px}
@@ -255,6 +298,8 @@
         <a href="dwcm.html" data-i18n="nav.about">Par projektu</a>
         <a href="dwcm-outputs-followup.html" data-i18n="nav.outcomes">Rezultāti</a>
         <a href="dwcm-media.html" data-i18n="nav.media">Mediji</a>
+        <a href="dwcm-digital-campaign.html" data-i18n="nav.campaign">Kampaņa</a>
+        <a href="dwcm-learning-module.html" data-i18n="nav.learning">Tests</a>
         <a href="dwcm-publication-guidelines.html" data-i18n="nav.guidelines">Vadlīnijas</a>
         <div class="lsw">
           <button class="lbtn" data-lang="lv">LV</button>
@@ -274,13 +319,14 @@
     <div class="hero-grid">
       <div>
         <div class="eyebrow"><span class="edot"></span><span data-i18n="hero.kicker">Erasmus+ KA153-YOU — Jaunatnes darbinieku mobilitāte</span></div>
+        <div class="oa-badge"><span>🌐</span><span data-i18n="hero.oa">Open-Access Resource Hub</span></div>
         <h1>Daily<br><span class="hg" data-t="Wellness">Wellness</span><br>Challenge<br><em style="font-style:italic;color:rgba(240,242,247,.85)">Movement</em></h1>
         <p class="hero-lead" data-i18n="hero.lead">Starptautiska apmācība, kas pulcēja jaunatnes darbiniekus no četrām valstīm, lai izzinātu pieejamas pieejas izdegšanas profilaksei, garīgajai labbūtībai un ilgtspējīgai labbūtības kultūrai jaunatnes darbā — ar somatiskām metodēm, āra izglītību, refleksiju un digitālo stāstniecību.</p>
         <div class="flags">
-          <span class="fc">🇱🇻 Latvija</span>
-          <span class="fc">🇳🇴 Norvēģija</span>
-          <span class="fc">🇩🇪 Vācija</span>
-          <span class="fc">🇪🇪 Igaunija</span>
+          <span class="fc" data-i18n="flag.lv">🇱🇻 Latvija</span>
+          <span class="fc" data-i18n="flag.no">🇳🇴 Norvēģija</span>
+          <span class="fc" data-i18n="flag.de">🇩🇪 Vācija</span>
+          <span class="fc" data-i18n="flag.ee">🇪🇪 Igaunija</span>
         </div>
         <div class="ctas">
           <a class="btn btn-c" href="#about" data-i18n="hero.explore">Izpētīt projektu</a>
@@ -346,8 +392,8 @@
       <div class="titem">
         <div class="tdot">🤝</div>
         <div class="tstep" data-i18n="tl.s1">01 — Sagatavošanās</div>
-        <div class="ttitle" data-i18n="tl.t1">Sagatavošanās vizīte</div>
-        <p class="tdesc" data-i18n="tl.d1">Četras organizācijas saskaņoja mērķus, metodes un dalībnieku atlasi mobilitātei Latvijā.</p>
+        <div class="ttitle" data-i18n="tl.t1">Online sagatavošanās</div>
+        <p class="tdesc" data-i18n="tl.d1">Sagatavošanās notika pilnībā tiešsaistē — neviens iepriekš fiziski nebrauca uz Latviju. Četras organizācijas attālināti saskaņoja mērķus, metodes un dalībnieku atlasi mobilitātei.</p>
       </div>
       <div class="titem">
         <div class="tdot">🏕️</div>
@@ -371,6 +417,7 @@
 
     <div class="eustrip rv" style="--d:.2s">
       <img src="https://ik.imagekit.io/erewhile/Untu/Logo%20and%20Og/EN_Co-fundedbytheEU_RGB_NEG.png" alt="Co-funded by the EU">
+      <div class="jspa-ph" title="Jaunatnes starptautisko programmu aģentūra (JSPA)"><span data-i18n="jspa.ph">JSPA logo — pievienot</span></div>
       <div class="eut" data-i18n="about.eu">Līdzfinansē Eiropas Savienība. Paustie uzskati un viedokļi atspoguļo vienīgi autoru viedokli un ne vienmēr sakrīt ar Eiropas Savienības vai Jaunatnes starptautisko programmu aģentūras viedokli. Ne Eiropas Savienība, ne piešķīrēja iestāde nav atbildīga par tiem.</div>
       <span class="kabadge">KA153</span>
     </div>
@@ -389,7 +436,7 @@
     <p class="osublabel rv" data-i18n="outcomes.sub1">📖 Pētījums</p>
     <div class="og rv" style="grid-template-columns:1fr;margin-bottom:32px">
       <div class="oc" style="max-width:320px">
-        <div class="oth oth--photo"><img class="oth-cover" src="https://ik.imagekit.io/colibrarian/dwcm/follow%20up%20and%20outputs%20page/map%20report.jpg" alt=""><span class="obi">🗺️</span><span class="oph" data-i18n="outcome.map.ph">PDF — drīzumā</span></div>
+        <div class="oth oth--photo"><img class="oth-cover" src="https://ik.imagekit.io/colibrarian/dwcm/follow%20up%20and%20outputs%20page/map%20report.jpg" alt=""><span class="obi">🗺️</span></div>
         <div class="ob">
           <div class="otype" data-i18n="outcome.map.type">Starptautisks salīdzinošs pētījums</div>
           <div class="otitle" data-i18n="outcome.map.t">International Comparative Mapping Report</div>
@@ -402,7 +449,7 @@
     <p class="osublabel rv" data-i18n="outcomes.sub2">🛠️ Rīkkopas</p>
     <div class="og">
       <div class="oc rv" style="--d:.08s">
-        <div class="oth oth--photo"><img class="oth-cover" src="https://ik.imagekit.io/colibrarian/dwcm/follow%20up%20and%20outputs%20page/toolkit%20outdoor.jpg" alt=""><span class="obi">🧰</span><span class="oph" data-i18n="outcome.kit.ph">PDF — drīzumā</span></div>
+        <div class="oth oth--photo"><img class="oth-cover" src="https://ik.imagekit.io/colibrarian/dwcm/follow%20up%20and%20outputs%20page/toolkit%20outdoor.jpg" alt=""><span class="obi">🧰</span></div>
         <div class="ob">
           <div class="otype" data-i18n="outcome.kit.type">Metodoloģijas rīkkopa</div>
           <div class="otitle" data-i18n="outcome.kit.t">Daily Wellness Challenge Movement Toolkit</div>
@@ -414,7 +461,7 @@
         </div>
       </div>
       <div class="oc rv" style="--d:.16s">
-        <div class="oth oth--photo"><img class="oth-cover" src="https://ik.imagekit.io/colibrarian/dwcm/follow%20up%20and%20outputs%20page/baked%20content.jpg" alt=""><span class="obi">🎬</span><span class="oph" data-i18n="outcome.dig.ph">PDF — drīzumā</span></div>
+        <div class="oth oth--photo"><img class="oth-cover" src="https://ik.imagekit.io/colibrarian/dwcm/follow%20up%20and%20outputs%20page/baked%20content.jpg" alt=""><span class="obi">🎬</span></div>
         <div class="ob">
           <div class="otype" data-i18n="outcome.dig.type">Digitālā rīkkopa</div>
           <div class="otitle" data-i18n="outcome.dig.t">Freshly Baked Content — DWCM Digital Toolkit</div>
@@ -426,6 +473,61 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- DIGITAL AWARENESS CAMPAIGN -->
+<section id="campaign" class="sec sec0">
+  <div class="container">
+    <div class="sh rv">
+      <p class="kicker" data-i18n="camp.kicker">Digital Awareness Campaign</p>
+      <h2 data-i18n="camp.h2">Centrālā kampaņa + vietējie koncepti.</h2>
+      <p class="sdesc" data-i18n="camp.lead">Turpinājuma procesa ietvaros dalībnieki un nacionālās komandas tika aicināti pielietot projektā apgūtās digitālās komunikācijas un labbūtības kompetences savā organizācijas kontekstā. Tā vietā, lai visās partnervalstīs atkārtotu vienu un to pašu kampaņu, komandas izstrādāja vietējus konceptus, kas atspoguļo to auditoriju vajadzības un regulārās jaunatnes darba aktivitātes.</p>
+    </div>
+    <div class="campchaos">
+      <a class="campcard cc1 rv" style="--d:0s" href="dwcm-digital-campaign.html#kambuka">
+        <span class="ccicon">📱</span>
+        <span class="cctag" data-i18n="camp.c1.type">🇪🇪 Igaunija</span>
+        <div class="ccname">Content Promotion Strategy</div>
+        <div class="ccorg">Kambuka Kids</div>
+        <span class="ccgo" data-i18n="camp.view">Skatīt kampaņu →</span>
+      </a>
+      <a class="campcard cc2 rv" style="--d:.08s" href="dwcm-digital-campaign.html#wiesbaden">
+        <span class="ccicon">🤝</span>
+        <span class="cctag" data-i18n="camp.c2.type">🇩🇪 Vācija</span>
+        <div class="ccname">Identity Through Community</div>
+        <div class="ccorg">Wiesbaden</div>
+        <span class="ccgo" data-i18n="camp.view">Skatīt kampaņu →</span>
+      </a>
+      <a class="campcard cc3 rv" style="--d:.16s" href="dwcm-digital-campaign.html#norway">
+        <span class="ccicon">🧗</span>
+        <span class="cctag" data-i18n="camp.c3.type">🇳🇴 Norvēģija</span>
+        <div class="ccname">Friday Climbing Activities</div>
+        <div class="ccorg">Norway</div>
+        <span class="ccgo" data-i18n="camp.view">Skatīt kampaņu →</span>
+      </a>
+    </div>
+    <a class="ccentral rv" style="--d:.24s" href="dwcm-digital-campaign.html#central">
+      <span class="ccbadge" data-i18n="camp.central.badge">Centrālais dokuments</span>
+      <div class="cctitle">Daily Wellness Challenge Movement</div>
+      <div class="ccsub">Digital Awareness Campaign — Strategy, Implementation, Results &amp; Lessons Learned</div>
+      <span class="olink" data-i18n="camp.central.view">Skatīt dokumentu →</span>
+    </a>
+  </div>
+</section>
+
+<!-- LEARNING MODULE TEASER -->
+<section id="learning-teaser" class="sec sec0">
+  <div class="container">
+    <a class="lt-banner rv" href="dwcm-learning-module.html">
+      <div class="lt-left">
+        <div class="lt-dots"><span></span><span></span><span></span><span></span></div>
+        <p class="lt-kicker" data-i18n="lt.kicker">Online Learning Module</p>
+        <h3 data-i18n="lt.h3">Izlasi. Atbildi. Uzzini rezultātu.</h3>
+        <p class="lt-desc" data-i18n="lt.desc">4 raundi, 12 jautājumi — pārbaudi, cik labi iepazini projektu, un saņem savu rezultātu.</p>
+      </div>
+      <span class="lt-cta" data-i18n="lt.cta">Sākt testu →</span>
+    </a>
   </div>
 </section>
 
@@ -479,21 +581,21 @@
     <div class="sh rv">
       <p class="kicker" data-i18n="gallery.kicker">Foto galerija</p>
       <h2 data-i18n="gallery.h2">Mirkļi no projekta.</h2>
-      <p class="sdesc" data-i18n="gallery.desc">Fotogrāfijas no semināriem, āra aktivitātēm un komandas brīžiem. Pilnā galerija — drīzumā.</p>
+      <p class="sdesc" data-i18n="gallery.desc">Fotogrāfijas no semināriem, āra aktivitātēm un komandas brīžiem visā projekta laikā.</p>
     </div>
     <div class="gg">
-      <div class="gi rv" style="--d:0s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/5.jpg" alt="" loading="lazy"><div class="ghl">🔍</div><span class="gnum">01</span></div>
-      <div class="gi rv" style="--d:.03s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/7.jpg" alt="" loading="lazy"><div class="ghl">🔍</div><span class="gnum">02</span></div>
-      <div class="gi rv" style="--d:.06s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/11.jpg" alt="" loading="lazy"><div class="ghl">🔍</div><span class="gnum">03</span></div>
-      <div class="gi rv" style="--d:.09s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/13.jpg" alt="" loading="lazy"><div class="ghl">🔍</div><span class="gnum">04</span></div>
-      <div class="gi rv" style="--d:.12s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/10.jpg" alt="" loading="lazy"><div class="ghl">🔍</div><span class="gnum">05</span></div>
-      <div class="gi rv" style="--d:.15s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/12.jpg" alt="" loading="lazy"><div class="ghl">🔍</div><span class="gnum">06</span></div>
-      <div class="gi rv" style="--d:.18s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/9.jpg" alt="" loading="lazy"><div class="ghl">🔍</div><span class="gnum">07</span></div>
-      <div class="gi rv" style="--d:.21s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/6.jpg" alt="" loading="lazy"><div class="ghl">🔍</div><span class="gnum">08</span></div>
-      <div class="gi rv" style="--d:.24s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/1.jpg" alt="" loading="lazy"><div class="ghl">🔍</div><span class="gnum">09</span></div>
-      <div class="gi rv" style="--d:.27s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/2.jpg" alt="" loading="lazy"><div class="ghl">🔍</div><span class="gnum">10</span></div>
-      <div class="gi rv" style="--d:.30s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/4.jpg" alt="" loading="lazy"><div class="ghl">🔍</div><span class="gnum">11</span></div>
-      <div class="gi rv" style="--d:.33s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/3.jpg" alt="" loading="lazy"><div class="ghl">🔍</div><span class="gnum">12</span></div>
+      <div class="gi rv" style="--d:0s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/5.jpg" alt="" loading="lazy"></div>
+      <div class="gi rv" style="--d:.03s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/7.jpg" alt="" loading="lazy"></div>
+      <div class="gi rv" style="--d:.06s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/11.jpg" alt="" loading="lazy"></div>
+      <div class="gi rv" style="--d:.09s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/13.jpg" alt="" loading="lazy"></div>
+      <div class="gi rv" style="--d:.12s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/10.jpg" alt="" loading="lazy"></div>
+      <div class="gi rv" style="--d:.15s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/12.jpg" alt="" loading="lazy"></div>
+      <div class="gi rv" style="--d:.18s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/9.jpg" alt="" loading="lazy"></div>
+      <div class="gi rv" style="--d:.21s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/6.jpg" alt="" loading="lazy"></div>
+      <div class="gi rv" style="--d:.24s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/1.jpg" alt="" loading="lazy"></div>
+      <div class="gi rv" style="--d:.27s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/2.jpg" alt="" loading="lazy"></div>
+      <div class="gi rv" style="--d:.30s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/4.jpg" alt="" loading="lazy"></div>
+      <div class="gi rv" style="--d:.33s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/3.jpg" alt="" loading="lazy"></div>
     </div>
     <div class="lb" id="lb">
       <button class="lbx" id="lbx">✕</button>
@@ -512,7 +614,6 @@
       </div>
       <div class="ftlinks">
         <a href="https://untu.ngo" data-i18n="footer.back">← untu.ngo</a>
-        <a href="https://www.youtube.com/@untuwellnessdailychallenge" target="_blank" rel="noopener">YouTube ↗</a>
         <a href="https://www.instagram.com/ngo_untu" target="_blank" rel="noopener">Instagram ↗</a>
       </div>
     </div>
@@ -598,8 +699,10 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
 var T={
   lv:{
     "nav.about":"Par projektu","nav.outcomes":"Rezultāti","nav.partners":"Partneri","nav.gallery":"Galerija","nav.guidelines":"Vadlīnijas",
-    "nav.followup":"Aktivitātes","nav.media":"Mediji","nav.downloads":"Lejupielādes",
+    "nav.followup":"Aktivitātes","nav.media":"Mediji","nav.downloads":"Lejupielādes","nav.campaign":"Kampaņa","nav.learning":"Tests",
     "hero.kicker":"Erasmus+ KA153-YOU — Jaunatnes darbinieku mobilitāte",
+    "hero.oa":"Open-Access Resource Hub",
+    "flag.lv":"🇱🇻 Latvija","flag.no":"🇳🇴 Norvēģija","flag.de":"🇩🇪 Vācija","flag.ee":"🇪🇪 Igaunija",
     "hero.lead":"Starptautiska apmācība, kas pulcēja jaunatnes darbiniekus no četrām valstīm, lai izzinātu pieejamas pieejas izdegšanas profilaksei, garīgajai labbūtībai un ilgtspējīgai labbūtības kultūrai jaunatnes darbā — ar somatiskām metodēm, āra izglītību, refleksiju un digitālo stāstniecību.",
     "hero.explore":"Izpētīt projektu","hero.downloads":"Lejupielādēt rezultātus","hero.scroll":"Ritināt",
     "stat.countries":"Valstis","stat.program":"Programma","stat.year":"Gads",
@@ -609,8 +712,9 @@ var T={
     "about.c2.t":"Metodes","about.c2.d":"Somatiskās metodes, āra izglītība, refleksija, dabā balstīta prakse un digitālā stāstniecība — praktiski rīki, ko dalībnieki var izmantot savā ikdienas darbā.",
     "about.c3.t":"Mērķauditorija","about.c3.d":"Jaunatnes darbinieki, jaunatnes organizācijas, treneri, pašvaldības, finansētāji un politikas veidotāji četrās partnervalstīs.",
     "about.eu":"Līdzfinansē Eiropas Savienība. Paustie uzskati un viedokļi atspoguļo vienīgi autoru viedokli un ne vienmēr sakrīt ar Eiropas Savienības vai Jaunatnes starptautisko programmu aģentūras viedokli. Ne Eiropas Savienība, ne piešķīrēja iestāde nav atbildīga par tiem.",
+    "jspa.ph":"JSPA logo — pievienot",
     "timeline.kicker":"Kā tas notika","timeline.h2":"Projekta gaita.",
-    "tl.s1":"01 — Sagatavošanās","tl.t1":"Sagatavošanās vizīte","tl.d1":"Četras organizācijas saskaņoja mērķus, metodes un dalībnieku atlasi mobilitātei Latvijā.",
+    "tl.s1":"01 — Sagatavošanās","tl.t1":"Online sagatavošanās","tl.d1":"Sagatavošanās notika pilnībā tiešsaistē — neviens iepriekš fiziski nebrauca uz Latviju. Četras organizācijas attālināti saskaņoja mērķus, metodes un dalībnieku atlasi mobilitātei.",
     "tl.s2":"02 — Mācību kurss","tl.t2":"Mobilitāte, 21.–30.10.2025","tl.d2":"Jaunatnes darbinieki no četrām valstīm kopā apguva labbūtības metodes Latvijā.",
     "tl.s3":"03 — Rezultāti un kampaņas","tl.t3":"Video, rīkkopas un kampaņas","tl.d3":"513 video visā projekta ciklā, trīs izstrādnes rīkkopas un starptautiska digitāla kampaņa.",
     "tl.s4":"04 — Turpinājums","tl.t4":"Izplatīšana un turpmākās aktivitātes","tl.d4":"Vismaz 11 aktivitātes Latvijā, Norvēģijā, Vācijā un Igaunijā turpina projekta ietekmi.",
@@ -629,6 +733,14 @@ var T={
     "outcome.dig.t":"Freshly Baked Content — DWCM Digital Toolkit",
     "outcome.dig.d":"Atsevišķa digitālās stāstniecības un satura veidošanas rīkkopa — netiek apvienota ar praktisko metodoloģijas rīkkopu.",
     "outcome.dig.l":"Lejupielādēt PDF","outcome.dig.canva":"Priekšskatīt Canva",
+    "camp.kicker":"Digital Awareness Campaign","camp.h2":"Centrālā kampaņa + vietējie koncepti.",
+    "camp.lead":"Turpinājuma procesa ietvaros dalībnieki un nacionālās komandas tika aicināti pielietot projektā apgūtās digitālās komunikācijas un labbūtības kompetences savā organizācijas kontekstā. Tā vietā, lai visās partnervalstīs atkārtotu vienu un to pašu kampaņu, komandas izstrādāja vietējus konceptus, kas atspoguļo to auditoriju vajadzības un regulārās jaunatnes darba aktivitātes.",
+    "camp.c1.type":"🇪🇪 Igaunija","camp.c1.d":"Praktisks ietvars organizācijas satura izstrādei un popularizēšanai — auditorijas analīze, pozicionēšana, satura plānošana un rezultātu mērīšana.",
+    "camp.c2.type":"🇩🇪 Vācija","camp.c2.d":"Ikmēneša sociālo tīklu koncepts, kas apvieno labbūtības padomus ar kultūras identitāti, radošumu, integrāciju un kopienas atbalstu.",
+    "camp.c3.type":"🇳🇴 Norvēģija","camp.c3.d":"Digitāla informatīvā kampaņa, kas ik nedēļu prezentē kāpšanu kā rīku labbūtībai, pašapziņai, piederībai un sociālajai iekļaušanai.",
+    "camp.view":"Skatīt kampaņu →","camp.central.badge":"Centrālais dokuments","camp.central.view":"Skatīt dokumentu →",
+    "lt.kicker":"Online Learning Module","lt.h3":"Izlasi. Atbildi. Uzzini rezultātu.",
+    "lt.desc":"4 raundi, 12 jautājumi — pārbaudi, cik labi iepazini projektu, un saņem savu rezultātu.","lt.cta":"Sākt testu →",
     "partners.kicker":"Partnerorganizācijas","partners.h2":"Četras valstis. Viena kustība.",
     "partners.desc":"Projekta koordinatore — biedrība UNTU no Latvijas — sadarbībā ar partneriem Igaunijā, Vācijā un Norvēģijā.",
     "p.lv.org":"Biedrība UNTU","p.no.org":"International Volda","p.de.org":"Rubikus e. V.","p.ee.org":"Kambuka Kids MTÜ",
@@ -640,8 +752,10 @@ var T={
   },
   en:{
     "nav.about":"About","nav.outcomes":"Outcomes","nav.partners":"Partners","nav.gallery":"Gallery","nav.guidelines":"Guidelines",
-    "nav.followup":"Activities","nav.media":"Media","nav.downloads":"Downloads",
+    "nav.followup":"Activities","nav.media":"Media","nav.downloads":"Downloads","nav.campaign":"Campaign","nav.learning":"Quiz",
     "hero.kicker":"Erasmus+ KA153-YOU — Mobility of Youth Workers",
+    "hero.oa":"Open-Access Resource Hub",
+    "flag.lv":"🇱🇻 Latvia","flag.no":"🇳🇴 Norway","flag.de":"🇩🇪 Germany","flag.ee":"🇪🇪 Estonia",
     "hero.lead":"An international training that brought together youth workers from four countries to explore accessible approaches to burnout prevention, mental well-being and a sustainable well-being culture in youth work — through somatic methods, outdoor education, reflection and digital storytelling.",
     "hero.explore":"Explore Project","hero.downloads":"Download Outputs","hero.scroll":"Scroll",
     "stat.countries":"Countries","stat.program":"Programme","stat.year":"Year",
@@ -651,8 +765,9 @@ var T={
     "about.c2.t":"Methods","about.c2.d":"Somatic methods, outdoor education, reflection, nature-based practice and digital storytelling — practical tools participants can use in their everyday work.",
     "about.c3.t":"Target audience","about.c3.d":"Youth workers, youth organisations, trainers, municipalities, funders and policy stakeholders across four partner countries.",
     "about.eu":"Co-funded by the European Union. Views and opinions expressed are, however, those of the authors only and do not necessarily reflect those of the European Union or the Agency for International Programs for Youth. Neither the European Union nor the granting authority can be held responsible for them.",
+    "jspa.ph":"JSPA logo — to add",
     "timeline.kicker":"How it worked","timeline.h2":"Project journey.",
-    "tl.s1":"01 — Preparation","tl.t1":"Preparatory visit","tl.d1":"Four organisations aligned on goals, methods and participant selection for the mobility in Latvia.",
+    "tl.s1":"01 — Preparation","tl.t1":"Online preparation","tl.d1":"Preparation took place entirely online — no one travelled to Latvia in advance. The four organisations remotely aligned on goals, methods and participant selection for the mobility.",
     "tl.s2":"02 — Training","tl.t2":"Mobility, 21–30 Oct 2025","tl.d2":"Youth workers from four countries trained together in Latvia to explore well-being methods.",
     "tl.s3":"03 — Results & campaigns","tl.t3":"Videos, toolkits & campaigns","tl.d3":"513 videos across the full project cycle, three production outputs and an international digital campaign.",
     "tl.s4":"04 — Follow-up","tl.t4":"Dissemination & follow-up activities","tl.d4":"At least 11 activities across Latvia, Norway, Germany and Estonia continue the project's impact.",
@@ -671,6 +786,14 @@ var T={
     "outcome.dig.t":"Freshly Baked Content — DWCM Digital Toolkit",
     "outcome.dig.d":"A separate digital storytelling and content-creation toolkit — kept distinct from the practical methodology toolkit.",
     "outcome.dig.l":"Download PDF","outcome.dig.canva":"Preview in Canva",
+    "camp.kicker":"Digital Awareness Campaign","camp.h2":"Central campaign + local concepts.",
+    "camp.lead":"As part of the follow-up process, participants and national teams were encouraged to apply the digital communication and wellness competences developed during the project to their own organisational contexts. Rather than reproducing one identical campaign in all partner countries, teams developed local concepts reflecting the needs of their audiences and regular youth-work activities.",
+    "camp.c1.type":"🇪🇪 Estonia","camp.c1.d":"A practical framework for developing and promoting organisational content, covering audience analysis, positioning, content planning, channel selection, growth tactics and performance measurement.",
+    "camp.c2.type":"🇩🇪 Germany","camp.c2.d":"A monthly social-media concept combining wellness tips with cultural identity, creativity, integration and community support.",
+    "camp.c3.type":"🇳🇴 Norway","camp.c3.d":"A digital awareness campaign presenting weekly climbing as a tool for well-being, confidence, belonging, social inclusion and integration.",
+    "camp.view":"View campaign →","camp.central.badge":"Central document","camp.central.view":"View document →",
+    "lt.kicker":"Online Learning Module","lt.h3":"Read. Answer. Get your result.",
+    "lt.desc":"4 rounds, 12 questions — test how well you know the project and get your score.","lt.cta":"Start quiz →",
     "partners.kicker":"Partner Organizations","partners.h2":"Four countries. One movement.",
     "partners.desc":"Coordinated by Biedrība UNTU (Latvia), in partnership with organisations in Estonia, Germany and Norway.",
     "p.lv.org":"Biedrība UNTU","p.no.org":"International Volda","p.de.org":"Rubikus e. V.","p.ee.org":"Kambuka Kids MTÜ",
