@@ -292,6 +292,10 @@
     .stat-card .l{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-top:6px;display:block}
     .stat-card.tgt .n{color:var(--mag)}
     @media(max-width:768px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+    .reach-hero{text-align:center;padding:44px 24px;border-radius:22px;border:1px solid var(--border);background:var(--card)}
+    .reach-num{font-size:clamp(38px,7vw,60px);font-weight:900;background:linear-gradient(90deg,var(--cyan),var(--mag));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:block;letter-spacing:-.02em;line-height:1}
+    .reach-label{font-size:12.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:block;margin-top:10px}
+    .reach-desc{font-size:13.5px;line-height:1.75;color:var(--muted);max-width:58ch;margin:18px auto 0}
   </style>
 </head>
 <body>
@@ -310,6 +314,8 @@
         <a href="dwcm.html" data-i18n="nav.about">Par projektu</a>
         <a href="dwcm-outputs-followup.html" data-i18n="nav.outcomes">Rezultāti</a>
         <a href="dwcm-media.html" data-i18n="nav.media">Mediji</a>
+        <a href="dwcm-digital-campaign.html" data-i18n="nav.campaign">Kampaņa</a>
+        <a href="dwcm-learning-module.html" data-i18n="nav.learning">Tests</a>
         <a href="dwcm-publication-guidelines.html" data-i18n="nav.guidelines">Vadlīnijas</a>
         <div class="lsw">
           <button class="lbtn" data-lang="lv">LV</button>
@@ -333,13 +339,11 @@
 
 <section class="sec sec0">
   <div class="container">
-    <div class="stat-grid rv">
-      <div class="stat-card tgt"><span class="n">300</span><span class="l" data-i18n="mstat.s1">Mērķa video</span></div>
-      <div class="stat-card"><span class="n">333</span><span class="l" data-i18n="mstat.s2">Standartizēti video</span></div>
-      <div class="stat-card"><span class="n">344</span><span class="l" data-i18n="mstat.s3">Visi kampaņu video</span></div>
-      <div class="stat-card"><span class="n">513</span><span class="l" data-i18n="mstat.s4">Video visā projekta ciklā</span></div>
+    <div class="reach-hero rv">
+      <span class="reach-num">65,735</span>
+      <span class="reach-label" data-i18n="reach.label">People Reached</span>
+      <p class="reach-desc" data-i18n="reach.desc">The dedicated Daily Wellness Challenge social media accounts generated at least 65,735 cumulative public video views across Instagram, TikTok, Facebook and YouTube.</p>
     </div>
-    <p class="prose rv" style="margin-top:18px" data-i18n="mstat.note">333 standartizētie video: Igaunija 102, Vācija 80, Latvija 148, Norvēģija 3. Papildus 11 personīgi un 8 nacionālo komandu video, kā arī 150 video no sagatavošanās kampaņas un turpinājuma aktivitātēm — kopā 513 video visā projekta ciklā.</p>
 
     <div class="gg rv" style="margin-top:30px">
       <a class="gi gi--photo" href="https://www.instagram.com/reel/DTiygN-jT2B/" target="_blank" rel="noopener" style="--i:0"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/wall%20papers/sound%20heal%20dwcm.jpg" alt="" loading="lazy"><span class="gplat ig">📷 Instagram</span><div class="ghl">↗</div><span class="gext" data-i18n="mvid.no">🇳🇴 Norvēģija</span></a>
@@ -477,13 +481,12 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
 var T={
   lv:{
     "nav.about":"Par projektu","nav.outcomes":"Rezultāti","nav.partners":"Partneri","nav.gallery":"Galerija","nav.guidelines":"Vadlīnijas",
-    "nav.followup":"Aktivitātes","nav.media":"Mediji","nav.downloads":"Lejupielādes",
+    "nav.followup":"Aktivitātes","nav.media":"Mediji","nav.downloads":"Lejupielādes","nav.campaign":"Kampaņa","nav.learning":"Tests",
     "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025\u20132026 Biedrība UNTU. Projekts Nr. 2025-1-LV02-KA153-YOU-000304266. Līdzfinansē Eiropas Savienība.",
     "crumb.back":"\u2190 Daily Wellness Challenge Movement",
     "mh.kicker":"Mediju bibliotēka","mh.h1":"513 video. Četras valstis. Viena kustība.",
     "mh.lead":"Kampaņu video, dalībnieku personīgie video, nacionālo komandu video un turpinājuma aktivitāšu materiāli — viss projekta cikla laikā radītais saturs.",
-    "mstat.s1":"Mērķa video","mstat.s2":"Standartizēti video","mstat.s3":"Visi kampaņu video","mstat.s4":"Video visā projekta ciklā",
-    "mstat.note":"333 standartizētie video: Igaunija 102, Vācija 80, Latvija 148, Norvēģija 3. Papildus 11 personīgi un 8 nacionālo komandu video, kā arī 150 video no sagatavošanās kampaņas un turpinājuma aktivitātēm — kopā 513 video visā projekta ciklā.",
+    "reach.label":"Sasniegtie cilvēki","reach.desc":"Daily Wellness Challenge sociālo tīklu kontos kopā tika reģistrēti vismaz 65,735 publiski video skatījumi Instagram, TikTok, Facebook un YouTube platformās.",
     "igp.kicker":"Instagram lapa","igp.h3":"Standartizētie video — Instagram lapā.",
     "igp.p":"Šī saite ved uz projekta Instagram lapu, kurā apkopoti standartizētie video (333 no 513 kopējiem). Pilns visu dalībnieku radīto video saraksts — skatīt zemāk, sadaļā \"Pilns video arhīvs\".",
     "igp.btn":"Atvērt Instagram lapu ↗",
@@ -498,13 +501,12 @@ var T={
   },
   en:{
     "nav.about":"About","nav.outcomes":"Outcomes","nav.partners":"Partners","nav.gallery":"Gallery","nav.guidelines":"Guidelines",
-    "nav.followup":"Activities","nav.media":"Media","nav.downloads":"Downloads",
+    "nav.followup":"Activities","nav.media":"Media","nav.downloads":"Downloads","nav.campaign":"Campaign","nav.learning":"Quiz",
     "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025\u20132026 Biedrība UNTU. Project No. 2025-1-LV02-KA153-YOU-000304266. Co-funded by the European Union.",
     "crumb.back":"\u2190 Daily Wellness Challenge Movement",
     "mh.kicker":"Media Library","mh.h1":"513 videos. Four countries. One movement.",
     "mh.lead":"Campaign videos, participants' personal videos, national team videos and follow-up activity material — all content produced across the project cycle.",
-    "mstat.s1":"Target videos","mstat.s2":"Standardised videos","mstat.s3":"All campaign-related videos","mstat.s4":"Videos across the full project cycle",
-    "mstat.note":"333 standardised videos: Estonia 102, Germany 80, Latvia 148, Norway 3. Plus 11 personal and 8 national-team videos, and 150 videos from the preparatory campaign and follow-up activities — 513 videos in total across the project cycle.",
+    "reach.label":"People Reached","reach.desc":"The dedicated Daily Wellness Challenge social media accounts generated at least 65,735 cumulative public video views across Instagram, TikTok, Facebook and YouTube.",
     "igp.kicker":"Instagram Page","igp.h3":"Standardised videos — on our Instagram page.",
     "igp.p":"This link goes to the project's Instagram page, which collects the standardised videos (333 out of 513 in total). The full list of every video created by participants is below, in the \"Full Video Archive\" section.",
     "igp.btn":"Open Instagram Page ↗",
