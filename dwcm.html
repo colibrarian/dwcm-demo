@@ -122,7 +122,10 @@
     /* EU strip */
     .eustrip{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 22px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.025);margin-top:36px}
     .eustrip img{height:30px;object-fit:contain;filter:brightness(.8)}
-    .jspa-ph{height:30px;padding:0 12px;display:flex;align-items:center;border:1px dashed rgba(255,255,255,.22);border-radius:8px;font-size:9px;font-weight:700;letter-spacing:.03em;color:#ffcf7a;white-space:nowrap}
+    .jspa-logo{display:none}
+    html[lang="lv"] .jspa-lv{display:block}
+    html[lang="en"] .jspa-en{display:block}
+    html:not([lang]) .jspa-lv{display:block}
     .eut{font-size:11.5px;color:var(--muted);line-height:1.55;flex:1}
     .kabadge{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);background:var(--cd);border:1px solid rgba(0,212,239,.22);padding:5px 13px;border-radius:999px;white-space:nowrap}
 
@@ -419,7 +422,8 @@
 
     <div class="eustrip rv" style="--d:.2s">
       <img src="https://ik.imagekit.io/erewhile/Untu/Logo%20and%20Og/EN_Co-fundedbytheEU_RGB_NEG.png" alt="Co-funded by the EU">
-      <div class="jspa-ph" title="Jaunatnes starptautisko programmu aģentūra (JSPA)"><span data-i18n="jspa.ph">JSPA logo — pievienot</span></div>
+      <img class="jspa-logo jspa-lv" src="https://ik.imagekit.io/colibrarian/dwcm/logo/Vienkrasu%20JSPA.png" alt="JSPA">
+      <img class="jspa-logo jspa-en" src="https://ik.imagekit.io/colibrarian/dwcm/logo/vienkarss_inversa_rgb_v_EN-39.png" alt="JSPA">
       <div class="eut" data-i18n="about.eu">Līdzfinansē Eiropas Savienība. Paustie uzskati un viedokļi atspoguļo vienīgi autoru viedokli un ne vienmēr sakrīt ar Eiropas Savienības vai Jaunatnes starptautisko programmu aģentūras viedokli. Ne Eiropas Savienība, ne piešķīrēja iestāde nav atbildīga par tiem.</div>
       <span class="kabadge">KA153</span>
     </div>
@@ -716,7 +720,6 @@ var T={
     "about.c2.t":"Metodes","about.c2.d":"Somatiskās metodes, āra izglītība, refleksija, dabā balstīta prakse un digitālā stāstniecība — praktiski rīki, ko dalībnieki var izmantot savā ikdienas darbā.",
     "about.c3.t":"Mērķauditorija","about.c3.d":"Jaunatnes darbinieki, jaunatnes organizācijas, treneri, pašvaldības, finansētāji un politikas veidotāji četrās partnervalstīs.",
     "about.eu":"Līdzfinansē Eiropas Savienība. Paustie uzskati un viedokļi atspoguļo vienīgi autoru viedokli un ne vienmēr sakrīt ar Eiropas Savienības vai Jaunatnes starptautisko programmu aģentūras viedokli. Ne Eiropas Savienība, ne piešķīrēja iestāde nav atbildīga par tiem.",
-    "jspa.ph":"JSPA logo — pievienot",
     "timeline.kicker":"Kā tas notika","timeline.h2":"Projekta gaita.",
     "tl.s1":"01 — Sagatavošanās","tl.t1":"Online sagatavošanās","tl.d1":"Sagatavošanās notika pilnībā tiešsaistē — neviens iepriekš fiziski nebrauca uz Latviju. Četras organizācijas attālināti saskaņoja mērķus, metodes un dalībnieku atlasi mobilitātei.",
     "tl.s2":"02 — Mācību kurss","tl.t2":"Mobilitāte, 21.–30.10.2025","tl.d2":"Jaunatnes darbinieki no četrām valstīm kopā apguva labbūtības metodes Latvijā.",
@@ -769,7 +772,6 @@ var T={
     "about.c2.t":"Methods","about.c2.d":"Somatic methods, outdoor education, reflection, nature-based practice and digital storytelling — practical tools participants can use in their everyday work.",
     "about.c3.t":"Target audience","about.c3.d":"Youth workers, youth organisations, trainers, municipalities, funders and policy stakeholders across four partner countries.",
     "about.eu":"Co-funded by the European Union. Views and opinions expressed are, however, those of the authors only and do not necessarily reflect those of the European Union or the Agency for International Programs for Youth. Neither the European Union nor the granting authority can be held responsible for them.",
-    "jspa.ph":"JSPA logo — to add",
     "timeline.kicker":"How it worked","timeline.h2":"Project journey.",
     "tl.s1":"01 — Preparation","tl.t1":"Online preparation","tl.d1":"Preparation took place entirely online — no one travelled to Latvia in advance. The four organisations remotely aligned on goals, methods and participant selection for the mobility.",
     "tl.s2":"02 — Training","tl.t2":"Mobility, 21–30 Oct 2025","tl.d2":"Youth workers from four countries trained together in Latvia to explore well-being methods.",
