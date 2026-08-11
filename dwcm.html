@@ -6,7 +6,6 @@
   <title>Daily Wellness Challenge Movement — UNTU</title>
   <meta name="description" content="Erasmus+ KA1 mācību kurss — jaunatnes darbinieki no Norvēģijas, Vācijas, Igaunijas un Latvijas.">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <style>
     :root{
       --bg:#07090e; --card:rgba(255,255,255,.055); --border:rgba(255,255,255,.10);
@@ -219,11 +218,14 @@
     .mchip{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;border:1px solid rgba(0,212,239,.22);background:rgba(0,212,239,.07);font-size:13px;font-weight:600;white-space:nowrap}
     .mdot{width:8px;height:8px;border-radius:50%;background:var(--cyan);flex-shrink:0;animation:pulse 1.9s ease-in-out infinite}
     @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,239,.65)}50%{opacity:.75;box-shadow:0 0 0 7px rgba(0,212,239,0)}}
-    #mapbox{height:380px;border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh)}
-    #lmap{width:100%;height:100%}
-    .leaflet-popup-content-wrapper{background:#0d1017;border:1px solid rgba(0,212,239,.25);border-radius:12px;color:var(--text);box-shadow:0 8px 32px rgba(0,0,0,.5)}
-    .leaflet-popup-tip{background:#0d1017}
-    .leaflet-popup-content{margin:12px 16px;font-family:'Plus Jakarta Sans',sans-serif}
+    .locrow{display:flex;align-items:center;gap:16px;padding:20px 26px;border-radius:18px;border:1px solid var(--border);background:var(--card);text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+    .locrow:hover{border-color:rgba(0,212,239,.3);transform:translateY(-2px)}
+    .locicon{font-size:24px;flex-shrink:0}
+    .loctext{flex:1;min-width:0}
+    .locname{font-size:14.5px;font-weight:800}
+    .locsub{font-size:11.5px;color:var(--muted);margin-top:2px}
+    .locgo{font-size:12px;font-weight:700;color:var(--cyan);white-space:nowrap;flex-shrink:0}
+    @media(max-width:480px){.locrow{flex-wrap:wrap}.locgo{width:100%;text-align:center;margin-top:8px}}
 
     /* GALLERY */
     .gg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:8px 4px 4px}
@@ -436,12 +438,12 @@
     <p class="osublabel rv" data-i18n="outcomes.sub1">📖 Pētījums</p>
     <div class="og rv" style="grid-template-columns:1fr;margin-bottom:32px">
       <div class="oc" style="max-width:320px">
-        <div class="oth oth--photo"><img class="oth-cover" src="https://ik.imagekit.io/colibrarian/dwcm/follow%20up%20and%20outputs%20page/map%20report.jpg" alt=""><span class="obi">🗺️</span></div>
+        <div class="oth oth--photo"><img class="oth-cover" src="https://ik.imagekit.io/colibrarian/dwcm/follow%20up%20and%20outputs%20page/int%20map%20report.jpg" alt=""><span class="obi">🗺️</span></div>
         <div class="ob">
           <div class="otype" data-i18n="outcome.map.type">Starptautisks salīdzinošs pētījums</div>
           <div class="otitle" data-i18n="outcome.map.t">International Comparative Mapping Report</div>
           <p class="odesc" data-i18n="outcome.map.d">Labbūtības izaicinājumi, digitālā labbūtība un ilgtspējīgas prakses Eiropas jaunatnes darbā — ar sadaļām par Igauniju, Vāciju, Latviju un Norvēģiju, salīdzinošiem secinājumiem un ieteikumiem.</p>
-          <a class="olink dis"><span data-i18n="outcome.map.l">Lejupielādēt PDF</span> ↓</a>
+          <a class="olink" href="https://drive.google.com/file/d/1Luurrq9JsieYuNZIwr9qwCTaX8H4K3qi/view" target="_blank" rel="noopener"><span data-i18n="outcome.map.l">Skatīt / Lejupielādēt</span> ↗</a>
         </div>
       </div>
     </div>
@@ -455,8 +457,7 @@
           <div class="otitle" data-i18n="outcome.kit.t">Daily Wellness Challenge Movement Toolkit</div>
           <p class="odesc" data-i18n="outcome.kit.d">Praktiska metožu rīkkopa jaunatnes darbiniekiem — fiziskā, emocionālā un komunikācijas labbūtība, komandas dinamika un stresa mazināšana.</p>
           <div class="oclinks">
-            <a class="olink canva" href="https://canva.link/f389glz2sbrn38m" target="_blank" rel="noopener"><span data-i18n="outcome.kit.canva">Priekšskatīt Canva</span> ↗</a>
-            <a class="olink dis"><span data-i18n="outcome.kit.l">Lejupielādēt PDF</span> ↓</a>
+            <a class="olink" href="https://drive.google.com/file/d/1HMSqIzvAxaFwlRAHh0wJQYSrq-_Oezo5/view" target="_blank" rel="noopener"><span data-i18n="outcome.kit.l">Skatīt / Lejupielādēt</span> ↗</a>
           </div>
         </div>
       </div>
@@ -467,8 +468,7 @@
           <div class="otitle" data-i18n="outcome.dig.t">Freshly Baked Content — DWCM Digital Toolkit</div>
           <p class="odesc" data-i18n="outcome.dig.d">Atsevišķa digitālās stāstniecības un satura veidošanas rīkkopa — netiek apvienota ar praktisko metodoloģijas rīkkopu.</p>
           <div class="oclinks">
-            <a class="olink canva" href="https://canva.link/vmm03v11yag7v2u" target="_blank" rel="noopener"><span data-i18n="outcome.dig.canva">Priekšskatīt Canva</span> ↗</a>
-            <a class="olink dis"><span data-i18n="outcome.dig.l">Lejupielādēt PDF</span> ↓</a>
+            <a class="olink" href="https://drive.google.com/file/d/1QwL06e0kSPj1JYc855_U0o5ZczL4m2Bw/view" target="_blank" rel="noopener"><span data-i18n="outcome.dig.l">Skatīt / Lejupielādēt</span> ↗</a>
           </div>
         </div>
       </div>
@@ -567,11 +567,15 @@
 <!-- MAP -->
 <section id="location" class="sec sec0">
   <div class="container">
-    <div class="mhdr rv">
-      <div><p class="kicker" data-i18n="map.kicker">Norises vieta</p><h2 data-i18n="map.h2">Kur tas notika.</h2></div>
-      <div class="mchip"><span class="mdot"></span><span data-i18n="map.pin">Vircava, Latvija</span></div>
-    </div>
-    <div id="mapbox" class="rv" style="--d:.1s"><div id="lmap"></div></div>
+    <p class="kicker rv" data-i18n="map.kicker">Norises vieta</p>
+    <a class="locrow rv" style="--d:.05s" href="https://www.google.com/maps?q=56.510,23.858" target="_blank" rel="noopener">
+      <span class="locicon">📍</span>
+      <div class="loctext">
+        <div class="locname" data-i18n="map.pin">Vircava, Latvija</div>
+        <div class="locsub" data-i18n="map.sub">56.510°N 23.858°E</div>
+      </div>
+      <span class="locgo" data-i18n="map.open">Atvērt kartē ↗</span>
+    </a>
   </div>
 </section>
 
@@ -724,15 +728,15 @@ var T={
     "outcome.map.ph":"PDF — drīzumā","outcome.map.type":"Starptautisks salīdzinošs pētījums",
     "outcome.map.t":"International Comparative Mapping Report",
     "outcome.map.d":"Labbūtības izaicinājumi, digitālā labbūtība un ilgtspējīgas prakses Eiropas jaunatnes darbā — ar sadaļām par Igauniju, Vāciju, Latviju un Norvēģiju, salīdzinošiem secinājumiem un ieteikumiem.",
-    "outcome.map.l":"Lejupielādēt PDF",
+    "outcome.map.l":"Skatīt / Lejupielādēt",
     "outcome.kit.ph":"PDF — drīzumā","outcome.kit.type":"Metodoloģijas rīkkopa",
     "outcome.kit.t":"Daily Wellness Challenge Movement Toolkit",
     "outcome.kit.d":"Praktiska metožu rīkkopa jaunatnes darbiniekiem — fiziskā, emocionālā un komunikācijas labbūtība, komandas dinamika un stresa mazināšana.",
-    "outcome.kit.l":"Lejupielādēt PDF","outcome.kit.canva":"Priekšskatīt Canva",
+    "outcome.kit.l":"Skatīt / Lejupielādēt",
     "outcome.dig.ph":"PDF — drīzumā","outcome.dig.type":"Digitālā rīkkopa",
     "outcome.dig.t":"Freshly Baked Content — DWCM Digital Toolkit",
     "outcome.dig.d":"Atsevišķa digitālās stāstniecības un satura veidošanas rīkkopa — netiek apvienota ar praktisko metodoloģijas rīkkopu.",
-    "outcome.dig.l":"Lejupielādēt PDF","outcome.dig.canva":"Priekšskatīt Canva",
+    "outcome.dig.l":"Skatīt / Lejupielādēt",
     "camp.kicker":"Digital Awareness Campaign","camp.h2":"Centrālā kampaņa + vietējie koncepti.",
     "camp.lead":"Turpinājuma procesa ietvaros dalībnieki un nacionālās komandas tika aicināti pielietot projektā apgūtās digitālās komunikācijas un labbūtības kompetences savā organizācijas kontekstā. Tā vietā, lai visās partnervalstīs atkārtotu vienu un to pašu kampaņu, komandas izstrādāja vietējus konceptus, kas atspoguļo to auditoriju vajadzības un regulārās jaunatnes darba aktivitātes.",
     "camp.c1.type":"🇪🇪 Igaunija","camp.c1.d":"Praktisks ietvars organizācijas satura izstrādei un popularizēšanai — auditorijas analīze, pozicionēšana, satura plānošana un rezultātu mērīšana.",
@@ -745,7 +749,7 @@ var T={
     "partners.desc":"Projekta koordinatore — biedrība UNTU no Latvijas — sadarbībā ar partneriem Igaunijā, Vācijā un Norvēģijā.",
     "p.lv.org":"Biedrība UNTU","p.no.org":"International Volda","p.de.org":"Rubikus e. V.","p.ee.org":"Kambuka Kids MTÜ",
     "p.coord":"Koordinējošā","p.partner":"Partneris",
-    "map.kicker":"Norises vieta","map.h2":"Kur tas notika.","map.pin":"Vircava, Latvija",
+    "map.kicker":"Norises vieta","map.pin":"Vircava, Latvija","map.sub":"56.510°N 23.858°E","map.open":"Atvērt kartē ↗",
     "gallery.kicker":"Foto galerija","gallery.h2":"Mirkļi no projekta.",
     "gallery.desc":"Fotogrāfijas no semināriem, āra aktivitātēm un komandas brīžiem visā projekta laikā.",
     "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025–2026 Biedrība UNTU. Projekts Nr. 2025-1-LV02-KA153-YOU-000304266. Līdzfinansē Eiropas Savienība."
@@ -777,15 +781,15 @@ var T={
     "outcome.map.ph":"PDF — coming soon","outcome.map.type":"International Comparative Study",
     "outcome.map.t":"International Comparative Mapping Report",
     "outcome.map.d":"Wellness Challenges, Digital Well-being and Sustainable Practices in European Youth Work — with country sections for Estonia, Germany, Latvia and Norway, comparative findings and recommendations.",
-    "outcome.map.l":"Download PDF",
+    "outcome.map.l":"View / Download",
     "outcome.kit.ph":"PDF — coming soon","outcome.kit.type":"Methodology Toolkit",
     "outcome.kit.t":"Daily Wellness Challenge Movement Toolkit",
     "outcome.kit.d":"A practical methodology toolkit for youth workers — accessible methods for physical, emotional and communication well-being, team dynamics and stress relief.",
-    "outcome.kit.l":"Download PDF","outcome.kit.canva":"Preview in Canva",
+    "outcome.kit.l":"View / Download",
     "outcome.dig.ph":"PDF — coming soon","outcome.dig.type":"Digital Toolkit",
     "outcome.dig.t":"Freshly Baked Content — DWCM Digital Toolkit",
     "outcome.dig.d":"A separate digital storytelling and content-creation toolkit — kept distinct from the practical methodology toolkit.",
-    "outcome.dig.l":"Download PDF","outcome.dig.canva":"Preview in Canva",
+    "outcome.dig.l":"View / Download",
     "camp.kicker":"Digital Awareness Campaign","camp.h2":"Central campaign + local concepts.",
     "camp.lead":"As part of the follow-up process, participants and national teams were encouraged to apply the digital communication and wellness competences developed during the project to their own organisational contexts. Rather than reproducing one identical campaign in all partner countries, teams developed local concepts reflecting the needs of their audiences and regular youth-work activities.",
     "camp.c1.type":"🇪🇪 Estonia","camp.c1.d":"A practical framework for developing and promoting organisational content, covering audience analysis, positioning, content planning, channel selection, growth tactics and performance measurement.",
@@ -798,7 +802,7 @@ var T={
     "partners.desc":"Coordinated by Biedrība UNTU (Latvia), in partnership with organisations in Estonia, Germany and Norway.",
     "p.lv.org":"Biedrība UNTU","p.no.org":"International Volda","p.de.org":"Rubikus e. V.","p.ee.org":"Kambuka Kids MTÜ",
     "p.coord":"Coordinating","p.partner":"Partner",
-    "map.kicker":"Location","map.h2":"Where it happened.","map.pin":"Vircava, Latvia",
+    "map.kicker":"Location","map.pin":"Vircava, Latvia","map.sub":"56.510°N 23.858°E","map.open":"Open in Maps ↗",
     "gallery.kicker":"Photo Gallery","gallery.h2":"Moments from the project.",
     "gallery.desc":"Photos from workshops, outdoor activities, and team moments throughout the project.",
     "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025–2026 Biedrība UNTU. Project No. 2025-1-LV02-KA153-YOU-000304266. Co-funded by the European Union."
@@ -815,36 +819,6 @@ function applyLang(lang){
 }
 document.querySelectorAll('.lbtn').forEach(function(b){b.addEventListener('click',function(){applyLang(b.dataset.lang)})});
 try{applyLang(localStorage.getItem('dwcm_lang')||'lv')}catch(e){applyLang('lv')}
-})();
-
-/* ===== 5. MAP (isolated, cannot break other JS) ===== */
-(function(){
-  function initMap(){
-    try{
-      var m=L.map('lmap',{center:[56.510,23.858],zoom:11,scrollWheelZoom:false});
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'\u00a9 OpenStreetMap \u00a9 CARTO',maxZoom:19}).addTo(m);
-      var icon=L.divIcon({html:'<svg width="34" height="42" viewBox="0 0 34 42" xmlns="http://www.w3.org/2000/svg"><ellipse cx="17" cy="38" rx="7" ry="2.5" fill="rgba(0,212,239,.3)"/><path d="M17 0C7.6 0 0 7.6 0 17c0 12.8 17 25 17 25S34 29.8 34 17C34 7.6 26.4 0 17 0z" fill="#00D4EF"/><circle cx="17" cy="17" r="7" fill="white" fill-opacity=".92"/></svg>',className:'',iconSize:[34,42],iconAnchor:[17,42],popupAnchor:[0,-46]});
-      L.marker([56.510,23.858],{icon:icon}).addTo(m).bindPopup('<div style="font-family:sans-serif"><strong style="color:#00D4EF;font-size:13px">Daily Wellness Challenge Movement</strong><br><span style="color:#888;font-size:11px">Vircava, Latvija</span></div>',{maxWidth:220}).openPopup();
-    }catch(err){
-      var box=document.getElementById('mapbox');
-      if(box)box.innerHTML='<div style="height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:rgba(240,242,247,.4);font-family:sans-serif;font-size:13px"><span style="font-size:30px">\ud83d\uddfa\ufe0f</span>Vircava, Latvija<span style="font-size:11px">56.510\u00b0N 23.858\u00b0E</span></div>';
-    }
-  }
-  if(typeof L!=='undefined'){
-    initMap();
-  }else{
-    var lcsS=document.createElement('link');
-    lcsS.rel='stylesheet';lcsS.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
-    document.head.appendChild(lcsS);
-    var sc=document.createElement('script');
-    sc.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-    sc.onload=initMap;
-    sc.onerror=function(){
-      var box=document.getElementById('mapbox');
-      if(box)box.innerHTML='<div style="height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:rgba(240,242,247,.4);font-family:sans-serif;font-size:13px"><span style="font-size:30px">\ud83d\uddfa\ufe0f</span>Vircava, Latvija<span style="font-size:11px">56.510\u00b0N 23.858\u00b0E</span></div>';
-    };
-    document.body.appendChild(sc);
-  }
 })();
 </script>
 </body>
