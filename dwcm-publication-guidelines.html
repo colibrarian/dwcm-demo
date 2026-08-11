@@ -122,6 +122,10 @@
     /* EU strip */
     .eustrip{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 22px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.025);margin-top:36px}
     .eustrip img{height:30px;object-fit:contain;filter:brightness(.8)}
+    .jspa-logo{display:none}
+    html[lang="lv"] .jspa-lv{display:block}
+    html[lang="en"] .jspa-en{display:block}
+    html:not([lang]) .jspa-lv{display:block}
     .eut{font-size:11.5px;color:var(--muted);line-height:1.55;flex:1}
     .kabadge{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);background:var(--cd);border:1px solid rgba(0,212,239,.22);padding:5px 13px;border-radius:999px;white-space:nowrap}
 
@@ -325,7 +329,12 @@
       </ul>
       <h3 data-i18n="g.h3">3. EU redzamība</h3>
       <p data-i18n="g.p1">Jebkurā publiskā materiālā, kas satur EU logo, jāiekļauj pilns atbildības izslēguma teksts (skatīt sadaļu "Co-funded by the European Union" projekta lapas apakšā).</p>
-      <p data-i18n="g.p1b">Projektu papildus atbalstīja arī Jaunatnes starptautisko programmu aģentūra (JSPA) — arī tās logo jāiekļauj publiskajos materiālos līdzās EU emblēmai (<span class="ph">JSPA logo — pievienot</span>).</p>
+      <p data-i18n="g.p1b">Projektu papildus atbalstīja arī Jaunatnes starptautisko programmu aģentūra (JSPA) — arī tās logo jāiekļauj publiskajos materiālos līdzās EU emblēmai.</p>
+      <div class="eustrip">
+        <img src="https://ik.imagekit.io/erewhile/Untu/Logo%20and%20Og/EN_Co-fundedbytheEU_RGB_NEG.png" alt="Co-funded by the EU">
+        <img class="jspa-logo jspa-lv" src="https://ik.imagekit.io/colibrarian/dwcm/logo/Vienkrasu%20JSPA.png" alt="JSPA">
+        <img class="jspa-logo jspa-en" src="https://ik.imagekit.io/colibrarian/dwcm/logo/vienkarss_inversa_rgb_v_EN-39.png" alt="JSPA">
+      </div>
       <h3 data-i18n="g.h4">4. Jautājumi</h3>
       <p data-i18n="g.p2">Par publicēšanas jautājumiem sazinies: Jekaterina Orlova — projects@untu.ngo</p>
       <h3 data-i18n="g.h5">5. Pilnais izplatīšanas ziņojums</h3>
@@ -437,7 +446,7 @@ var T={
     "g.li6":"#UNTU_DWC #DailyWellnessChallenge",
     "g.h3":"3. EU redzamība",
     "g.p1":"Jebkurā publiskā materiālā, kas satur EU logo, jāiekļauj pilns atbildības izslēguma teksts (skatīt sadaļu \"Co-funded by the European Union\" projekta lapas apakšā).",
-    "g.p1b":"Projektu papildus atbalstīja arī Jaunatnes starptautisko programmu aģentūra (JSPA) — arī tās logo jāiekļauj publiskajos materiālos līdzās EU emblēmai (JSPA logo — pievienot).",
+    "g.p1b":"Projektu papildus atbalstīja arī Jaunatnes starptautisko programmu aģentūra (JSPA) — arī tās logo jāiekļauj publiskajos materiālos līdzās EU emblēmai.",
     "g.h4":"4. Jautājumi",
     "g.p2":"Par publicēšanas jautājumiem sazinies: Jekaterina Orlova — projects@untu.ngo",
     "g.h5":"5. Pilnais izplatīšanas ziņojums",
@@ -460,7 +469,7 @@ var T={
     "g.li6":"#UNTU_DWC #DailyWellnessChallenge",
     "g.h3":"3. EU visibility",
     "g.p1":"Any public material carrying the EU logo must include the full disclaimer text (see the \"Co-funded by the European Union\" section at the bottom of the project page).",
-    "g.p1b":"The project was additionally supported by the Agency for International Programs for Youth (JSPA) — its logo should also appear on public materials alongside the EU emblem (JSPA logo — to add).",
+    "g.p1b":"The project was additionally supported by the Agency for International Programs for Youth (JSPA) — its logo should also appear on public materials alongside the EU emblem.",
     "g.h4":"4. Questions",
     "g.p2":"For publication questions, contact: Jekaterina Orlova — projects@untu.ngo",
     "g.h5":"5. Full dissemination report",
