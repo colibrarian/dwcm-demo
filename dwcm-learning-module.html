@@ -347,12 +347,7 @@
   <div class="container">
     <div class="quiz-app rv" id="quizApp">
 
-      <div class="qprog" id="qprog">
-        <div class="qdot active" data-round="0"></div>
-        <div class="qdot" data-round="1"></div>
-        <div class="qdot" data-round="2"></div>
-        <div class="qdot" data-round="3"></div>
-      </div>
+      <div class="qprog" id="qprog"></div>
 
       <div class="qscreen" id="screenRead">
         <p class="qkicker" id="roundLabel">Round 1 / 4</p>
@@ -389,7 +384,7 @@
 
     </div>
 
-    <p class="prose rv" style="margin-top:26px;text-align:center" data-i18n="lm.note"><span class="ph">Plēholders</span> — šeit redzamās tēmas un jautājumi ir darbojošās funkcionalitātes maketa piemērs. Reālais saturs tiks pievienots vēlāk.</p>
+    <p class="prose rv" style="margin-top:26px;text-align:center" data-i18n="lm.note">Jautājumu saturs balstīts uz projekta Toolkit un Freshly Baked Content dokumentiem.</p>
   </div>
 </section>
 <!-- FOOTER -->
@@ -439,81 +434,201 @@
 })();
 
 /* ===== 0.5 QUIZ ENGINE ===== */
-/* PLACEHOLDER CONTENT — replace QUIZ_DATA with real topics/questions when ready. */
+/* Content sourced from the Daily Wellness Challenge Movement Toolkit and Freshly Baked Content documents. Bilingual LV/EN. */
 (function(){
   var QUIZ_DATA = [
     {
-      title: "Wellness in Youth Work",
-      passage: [
-        "The Daily Wellness Challenge Movement brought together youth workers from Latvia, Norway, Germany and Estonia to explore accessible approaches to burnout prevention and mental well-being.",
-        "Rather than treating well-being as a side topic, the project placed it at the centre of youth work practice — through somatic methods, outdoor education, reflection and nature-based activities."
-      ],
+      title: { en: "The Training Course & Icebreakers", lv: "Mācību kurss un iepazīšanās aktivitātes" },
+      passage: {
+        en: [
+          "The \u201cDaily Wellness Challenge Movement\u201d was an Erasmus+ training course held in Latvia from 21 to 30 October 2025, uniting youth workers from Germany, Norway, Latvia and Estonia around burnout prevention, mental health and a culture of wellbeing.",
+          "Part 1 of the Toolkit, Icebreakers & Group Building, opens with the Conversation Cards Icebreaker (20\u201345 minutes, working in pairs with open-ended questions) and Fears, Expectations & Commitments, where participants individually reflect before the group clusters and discusses the responses together."
+        ],
+        lv: [
+          "\u201cDaily Wellness Challenge Movement\u201d bija Erasmus+ m\u0101c\u012bbu kurss, kas notika Latvij\u0101 no 2025. gada 21. l\u012bdz 30. oktobrim, apvienojot jaunatnes darbiniekus no V\u0101cijas, Norv\u0113\u0123ijas, Latvijas un Igaunijas ap izdeg\u0161anas profilaksi, gar\u012bgo vesel\u012bbu un labb\u016bt\u012bbas kult\u016bru.",
+          "R\u012bkkopas 1. da\u013ca, Iepaz\u012b\u0161an\u0101s un grupas veido\u0161ana, s\u0101kas ar sarunu k\u0101r\u0161u aktivit\u0101ti (20\u201345 min\u016btes, darbs p\u0101ros ar atv\u0113rtiem jaut\u0101jumiem) un vingrin\u0101jumu \u201cBailes, cer\u012bbas un ap\u0146em\u0161an\u0101s\u201d, kur\u0101 dal\u012bbnieki vispirms individu\u0101li p\u0101rdom\u0101, p\u0113c tam grupa sakopo un p\u0101rrun\u0101 atbildes kop\u0101."
+        ]
+      },
       questions: [
-        { q: "How many countries took part in the project?", opts: ["Two", "Three", "Four"], correct: 2 },
-        { q: "What was one of the project's core focus areas?", opts: ["Burnout prevention", "Fundraising strategy", "Event ticketing"], correct: 0 },
-        { q: "Which methods did participants use during the training?", opts: ["Only lectures", "Somatic and outdoor methods", "Written exams only"], correct: 1 }
+        { q: { en: "How many partner countries were united in the training course?", lv: "Cik partnervalstis apvienoja m\u0101c\u012bbu kursu?" },
+          opts: { en: ["Three", "Four", "Five"], lv: ["Tr\u012bs", "\u010cetras", "Piecas"] }, correct: 1 },
+        { q: { en: "What is the recommended duration for the Conversation Cards Icebreaker, including reflection?", lv: "K\u0101ds ir ieteicamais ilgums sarunu k\u0101r\u0161u aktivit\u0101tei, ieskaitot refleksiju?" },
+          opts: { en: ["20\u201345 minutes (up to 60 with reflection)", "5 minutes only", "3 hours"], lv: ["20\u201345 min\u016btes (l\u012bdz 60 ar refleksiju)", "Tikai 5 min\u016btes", "3 stundas"] }, correct: 0 },
+        { q: { en: "In \u2018Fears, Expectations & Commitments\u2019, what happens after individual reflection?", lv: "Kas notiek p\u0113c individu\u0101l\u0101s refleksijas vingrin\u0101jum\u0101 \u201cBailes, cer\u012bbas un ap\u0146em\u0161an\u0101s\u201d?" },
+          opts: { en: ["Responses are collected and clustered as a group", "Each answer is read aloud by the trainer only", "Participants immediately move to the next activity"], lv: ["Atbildes tiek sav\u0101ktas un sakopotas grup\u0101", "Katru atbildi ska\u013ci nolasa tikai treneris", "Dal\u012bbnieki uzreiz p\u0101riet pie n\u0101kam\u0101s aktivit\u0101tes"] }, correct: 0 }
       ]
     },
     {
-      title: "The Three Project Outputs",
-      passage: [
-        "The project produced three separate, standalone outputs: an International Comparative Mapping Report, the Daily Wellness Challenge Movement Toolkit, and Freshly Baked Content — a digital storytelling toolkit.",
-        "Each resource serves a different purpose — research, practical methodology, and content creation — and none of them were merged into a single document."
-      ],
+      title: { en: "Wellness & Somatic Practices I: Yoga & Breathing", lv: "Labb\u016bt\u012bba un somatisk\u0101s prakses I: joga un elpo\u0161ana" },
+      passage: {
+        en: [
+          "Ashtanga Yoga for Beginners is a structured morning wellness practice built around the Surya Namaskar flow, recommended for groups of 5\u201325 participants and lasting 60\u201390 minutes, best timed before breakfast. It closes with 8\u201312 minutes of Shavasana, letting the nervous system shift out of \u2018effort mode\u2019.",
+          "Chakra Breathing, based on Osho\u2019s Active Meditation, is a one-hour practice in two stages: 45 minutes of active breathing that moves upward through each chakra (marked by a bell at each transition, three bells at the crown), followed by 15 minutes of silent stillness."
+        ],
+        lv: [
+          "Ashtanga joga ies\u0101c\u0113jiem ir struktur\u0113ta r\u012bta labb\u016bt\u012bbas prakse, kas balst\u012bta uz Surya Namaskar pl\u016bsmu, ieteicama grup\u0101m no 5 l\u012bdz 25 dal\u012bbniekiem, ilgst 60\u201390 min\u016btes un vislab\u0101k tiek veikta pirms brokast\u012bm. To nosl\u0113dz 8\u201312 min\u016btes ilga Shavasana, kas \u013cauj nervu sist\u0113mai iziet no \u201cpiep\u016bles re\u017e\u012bma\u201d.",
+          "Chakra elpo\u0161ana, kas balst\u012bta uz Osho akt\u012bvo medit\u0101ciju, ir vienu stundu ilga prakse divos posmos: 45 min\u016btes akt\u012bvas elpo\u0161anas, kas virz\u0101s aug\u0161up caur katru \u010dakru (katru p\u0101reju iez\u012bm\u0113 zvana ska\u0146a, bet kro\u0146a \u010dakru \u2014 tr\u012bs zvani), kam seko 15 min\u016btes klusuma."
+        ]
+      },
       questions: [
-        { q: "How many official outputs did the project produce?", opts: ["One", "Two", "Three"], correct: 2 },
-        { q: "What kind of resource is the Mapping Report?", opts: ["A comparative research study", "A cooking recipe book", "A travel itinerary"], correct: 0 },
-        { q: "What does 'Freshly Baked Content' focus on?", opts: ["Digital storytelling", "Financial reporting", "Facility management"], correct: 0 }
+        { q: { en: "What is the recommended group size for Ashtanga Yoga for Beginners?", lv: "K\u0101ds ir ieteicamais grupas lielums Ashtanga jogai ies\u0101c\u0113jiem?" },
+          opts: { en: ["5\u201325 participants", "50\u2013100 participants", "Only 1-on-1 sessions"], lv: ["5\u201325 dal\u012bbnieki", "50\u2013100 dal\u012bbnieki", "Tikai individu\u0101las nodarb\u012bbas"] }, correct: 0 },
+        { q: { en: "How long does the Active Breathing stage of Chakra Breathing last?", lv: "Cik ilgi ilgst akt\u012bv\u0101s elpo\u0161anas posms Chakra elpo\u0161an\u0101?" },
+          opts: { en: ["45 minutes", "5 minutes", "3 hours"], lv: ["45 min\u016btes", "5 min\u016btes", "3 stundas"] }, correct: 0 },
+        { q: { en: "What signals that a participant has reached the crown chakra during Chakra Breathing?", lv: "Kas iez\u012bm\u0113 br\u012bdi, kad dal\u012bbnieks sasniedzis kro\u0146a \u010dakru Chakra elpo\u0161anas laik\u0101?" },
+          opts: { en: ["Three bells", "A single clap", "Complete silence with no signal"], lv: ["Tr\u012bs zvani", "Viens aplausu sitiens", "Piln\u012bgs klusums bez sign\u0101la"] }, correct: 0 }
       ]
     },
     {
-      title: "Follow-up Activities",
-      passage: [
-        "After the mobility ended, the project's impact continued through follow-up activities in every partner country — from a Sound Healing Workshop in Norway to a Christmas Family Camp in Germany and a Children's Winter Camp in Estonia.",
-        "The target was at least one follow-up activity per partner country — in practice, partners documented considerably more."
-      ],
+      title: { en: "Wellness & Somatic Practices II: Yoga Nidra, Sound Healing & Sauna", lv: "Labb\u016bt\u012bba un somatisk\u0101s prakses II: Yoga Nidra, ska\u0146u ter\u0101pija un sauna" },
+      passage: {
+        en: [
+          "Yoga Nidra (\u2018yogic sleep\u2019) is a group-guided meditation performed lying down only, lasting 25\u201345 minutes. It uses a \u2018Sankalpa\u2019 \u2014 a short positive intention repeated at the start and end of the practice \u2014 and the facilitator\u2019s golden rule is to leave long pauses of 3\u201310 seconds after each instruction.",
+          "Sound Healing is a 30\u201360 minute group relaxation practice using live instruments such as Tibetan singing bowls, Koshi chimes and Kalimba, gradually introduced with soft, grounding sounds. Sauna as Wellness Practice recommends beginner temperatures of 60\u201380\u00b0C, cycling through heat, cooling and rest phases 2\u20133 times."
+        ],
+        lv: [
+          "Yoga Nidra (\u201cjogiskais miegs\u201d) ir grup\u0101 vad\u012bta medit\u0101cija, kas tiek veikta tikai gu\u013cus st\u0101vokl\u012b un ilgst 25\u201345 min\u016btes. Taj\u0101 izmanto \u201cSankalpu\u201d \u2014 \u012bsu pozit\u012bvu nodomu, ko atk\u0101rto prakses s\u0101kum\u0101 un beig\u0101s, un vad\u012bt\u0101ja zelta likums ir atst\u0101t garas, 3\u201310 sekun\u017eu pauzes p\u0113c katras instrukcijas.",
+          "Ska\u0146u ter\u0101pija ir 30\u201360 min\u016btes ilga grupas relaks\u0101cijas prakse, izmantojot dz\u012bvus instrumentus, piem\u0113ram, Tibetas dziedo\u0161\u0101s b\u013codi\u0146as, Koshi zvani\u0146us un Kalimba, kas tiek pak\u0101peniski ieviesti ar maig\u0101m, zem\u0113jo\u0161\u0101m ska\u0146\u0101m. Sauna k\u0101 labb\u016bt\u012bbas prakse iesaka ies\u0101c\u0113jiem temperat\u016bru 60\u201380\u00b0C, cikliski main\u012bt silt\u0101, atdzi\u0161anas un atp\u016btas f\u0101zes 2\u20133 reizes."
+        ]
+      },
       questions: [
-        { q: "What was the minimum target for follow-up activities per country?", opts: ["Zero", "At least one", "At least ten"], correct: 1 },
-        { q: "Which country hosted a Sound Healing Workshop?", opts: ["Norway", "Estonia", "Latvia"], correct: 0 },
-        { q: "What kind of event took place in Estonia?", opts: ["A Children's Winter Camp", "A film festival", "A trade fair"], correct: 0 }
+        { q: { en: "What is a \u2018Sankalpa\u2019 in Yoga Nidra?", lv: "Kas ir \u201cSankalpa\u201d Yoga Nidra praks\u0113?" },
+          opts: { en: ["A short positive intention repeated at the start and end", "The name of the final relaxation pose", "A physical stretching sequence"], lv: ["\u012ass pozit\u012bvs nodoms, ko atk\u0101rto prakses s\u0101kum\u0101 un beig\u0101s", "Nosl\u0113guma pozas nosaukums", "Fiziska stiep\u0161an\u0101s sec\u012bba"] }, correct: 0 },
+        { q: { en: "What is the facilitator\u2019s golden rule during Yoga Nidra?", lv: "K\u0101ds ir vad\u012bt\u0101ja zelta likums Yoga Nidra laik\u0101?" },
+          opts: { en: ["Speak quickly to keep energy high", "Leave long pauses of 3\u201310 seconds after instructions", "Never repeat any instruction"], lv: ["Run\u0101t \u0101tri, lai saglab\u0101tu enerģiju", "Atst\u0101t garas, 3\u201310 sekun\u017eu pauzes p\u0113c instrukcij\u0101m", "Nekad neatk\u0101rtot nevienu instrukciju"] }, correct: 1 },
+        { q: { en: "What is the recommended beginner sauna temperature range?", lv: "K\u0101da ir ieteicam\u0101 saunas temperat\u016bra ies\u0101c\u0113jiem?" },
+          opts: { en: ["60\u201380\u00b0C", "100\u2013120\u00b0C", "20\u201330\u00b0C"], lv: ["60\u201380\u00b0C", "100\u2013120\u00b0C", "20\u201330\u00b0C"] }, correct: 0 }
       ]
     },
     {
-      title: "Digital Awareness Campaign",
-      passage: [
-        "As part of the follow-up process, participants applied their digital communication and wellness competences to their own organisational contexts.",
-        "Instead of repeating one identical campaign everywhere, each national team built a local concept — from a content strategy in Estonia to a community-identity campaign in Germany and a weekly climbing campaign in Norway."
-      ],
+      title: { en: "Outdoor Education Tools", lv: "\u0100ra izgl\u012bt\u012bbas r\u012bki" },
+      passage: {
+        en: [
+          "The Human Knot brings 8\u201312 participants into a circle where they grab random hands across from them and must untangle without letting go \u2014 building communication and joint problem-solving in 15\u201320 minutes. If a knot proves mathematically impossible, facilitators may allow one \u2018Magic Break\u2019, where two people briefly unclasp and re-clasp hands.",
+          "The Square Knot Rope Relay teaches a practical outdoor skill through a fast-paced team race: participants tie square knots using the rhyme \u2018Right over left, and under. Left over right, and under.\u2019 Silent Walk & Forest Bathing, meanwhile, asks participants to walk in complete silence, keeping a 2\u20133 metre distance from others, with no phones or music."
+        ],
+        lv: [
+          "\u201cCilv\u0113ku mezgls\u201d pulc\u0113 8\u201312 dal\u012bbniekus apl\u012b, kur vi\u0146i satver nejau\u0161as rokas pret\u012b st\u0101vo\u0161ajiem un bez atlai\u0161anas m\u0113\u0123ina atritin\u0101ties \u2014 15\u201320 min\u016bt\u0113s veidojot komunik\u0101ciju un kop\u012bgu probl\u0113mu risin\u0101\u0161anu. Ja mezglu matem\u0101tiski nav iesp\u0113jams atritin\u0101t, vad\u012bt\u0101ji var at\u013caut vienu \u201cma\u0123isko p\u0101rtraukumu\u201d, kad divi cilv\u0113ki \u012bsi atlai\u017e un no jauna satver rokas.",
+          "\u201cVienk\u0101r\u0161\u0101 mezgla virves stafete\u201d m\u0101ca praktisku \u0101ra prasmi \u0101tr\u0101 komandu sacens\u012bb\u0101: dal\u012bbnieki sien vienk\u0101r\u0161os mezglus, izmantojot atska\u0146u \u201cRight over left, and under. Left over right, and under.\u201d Savuk\u0101rt \u201cKlusais pastaigas g\u0101jiens un me\u017ea peldes\u201d aicina dal\u012bbniekus staig\u0101t piln\u012bg\u0101 klusum\u0101, saglab\u0101jot 2\u20133 metru distanci no citiem, bez telefoniem vai m\u016bzikas."
+        ]
+      },
       questions: [
-        { q: "Did every country run the exact same campaign?", opts: ["Yes, identical everywhere", "No, each team built a local concept", "No campaigns were run"], correct: 1 },
-        { q: "What does the Norway campaign focus on?", opts: ["Weekly climbing", "Cooking classes", "Debate club"], correct: 0 },
-        { q: "What skills did participants apply in this phase?", opts: ["Digital communication and wellness competences", "Accounting skills", "Construction skills"], correct: 0 }
+        { q: { en: "What rhyme is taught to help participants remember how to tie a square knot?", lv: "K\u0101da atska\u0146a pal\u012bdz dal\u012bbniekiem atcer\u0113ties, k\u0101 sasiet vienk\u0101r\u0161o mezglu?" },
+          opts: { en: ["\u2018Right over left, and under. Left over right, and under.\u2019", "\u2018Over, under, around and through\u2019", "\u2018Left, right, left, tie it tight\u2019"], lv: ["\u201cRight over left, and under. Left over right, and under.\u201d", "\u201cOver, under, around and through\u201d", "\u201cLeft, right, left, tie it tight\u201d"] }, correct: 0 },
+        { q: { en: "During the Silent Walk, what distance should participants keep from the person in front and behind?", lv: "K\u0101da distance j\u0101saglab\u0101 dal\u012bbniekiem Klus\u0101s pastaigas laik\u0101 no priek\u0161\u0101 un aizmugur\u0113 eso\u0161\u0101 cilv\u0113ka?" },
+          opts: { en: ["2\u20133 metres", "10 metres", "No distance rule applies"], lv: ["2\u20133 metri", "10 metri", "Distances noteikums nav sp\u0113k\u0101"] }, correct: 0 },
+        { q: { en: "What is the \u2018Magic Break\u2019 rule in the Human Knot exercise?", lv: "Kas ir \u201cma\u0123isk\u0101 p\u0101rtraukuma\u201d noteikums \u201cCilv\u0113ku mezgla\u201d vingrin\u0101jum\u0101?" },
+          opts: { en: ["A rule allowing two people to unclasp and re-clasp hands if the knot is unsolvable", "A mandatory rest halfway through", "Permission to add new participants mid-game"], lv: ["Noteikums, kas \u013cauj diviem cilv\u0113kiem atlaist un no jauna satvert rokas, ja mezglu nevar atrisin\u0101t", "Oblig\u0101ta atp\u016bta pusce\u013c\u0101", "At\u013cauja pievienot jaunus dal\u012bbniekus sp\u0113les vid\u016b"] }, correct: 0 }
+      ]
+    },
+    {
+      title: { en: "Communication & Project Tools", lv: "Komunik\u0101cijas un projektu r\u012bki" },
+      passage: {
+        en: [
+          "The DESC method is a structured framework for assertive, respectful conflict resolution: Describe the observable facts, Express how the situation affects you, Specify a clear request, and state the Consequences or Commitment that follows. The related FUKO method uses Fact, Understanding/Feelings, Konsequences, and Outcome/Request to express personal needs without blame.",
+          "In \u2018Step Back, Step Forward\u2019, participants stand in a line and step forward for statements that apply to them (such as \u2018I take breaks during my working day\u2019), stay still if neutral, and step back for statements like \u2018I experience burnout\u2019 \u2014 a physical, experiential way to reflect on wellbeing habits."
+        ],
+        lv: [
+          "DESC metode ir struktur\u0113ts ietvars pa\u0161p\u0101rliecin\u0101tai, cie\u0146pilnai konfliktu risin\u0101\u0161anai: Aprakst\u012bt (Describe) nov\u0113rojamos faktus, Izteikt (Express), k\u0101 situ\u0101cija ietekm\u0113 tevi, Nor\u0101d\u012bt (Specify) skaidru l\u016bgumu un pateikt Sekas/Ap\u0146em\u0161anos (Consequences/Commitment), kas seko. Saist\u012bt\u0101 FUKO metode izmanto \u010detrus so\u013cus \u2014 faktu, izj\u016btas, sekas un v\u0113lamo rezult\u0101tu vai l\u016bgumu, lai izteiktu person\u012bg\u0101s vajadz\u012bbas bez vaino\u0161anas.",
+          "Vingrin\u0101jum\u0101 \u201cSolis atpaka\u013c, solis uz priek\u0161u\u201d dal\u012bbnieki st\u0101v rind\u0101 un sper soli uz priek\u0161u, ja apgalvojums attiecas uz vi\u0146iem (piem\u0113ram, \u201cEs ieturu p\u0101rtraukumus darba dienas laik\u0101\u201d), paliek uz vietas, ja tas ir neitr\u0101ls, un sper soli atpaka\u013c t\u0101diem apgalvojumiem k\u0101 \u201cEs piedz\u012bvoju izdeg\u0161anu\u201d \u2014 fizisks, pieredz\u0113 balst\u012bts veids, k\u0101 p\u0101rdom\u0101t labb\u016bt\u012bbas ieradumus."
+        ]
+      },
+      questions: [
+        { q: { en: "What does the \u2018S\u2019 stand for in the DESC communication method?", lv: "Ko apz\u012bm\u0113 burts \u201cS\u201d DESC komunik\u0101cijas metod\u0113?" },
+          opts: { en: ["Specify", "Silence", "Solution"], lv: ["Nor\u0101d\u012bt (Specify)", "Klusums (Silence)", "Risin\u0101jums (Solution)"] }, correct: 0 },
+        { q: { en: "What does the \u2018U\u2019 stand for in the FUKO method?", lv: "Ko apz\u012bm\u0113 burts \u201cU\u201d FUKO metod\u0113?" },
+          opts: { en: ["Understanding / Feelings", "Urgency", "Unity"], lv: ["Izpratne / J\u016btas", "Steidzam\u012bba", "Vienot\u012bba"] }, correct: 0 },
+        { q: { en: "In \u2018Step Back, Step Forward\u2019, what does a participant do for a statement like \u2018I experience burnout\u2019?", lv: "Ko dal\u012bbnieks dara vingrin\u0101jum\u0101 \u201cSolis atpaka\u013c, solis uz priek\u0161u\u201d pie apgalvojuma \u201cEs piedz\u012bvoju izdeg\u0161anu\u201d?" },
+          opts: { en: ["Step back", "Step forward", "Sit down"], lv: ["Sper soli atpaka\u013c", "Sper soli uz priek\u0161u", "Aps\u0113\u017eas"] }, correct: 0 }
+      ]
+    },
+    {
+      title: { en: "Reflection & Closing", lv: "Refleksija un nosl\u0113gums" },
+      passage: {
+        en: [
+          "Emotion Cards Reflection uses visual cards so participants can identify their current emotional state without needing to verbalise it directly \u2014 a low-pressure way to support connection and self-awareness, best used at morning check-ins or when group energy feels fragmented.",
+          "Drawing My House is an introspective exercise on personal boundaries: participants draw their \u2018house\u2019 exactly as they feel it, imagine it, or would like it to be, noting details like fences, doors and windows. The trainer\u2019s important rule is that sharing is strictly voluntary, and drawings are never interpreted or psychoanalysed for the participant."
+        ],
+        lv: [
+          "Emociju kar\u0161u refleksija izmanto vizu\u0101las kartes, lai dal\u012bbnieki var\u0113tu identific\u0113t savu pa\u0161reiz\u0113jo emocion\u0101lo st\u0101vokli, to tie\u0161i nenosaucot v\u0101rdos \u2014 zemas spriedzes veids, k\u0101 atbalst\u012bt saikni un pa\u0161apzi\u0146u, vislab\u0101k izmantojams r\u012bta re\u0123istr\u0101cij\u0101s vai br\u012b\u017eos, kad grupas ener\u0123ija \u0161\u0137iet sadrumstalota.",
+          "\u201cZ\u012bm\u0113 manu m\u0101ju\u201d ir intraspekt\u012bvs vingrin\u0101jums par personiskaj\u0101m robe\u017e\u0101m: dal\u012bbnieki z\u012bm\u0113 savu \u201cm\u0101ju\u201d tie\u0161i t\u0101, k\u0101 vi\u0146i to j\u016bt, izt\u0113lojas, vai k\u0101du v\u0113l\u0113tos to redz\u0113t, atz\u012bm\u0113jot detaļas, piem\u0113ram, \u017eogus, durvis un logus. Trenera svar\u012bgais noteikums \u2014 dal\u012b\u0161an\u0101s ir stingri br\u012bvpr\u0101t\u012bga, un z\u012bm\u0113jumi nekad netiek interpret\u0113ti vai psihoanaliz\u0113ti dal\u012bbnieka viet\u0101."
+        ]
+      },
+      questions: [
+        { q: { en: "What is the purpose of Emotion Cards Reflection?", lv: "K\u0101ds ir Emociju kar\u0161u refleksijas m\u0113r\u0137is?" },
+          opts: { en: ["To help participants express their emotional state through imagery rather than words", "To test participants\u2019 drawing skills", "To rank participants by emotional intelligence"], lv: ["Pal\u012bdz\u0113t dal\u012bbniekiem izteikt savu emocion\u0101lo st\u0101vokli ar att\u0113lu, nevis v\u0101rdu pal\u012bdz\u012bbu", "P\u0101rbaud\u012bt dal\u012bbnieku z\u012bm\u0113\u0161anas prasmes", "Sarindot dal\u012bbniekus p\u0113c emocion\u0101l\u0101s inteli\u0123ences"] }, correct: 0 },
+        { q: { en: "In \u2018Drawing My House\u2019, what does the house metaphor represent?", lv: "Ko vingrin\u0101jum\u0101 \u201cZ\u012bm\u0113 manu m\u0101ju\u201d simboliz\u0113 m\u0101jas met\u0101fora?" },
+          opts: { en: ["The relationship with oneself and personal boundaries", "The participant\u2019s actual home address", "The training venue\u2019s floor plan"], lv: ["Attiec\u012bbas ar sevi un personisk\u0101s robe\u017eas", "Dal\u012bbnieka faktisko dz\u012bvesvietas adresi", "M\u0101c\u012bbu vietas pl\u0101nojumu"] }, correct: 0 },
+        { q: { en: "What is the trainer\u2019s important rule in \u2018Drawing My House\u2019?", lv: "K\u0101ds ir trenera svar\u012bgais noteikums vingrin\u0101jum\u0101 \u201cZ\u012bm\u0113 manu m\u0101ju\u201d?" },
+          opts: { en: ["Never interpret or psychoanalyse participants\u2019 drawings for them", "Always explain what each drawing means", "Drawings must be shared publicly"], lv: ["Nekad neinterpret\u0113t vai nepsihoanaliz\u0113t dal\u012bbnieku z\u012bm\u0113jumus vi\u0146u viet\u0101", "Vienm\u0113r paskaidrot, ko katrs z\u012bm\u0113jums noz\u012bm\u0113", "Z\u012bm\u0113jumi j\u0101par\u0101da publiski"] }, correct: 0 }
+      ]
+    },
+    {
+      title: { en: "Freshly Baked Content: Concept, Motivation & Technical Setup", lv: "Freshly Baked Content: koncepts, motiv\u0101cija un tehnisk\u0101 sagatave" },
+      passage: {
+        en: [
+          "The Freshly Baked Content toolkit treats video creation like home baking: \u2018everyone has their own recipe\u2019, guided by feel and intuition \u2014 but technical fundamentals are still essential, or \u2018the pastry turns out bland\u2019. Its core mindset is \u2018action beats perfection\u2019: start while the motivation is still there, even if the first result is rough around the edges.",
+          "The recommended technical setup is filming with the main camera (not front-facing), in 4K at 30 FPS, using natural light out of direct sunlight, in a quiet space free from background noise. For scripting, the toolkit suggests using ChatGPT: describe your topic and role, then ask for a short vertical-video script with a strong hook."
+        ],
+        lv: [
+          "\u201cFreshly Baked Content\u201d r\u012bkkopa izturas pret video veido\u0161anu k\u0101 pret m\u0101jas cep\u0161anu: \u201ckatram ir sava recepte\u201d, vadoties p\u0113c saj\u016btas un intu\u012bcijas \u2014 ta\u010du tehniskie pamati joproj\u0101m ir b\u016btiski, cit\u0101di \u201ck\u016bka izn\u0101k garlaic\u012bga\u201d. T\u0101s pamatdoma ir \u201cdarb\u012bba uzvar perfekcionismu\u201d: s\u0101kt, kam\u0113r motiv\u0101cija v\u0113l ir kl\u0101t, pat ja pirmais rezult\u0101ts izn\u0101k nedaudz neveikls.",
+          "Ieteicam\u0101 tehnisk\u0101 sagatave ir film\u0113\u0161ana ar galveno kameru (nevis priek\u0161\u0113jo), 4K iz\u0161\u0137irtsp\u0113j\u0101 ar 30 kadriem sekund\u0113, izmantojot dabisko gaismu \u0101rpus tie\u0161iem saules stariem, klus\u0101 telp\u0101 bez fona trok\u0161\u0146a. Scen\u0101rija izstr\u0101dei r\u012bkkopa iesaka izmantot ChatGPT: aprakst\u012bt t\u0113mu un lomu, tad pal\u016bgt \u012bsu vertik\u0101l\u0101 video scen\u0101riju ar sp\u0113c\u012bgu \u0101\u0137i (hook)."
+        ]
+      },
+      questions: [
+        { q: { en: "What is the toolkit\u2019s core mindset for getting started?", lv: "K\u0101da ir r\u012bkkopas pamatdoma, s\u0101kot darbu?" },
+          opts: { en: ["\u2018Action beats perfection\u2019", "\u2018Perfection before publishing\u2019", "\u2018Wait for the ideal moment\u2019"], lv: ["\u201cDarb\u012bba uzvar perfekcionismu\u201d", "\u201cPerfekcionisms pirms public\u0113\u0161anas\u201d", "\u201cGaid\u012bt ide\u0101lu br\u012bdi\u201d"] }, correct: 0 },
+        { q: { en: "What is the recommended filming specification?", lv: "K\u0101da ir ieteicam\u0101 film\u0113\u0161anas specifik\u0101cija?" },
+          opts: { en: ["4K at 30 FPS, using the main camera", "1080p at 60 FPS, using the front camera", "720p, either camera is fine"], lv: ["4K, 30 kadri sekund\u0113, galven\u0101 kamera", "1080p, 60 kadri sekund\u0113, priek\u0161\u0113j\u0101 kamera", "720p, jebkura kamera der"] }, correct: 0 },
+        { q: { en: "What tool does the toolkit suggest for scripting short videos?", lv: "K\u0101du r\u012bku r\u012bkkopa iesaka \u012bsu video scen\u0101riju izstr\u0101dei?" },
+          opts: { en: ["ChatGPT", "A physical notebook only", "A professional scriptwriter"], lv: ["ChatGPT", "Tikai pap\u012bra piez\u012bmju gr\u0101mati\u0146u", "Profesion\u0101lu scen\u0101rista pakalpojumu"] }, correct: 0 }
+      ]
+    },
+    {
+      title: { en: "Freshly Baked Content: Editing, Social Media & Bulk Creation", lv: "Freshly Baked Content: mont\u0101\u017ea, soci\u0101lo t\u012bklu stratē\u0123ija un video izveide vairum\u0101" },
+      passage: {
+        en: [
+          "In editing (\u2018The Oven\u2019), the toolkit recommends colour correction, audio enhancement, automatically removing silent gaps, adding supporting footage from a personal archive or Pexels, and enabling auto-generated subtitles. On Instagram, the single most common mistake is trying to talk about everything at once \u2014 the guide\u2019s main rule is to start with one clear message and one clear point of identification.",
+          "LinkedIn serves a different purpose: rather than fast engagement, it is a long-term tool for professional relationships, reputation and partnerships, requiring both an organisation page and a personal page. To scale video production, the toolkit describes generating 150 short challenge texts with ChatGPT, then using Canva\u2019s Bulk Create feature to map the data onto a single styled template, producing all 150 videos automatically."
+        ],
+        lv: [
+          "Mont\u0101\u017eas posm\u0101 (\u201cCepe\u0161kr\u0101sns\u201d) r\u012bkkopa iesaka kr\u0101su korekciju, audio uzlabo\u0161anu, autom\u0101tisku klusuma pauzu izgrie\u0161anu, papildu materi\u0101la pievieno\u0161anu no person\u012bg\u0101 arh\u012bva vai Pexels, k\u0101 ar\u012b autom\u0101tiski \u0123ener\u0113tu subtitru iesp\u0113jo\u0161anu. Instagram platform\u0101 visbie\u017e\u0101k\u0101 k\u013c\u016bda ir m\u0113\u0123in\u0101t run\u0101t par visu uzreiz \u2014 rokasgr\u0101matas galvenais noteikums ir s\u0101kt ar vienu skaidru v\u0113st\u012bjumu un vienu skaidru identifik\u0101cijas punktu.",
+          "LinkedIn kalpo citam m\u0113r\u0137im: nevis \u0101trai iesaistei, bet ilgtermi\u0146a r\u012bkam profesion\u0101l\u0101m attiec\u012bb\u0101m, reput\u0101cijai un partner\u012bb\u0101m, t\u0101p\u0113c nepiecie\u0161ama gan organiz\u0101cijas lapa, gan person\u012bg\u0101 lapa. Lai palielin\u0101tu video ra\u017eo\u0161anas apjomu, r\u012bkkopa apraksta 150 \u012bsu izaicin\u0101jumu tekstu \u0123ener\u0113\u0161anu ar ChatGPT, tad Canva \u201cBulk Create\u201d funkcijas izmanto\u0161anu, lai datus autom\u0101tiski ievietotu vien\u0101 stiliz\u0113t\u0101 veidn\u0113 un ieg\u016btu visus 150 video autom\u0101tiski."
+        ]
+      },
+      questions: [
+        { q: { en: "According to the toolkit, what is the most common mistake people make on Instagram?", lv: "Saska\u0146\u0101 ar r\u012bkkopu, k\u0101da ir visbie\u017e\u0101k\u0101 k\u013c\u016bda Instagram platform\u0101?" },
+          opts: { en: ["Trying to talk about everything at once", "Posting too rarely", "Using too many hashtags"], lv: ["M\u0113\u0123in\u0101t run\u0101t par visu uzreiz", "Public\u0113t p\u0101r\u0101k reti", "Izmantot p\u0101r\u0101k daudz t\u0113mturu (hashtags)"] }, correct: 0 },
+        { q: { en: "What two pages does the toolkit recommend for working effectively on LinkedIn?", lv: "K\u0101das divas lapas r\u012bkkopa iesaka efekt\u012bvam darbam LinkedIn?" },
+          opts: { en: ["An organisation page and a personal page", "A shop page and a blog page", "Only one combined page"], lv: ["Organiz\u0101cijas lapu un person\u012bgo lapu", "Veikala lapu un emu\u0101ra lapu", "Tikai vienu apvienotu lapu"] }, correct: 0 },
+        { q: { en: "What Canva feature is used to generate all 150 videos automatically from one styled template?", lv: "Kādu Canva funkciju izmanto, lai autom\u0101tiski \u0123ener\u0113tu visus 150 video no vienas stiliz\u0113tas veidnes?" },
+          opts: { en: ["Bulk Create", "Magic Resize", "Brand Kit"], lv: ["Bulk Create", "Magic Resize", "Brand Kit"] }, correct: 0 }
       ]
     }
   ];
 
   var LM_I18N = {
     lv: {
-      roundLabel: "Raunds {n} / 4",
-      quizLabel: "Raunds {n} / 4 — Jautājumi",
-      roundScoreMsg: "Pareizi atbildēji uz {s} no {t} jautājumiem šajā raundā.",
-      nextBtn: "Nākamais raunds →",
-      finalCta: "Skatīt rezultātu →",
-      finalTitleHigh: "Lieliski!", finalTitleMid: "Paldies!", finalTitleLow: "Turpini pētīt!",
-      finalMsgHigh: "Izcili! Tu ļoti labi pārzini projektu.",
-      finalMsgMid: "Labs rezultāts! Vēl pāris tēmas — un zināsi visu.",
-      finalMsgLow: "Labs sākums — izpēti sadaļas vēlreiz un mēģini vēlreiz!"
+      roundLabel: "Raunds {n} / {total}",
+      quizLabel: "Raunds {n} / {total} \u2014 Jaut\u0101jumi",
+      roundScoreMsg: "Pareizi atbild\u0113ji uz {s} no {t} jaut\u0101jumiem \u0161aj\u0101 raund\u0101.",
+      nextBtn: "N\u0101kamais raunds \u2192",
+      finalCta: "Skat\u012bt rezult\u0101tu \u2192",
+      finalTitleHigh: "Lieliski!", finalTitleMid: "Paldies!", finalTitleLow: "Turpini p\u0113t\u012bt!",
+      finalMsgHigh: "Izcili! Tu \u013coti labi p\u0101rzini projektu.",
+      finalMsgMid: "Labs rezult\u0101ts! V\u0113l p\u0101ris t\u0113mas \u2014 un zin\u0101si visu.",
+      finalMsgLow: "Labs s\u0101kums \u2014 izp\u0113ti sada\u013cas v\u0113lreiz un m\u0113\u0123ini v\u0113lreiz!"
     },
     en: {
-      roundLabel: "Round {n} / 4",
-      quizLabel: "Round {n} / 4 — Questions",
+      roundLabel: "Round {n} / {total}",
+      quizLabel: "Round {n} / {total} \u2014 Questions",
       roundScoreMsg: "You got {s} out of {t} questions right in this round.",
-      nextBtn: "Next round →",
-      finalCta: "See results →",
+      nextBtn: "Next round \u2192",
+      finalCta: "See results \u2192",
       finalTitleHigh: "Great job!", finalTitleMid: "Thanks!", finalTitleLow: "Keep exploring!",
       finalMsgHigh: "Excellent! You really know the project.",
       finalMsgMid: "Good result! A couple more topics and you'll know it all.",
-      finalMsgLow: "Good start — explore the sections again and try once more!"
+      finalMsgLow: "Good start \u2014 explore the sections again and try once more!"
     }
   };
   function currentLang(){
@@ -546,15 +661,30 @@
   var curRound = 0;
   var selections = [null, null, null];
   var roundScores = [];
+  var lastTitleKey = null, lastMsgKey = null, lastBadge = null;
 
+  function pick(obj){
+    var lang = currentLang();
+    return obj[lang] || obj.en;
+  }
   function tr(key){
     var d = LM_I18N[currentLang()] || LM_I18N.lv;
     return d[key] || LM_I18N.lv[key] || '';
   }
-  function fmt(key, n){
+  function fmt(key, n, total){
     var s = tr(key);
     if(!s) return '';
-    return s.replace('{n}', n).replace('{s}', selections._s).replace('{t}', selections._t);
+    return s.replace('{n}', n).replace('{total}', (total!=null?total:QUIZ_DATA.length)).replace('{s}', selections._s).replace('{t}', selections._t);
+  }
+
+  function buildDots(){
+    qprog.innerHTML = '';
+    QUIZ_DATA.forEach(function(_, i){
+      var d = document.createElement('div');
+      d.className = 'qdot' + (i===0 ? ' active' : '');
+      d.setAttribute('data-round', i);
+      qprog.appendChild(d);
+    });
   }
 
   function showScreen(el){
@@ -574,33 +704,31 @@
     curRound = i;
     selections = [null, null, null];
     var data = QUIZ_DATA[i];
-    var lbl = fmt('roundLabel', i+1);
-    roundLabel.textContent = lbl;
-    roundTitle.textContent = data.title;
-    roundPassage.innerHTML = data.passage.map(function(p){ return '<p>'+p+'</p>'; }).join('');
+    roundLabel.textContent = fmt('roundLabel', i+1);
+    roundTitle.textContent = pick(data.title);
+    roundPassage.innerHTML = pick(data.passage).map(function(p){ return '<p>'+p+'</p>'; }).join('');
     updateDots(i, roundScores.length);
     showScreen(screenRead);
   }
 
   function renderQuiz(){
     var data = QUIZ_DATA[curRound];
-    var lbl = fmt('quizLabel', curRound+1);
-    quizRoundLabel.textContent = lbl;
+    quizRoundLabel.textContent = fmt('quizLabel', curRound+1);
     questionsWrap.innerHTML = '';
     data.questions.forEach(function(qd, qi){
       var block = document.createElement('div');
       block.className = 'qquestion';
       var qt = document.createElement('div');
       qt.className = 'qqtext';
-      qt.innerHTML = '<span class="qqnum">'+(qi+1)+'</span>'+qd.q;
+      qt.innerHTML = '<span class="qqnum">'+(qi+1)+'</span>'+pick(qd.q);
       block.appendChild(qt);
       var opts = document.createElement('div');
       opts.className = 'qopts';
       var letters = ['A','B','C'];
-      qd.opts.forEach(function(optText, oi){
+      pick(qd.opts).forEach(function(optText, oi){
         var b = document.createElement('button');
         b.type = 'button';
-        b.className = 'qopt';
+        b.className = 'qopt' + (selections[qi]===oi ? ' selected' : '');
         b.innerHTML = '<span class="qletter">'+letters[oi]+'</span><span>'+optText+'</span>';
         b.addEventListener('click', function(){
           if(b.disabled) return;
@@ -614,7 +742,7 @@
       block.appendChild(opts);
       questionsWrap.appendChild(block);
     });
-    btnSubmitRound.disabled = true;
+    btnSubmitRound.disabled = selections.indexOf(null) !== -1;
     showScreen(screenQuiz);
   }
 
@@ -659,13 +787,12 @@
     finalScore.textContent = total + '/' + max;
     updateDots(-1, QUIZ_DATA.length);
     var ratio = total / max;
-    var badge, titleKey, msgKey;
-    if(ratio >= 0.8){ badge = '🏆'; titleKey = 'finalTitleHigh'; msgKey = 'finalMsgHigh'; }
-    else if(ratio >= 0.5){ badge = '🎉'; titleKey = 'finalTitleMid'; msgKey = 'finalMsgMid'; }
-    else { badge = '🌱'; titleKey = 'finalTitleLow'; msgKey = 'finalMsgLow'; }
-    finalBadge.textContent = badge;
-    finalTitle.textContent = tr(titleKey);
-    finalMsg.textContent = tr(msgKey);
+    if(ratio >= 0.8){ lastBadge = '\ud83c\udfc6'; lastTitleKey = 'finalTitleHigh'; lastMsgKey = 'finalMsgHigh'; }
+    else if(ratio >= 0.5){ lastBadge = '\ud83c\udf89'; lastTitleKey = 'finalTitleMid'; lastMsgKey = 'finalMsgMid'; }
+    else { lastBadge = '\ud83c\udf31'; lastTitleKey = 'finalTitleLow'; lastMsgKey = 'finalMsgLow'; }
+    finalBadge.textContent = lastBadge;
+    finalTitle.textContent = tr(lastTitleKey);
+    finalMsg.textContent = tr(lastMsgKey);
     showScreen(screenFinal);
   }
 
@@ -677,6 +804,7 @@
     renderRound(0);
   });
 
+  buildDots();
   renderRound(0);
 
   document.querySelectorAll('.lbtn').forEach(function(btn){
@@ -686,14 +814,19 @@
   });
   function refreshDynamicText(){
     if(!screenRead.classList.contains('hidden')){
-      roundLabel.textContent = fmt('roundLabel', curRound+1);
+      renderRound(curRound);
     }
     if(!screenQuiz.classList.contains('hidden')){
-      quizRoundLabel.textContent = fmt('quizLabel', curRound+1);
+      renderQuiz();
     }
     if(!screenRoundResult.classList.contains('hidden')){
       rrMsg.textContent = fmt('roundScoreMsg');
       btnNextRound.textContent = (curRound === QUIZ_DATA.length-1) ? tr('finalCta') : tr('nextBtn');
+    }
+    if(!screenFinal.classList.contains('hidden') && lastTitleKey){
+      finalBadge.textContent = lastBadge;
+      finalTitle.textContent = tr(lastTitleKey);
+      finalMsg.textContent = tr(lastMsgKey);
     }
   }
 })();
@@ -748,7 +881,7 @@ var T={
     "lm.lead":"Četri raundi, katrā — īss ievads tēmā un trīs jautājumi. Izlasi tekstu, atbildi uz jautājumiem un uzzini, cik labi iepazini Daily Wellness Challenge Movement projektu.",
     "lm.startBtn":"Sākt testu →","lm.submitBtn":"Iesniegt atbildes","lm.nextBtn":"Nākamais raunds →","lm.restartBtn":"↻ Sākt no jauna",
     "lm.finalDefaultTitle":"Lieliski!",
-    "lm.note":"Plēholders — šeit redzamās tēmas un jautājumi ir darbojošās funkcionalitātes maketa piemērs. Reālais saturs tiks pievienots vēlāk.",
+    "lm.note":"Jautājumu saturs balstīts uz projekta Toolkit un Freshly Baked Content dokumentiem.",
     "lm.roundLabel":"Raunds {n} / 4","lm.quizLabel":"Raunds {n} / 4 — Jautājumi",
     "lm.roundScoreMsg":"Pareizi atbildēji uz {s} no {t} jautājumiem šajā raundā.",
     "lm.finalMsgHigh":"Izcili! Tu ļoti labi pārzini projektu.","lm.finalMsgMid":"Labs rezultāts! Vēl pāris tēmas — un zināsi visu.","lm.finalMsgLow":"Labs sākums — izpēti sadaļas vēlreiz un mēģini vēlreiz!",
@@ -763,7 +896,7 @@ var T={
     "lm.lead":"Four rounds, each with a short intro to a topic and three questions. Read the text, answer the questions, and find out how well you know the Daily Wellness Challenge Movement project.",
     "lm.startBtn":"Start quiz →","lm.submitBtn":"Submit answers","lm.nextBtn":"Next round →","lm.restartBtn":"↻ Restart",
     "lm.finalDefaultTitle":"Great job!",
-    "lm.note":"Placeholder — the topics and questions shown here are a working demo of the functionality. Real content will be added later.",
+    "lm.note":"Question content is based on the project's Toolkit and Freshly Baked Content documents.",
     "lm.roundLabel":"Round {n} / 4","lm.quizLabel":"Round {n} / 4 — Questions",
     "lm.roundScoreMsg":"You got {s} out of {t} questions right in this round.",
     "lm.finalMsgHigh":"Excellent! You really know the project.","lm.finalMsgMid":"Good result! A couple more topics and you'll know it all.","lm.finalMsgLow":"Good start — explore the sections again and try once more!",
