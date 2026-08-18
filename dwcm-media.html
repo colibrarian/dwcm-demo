@@ -241,6 +241,8 @@
     .ftlinks a{font-size:12px;font-weight:600;color:var(--muted);padding:6px 14px;border-radius:999px;border:1px solid var(--border);background:var(--card);transition:all .2s}
     .ftlinks a:hover{color:var(--text);border-color:var(--bh)}
     .ftcopy{font-size:11px;color:rgba(240,242,247,.22);margin-top:14px;letter-spacing:.02em}
+    .ftaction{font-size:11px;color:rgba(240,242,247,.35);margin-top:6px;letter-spacing:.02em;font-weight:700}
+    .ftdisclaimer{font-size:10.5px;color:rgba(240,242,247,.28);margin-top:10px;line-height:1.6;max-width:70ch}
 
     /* RESPONSIVE */
     @media(max-width:880px){
@@ -340,9 +342,9 @@
 <section class="sec sec0">
   <div class="container">
     <div class="reach-hero rv">
-      <span class="reach-num">65,735</span>
-      <span class="reach-label" data-i18n="reach.label">People Reached</span>
-      <p class="reach-desc" data-i18n="reach.desc">The dedicated Daily Wellness Challenge social media accounts generated at least 65,735 cumulative public video views across Instagram, TikTok, Facebook and YouTube.</p>
+      <span class="reach-num" id="reachNum" data-target="71121">0</span>
+      <span class="reach-label" data-i18n="reach.label">Video Views</span>
+      <p class="reach-desc" data-i18n="reach.desc">The dedicated Daily Wellness Challenge social media accounts generated at least 71,121 cumulative public video views across Instagram, TikTok, Facebook and YouTube.</p>
     </div>
 
     <div class="gg rv" style="margin-top:30px">
@@ -363,7 +365,6 @@
       <a class="gi gi--photo" href="https://www.instagram.com/reel/DQR-IHRDUfr/" target="_blank" rel="noopener" style="--i:14"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/wall%20papers/volda%202.jpg" alt="" loading="lazy"><span class="gplat ig">📷 Instagram</span><div class="ghl">↗</div><span class="gext" data-i18n="mvid.no">🇳🇴 Norvēģija</span></a>
       <a class="gi gi--photo" href="https://www.instagram.com/reel/DQgvqDqDJz0/" target="_blank" rel="noopener" style="--i:15"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/wall%20papers/germany%20outdoor.jpg" alt="" loading="lazy"><span class="gplat ig">📷 Instagram</span><div class="ghl">↗</div><span class="gext" data-i18n="mvid.de">🇩🇪 Vācija</span></a>
     </div>
-    <p class="prose rv" style="margin-top:20px" data-i18n="m.note3">Sešpadsmit plāksnītes ar reāliem priekšskatiem no Instagram Reels — Latvija, Norvēģija, Igaunija, Vācija un vispārējs projekta saturs.</p>
     <div class="ig-promo rv">
       <div>
         <p class="ig-promo-kicker" data-i18n="igp.kicker">Instagram lapa</p>
@@ -406,7 +407,9 @@
         <a href="https://www.instagram.com/ngo_untu" target="_blank" rel="noopener">Instagram ↗</a>
       </div>
     </div>
-    <p class="ftcopy" data-i18n="footer.copy">© 2025–2026 Biedrība UNTU. Projekts Nr. 2025-1-LV02-KA153-YOU-000304266. Līdzfinansē Eiropas Savienība.</p>
+    <p class="ftcopy" data-i18n="footer.copy">© 2025–2026 Biedrība UNTU.</p>
+    <p class="ftaction" data-i18n="footer.action">Erasmus+ KA153-YOU — jaunatnes darbinieku mobilitāte · Projekts Nr. 2025-1-LV02-KA153-YOU-000304266</p>
+    <p class="ftdisclaimer" data-i18n="footer.disclaimer">Līdzfinansē Eiropas Savienība. Paustie uzskati un viedokļi atspoguļo vienīgi autoru viedokli un ne vienmēr sakrīt ar Eiropas Savienības vai Jaunatnes starptautisko programmu aģentūras viedokli. Ne Eiropas Savienība, ne piešķīrēja iestāde nav atbildīga par tiem.</p>
   </div>
 </footer>
 
@@ -436,6 +439,55 @@
     h.classList.remove('open');
     h.setAttribute('aria-expanded','false');
   });
+})();
+
+/* ===== 0.5 COUNT-UP ===== */
+(function(){
+  var el = document.getElementById('reachNum');
+  if(!el) return;
+  var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+  var duration = 1800;
+  var started = false;
+
+  function formatNum(n){
+    return n.toLocaleString('en-US');
+  }
+
+  function easeOutExpo(t){
+    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+  }
+
+  function runCount(){
+    if(started) return;
+    started = true;
+    var startTime = null;
+    function step(ts){
+      if(!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      var eased = easeOutExpo(progress);
+      el.textContent = formatNum(Math.round(eased * target));
+      if(progress < 1){
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = formatNum(target);
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          runCount();
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.4});
+    io.observe(el);
+  } else {
+    runCount();
+  }
 })();
 
 /* ===== 1. REVEAL ===== */
@@ -482,11 +534,13 @@ var T={
   lv:{
     "nav.about":"Par projektu","nav.outcomes":"Rezultāti","nav.partners":"Partneri","nav.gallery":"Galerija","nav.guidelines":"Vadlīnijas",
     "nav.followup":"Aktivitātes","nav.media":"Mediji","nav.downloads":"Lejupielādes","nav.campaign":"Kampaņa","nav.learning":"Tests",
-    "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025\u20132026 Biedrība UNTU. Projekts Nr. 2025-1-LV02-KA153-YOU-000304266. Līdzfinansē Eiropas Savienība.",
+    "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025\u20132026 Biedrība UNTU.",
+    "footer.action":"Erasmus+ KA153-YOU — jaunatnes darbinieku mobilitāte · Projekts Nr. 2025-1-LV02-KA153-YOU-000304266",
+    "footer.disclaimer":"Līdzfinansē Eiropas Savienība. Paustie uzskati un viedokļi atspoguļo vienīgi autoru viedokli un ne vienmēr sakrīt ar Eiropas Savienības vai Jaunatnes starptautisko programmu aģentūras viedokli. Ne Eiropas Savienība, ne piešķīrēja iestāde nav atbildīga par tiem.",
     "crumb.back":"\u2190 Daily Wellness Challenge Movement",
     "mh.kicker":"Mediju bibliotēka","mh.h1":"513 video. Četras valstis. Viena kustība.",
     "mh.lead":"Kampaņu video, dalībnieku personīgie video, nacionālo komandu video un turpinājuma aktivitāšu materiāli — viss projekta cikla laikā radītais saturs.",
-    "reach.label":"Sasniegtie cilvēki","reach.desc":"Daily Wellness Challenge sociālo tīklu kontos kopā tika reģistrēti vismaz 65,735 publiski video skatījumi Instagram, TikTok, Facebook un YouTube platformās.",
+    "reach.label":"Video skatījumi","reach.desc":"Daily Wellness Challenge sociālo tīklu kontos kopā tika reģistrēti vismaz 71 121 publisks video skatījums Instagram, TikTok, Facebook un YouTube platformās.",
     "igp.kicker":"Instagram lapa","igp.h3":"Standartizētie video — Instagram lapā.",
     "igp.p":"Šī saite ved uz projekta Instagram lapu, kurā apkopoti standartizētie video (333 no 513 kopējiem). Pilns visu dalībnieku radīto video saraksts — skatīt zemāk, sadaļā \"Pilns video arhīvs\".",
     "igp.btn":"Atvērt Instagram lapu ↗",
@@ -495,18 +549,18 @@ var T={
     "gd.t":"DWCM — pilns video arhīvs",
     "gd.s":"Google Drive · visas valstis vienā mapē","gd.btn":"Atvērt Drive ↗",
     "mvid.ph":"Video","mig.ph":"Instagram",
-    "mvid.lv":"🇱🇻 Latvija","mvid.no":"🇳🇴 Norvēģija","mvid.de":"🇩🇪 Vācija","mvid.ee":"🇪🇪 Igaunija","mvid.proj":"🎬 DWCM Project",
-    "m.note2":"Plēholders — saites uz Instagram Reels jau ir reālas. Trūkst tikai attēli-priekšskati (screenshot/vāciņš katram video, augšupielādēts ImageKit) — līdz tam tajā vietā rādās ikonas aizstājējs. YouTube plāksnītes pagaidām ved uz kanālu kopumā.",
-    "m.note3":"Sešpadsmit plāksnītes ar reāliem priekšskatiem no Instagram Reels — Latvija, Norvēģija, Igaunija, Vācija un vispārējs projekta saturs."
+    "mvid.lv":"🇱🇻 Latvija","mvid.no":"🇳🇴 Norvēģija","mvid.de":"🇩🇪 Vācija","mvid.ee":"🇪🇪 Igaunija","mvid.proj":"🎬 DWCM Project"
   },
   en:{
     "nav.about":"About","nav.outcomes":"Outcomes","nav.partners":"Partners","nav.gallery":"Gallery","nav.guidelines":"Guidelines",
     "nav.followup":"Activities","nav.media":"Media","nav.downloads":"Downloads","nav.campaign":"Campaign","nav.learning":"Quiz",
-    "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025\u20132026 Biedrība UNTU. Project No. 2025-1-LV02-KA153-YOU-000304266. Co-funded by the European Union.",
+    "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025\u20132026 Biedrība UNTU.",
+    "footer.action":"Erasmus+ KA153-YOU \u2013 Mobility of Youth Workers \u00b7 Project No. 2025-1-LV02-KA153-YOU-000304266",
+    "footer.disclaimer":"Co-funded by the European Union. Views and opinions expressed are, however, those of the authors only and do not necessarily reflect those of the European Union or the Agency for International Programs for Youth. Neither the European Union nor the granting authority can be held responsible for them.",
     "crumb.back":"\u2190 Daily Wellness Challenge Movement",
     "mh.kicker":"Media Library","mh.h1":"513 videos. Four countries. One movement.",
     "mh.lead":"Campaign videos, participants' personal videos, national team videos and follow-up activity material — all content produced across the project cycle.",
-    "reach.label":"People Reached","reach.desc":"The dedicated Daily Wellness Challenge social media accounts generated at least 65,735 cumulative public video views across Instagram, TikTok, Facebook and YouTube.",
+    "reach.label":"Video Views","reach.desc":"The dedicated Daily Wellness Challenge social media accounts generated at least 71,121 cumulative public video views across Instagram, TikTok, Facebook and YouTube.",
     "igp.kicker":"Instagram Page","igp.h3":"Standardised videos — on our Instagram page.",
     "igp.p":"This link goes to the project's Instagram page, which collects the standardised videos (333 out of 513 in total). The full list of every video created by participants is below, in the \"Full Video Archive\" section.",
     "igp.btn":"Open Instagram Page ↗",
@@ -515,9 +569,7 @@ var T={
     "gd.t":"DWCM — full video archive",
     "gd.s":"Google Drive · all countries in one folder","gd.btn":"Open Drive ↗",
     "mvid.ph":"Video","mig.ph":"Instagram",
-    "mvid.lv":"🇱🇻 Latvia","mvid.no":"🇳🇴 Norway","mvid.de":"🇩🇪 Germany","mvid.ee":"🇪🇪 Estonia","mvid.proj":"🎬 DWCM Project",
-    "m.note2":"Placeholder — the Instagram Reel links are now real. Only preview images are missing (a screenshot/cover for each video, uploaded to ImageKit) — until then an icon placeholder shows instead. YouTube tiles still link to the channel as a whole.",
-    "m.note3":"Sixteen tiles with real previews from Instagram Reels — Latvia, Norway, Estonia, Germany and general project content."
+    "mvid.lv":"🇱🇻 Latvia","mvid.no":"🇳🇴 Norway","mvid.de":"🇩🇪 Germany","mvid.ee":"🇪🇪 Estonia","mvid.proj":"🎬 DWCM Project"
   }
 };
 function applyLang(lang){
