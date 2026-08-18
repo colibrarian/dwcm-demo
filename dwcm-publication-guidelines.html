@@ -122,7 +122,16 @@
     /* EU strip */
     .eustrip{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:28px 22px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.025);margin-top:36px}
     .eustrip img{height:30px;object-fit:contain;filter:brightness(.8)}
-    .jspa-logo{display:none;height:75px;object-fit:contain}
+    .jspa-logo{display:none;height:188px;object-fit:contain}
+    .glink{color:var(--cyan);font-weight:700;text-decoration:none;white-space:nowrap}
+    .glink:hover{text-decoration:underline}
+    .green-panel{border-radius:var(--r);border:1px solid rgba(61,220,132,.25);background:linear-gradient(135deg,rgba(61,220,132,.05),rgba(0,212,239,.03));padding:36px 32px;margin-top:44px}
+    .green-badge{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.05em;color:#3ddc84;border:1px solid rgba(61,220,132,.3);background:rgba(61,220,132,.08);padding:6px 14px;border-radius:999px;margin-bottom:16px}
+    .green-h2{font-size:21px;font-weight:900;letter-spacing:-.01em;margin-bottom:10px;line-height:1.3}
+    .green-lead{font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:8px;max-width:70ch}
+    .green-quote{border-left:3px solid #3ddc84;background:rgba(61,220,132,.07);padding:16px 20px;border-radius:0 12px 12px 0;font-size:13px;line-height:1.7;color:var(--text);margin:22px 0;font-weight:600}
+    .green-btn{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#05060a;background:#3ddc84;padding:12px 24px;border-radius:999px;text-decoration:none;margin-top:22px;transition:filter .2s}
+    .green-btn:hover{filter:brightness(1.1)}
     html[lang="lv"] .jspa-lv{display:block}
     html[lang="en"] .jspa-en{display:block}
     html:not([lang]) .jspa-lv{display:block}
@@ -219,6 +228,8 @@
     .ftlinks a{font-size:12px;font-weight:600;color:var(--muted);padding:6px 14px;border-radius:999px;border:1px solid var(--border);background:var(--card);transition:all .2s}
     .ftlinks a:hover{color:var(--text);border-color:var(--bh)}
     .ftcopy{font-size:11px;color:rgba(240,242,247,.22);margin-top:14px;letter-spacing:.02em}
+    .ftaction{font-size:11px;color:rgba(240,242,247,.35);margin-top:6px;letter-spacing:.02em;font-weight:700}
+    .ftdisclaimer{font-size:10.5px;color:rgba(240,242,247,.28);margin-top:10px;line-height:1.6;max-width:70ch}
 
     /* RESPONSIVE */
     @media(max-width:880px){
@@ -328,8 +339,8 @@
         <li data-i18n="g.li6">#UNTU_DWC #DailyWellnessChallenge</li>
       </ul>
       <h3 data-i18n="g.h3">3. EU redzamība</h3>
-      <p data-i18n="g.p1">Jebkurā publiskā materiālā, kas satur EU logo, jāiekļauj pilns atbildības izslēguma teksts (skatīt sadaļu "Co-funded by the European Union" projekta lapas apakšā).</p>
-      <p data-i18n="g.p1b">Projektu papildus atbalstīja arī Jaunatnes starptautisko programmu aģentūra (JSPA) — arī tās logo jāiekļauj publiskajos materiālos līdzās EU emblēmai.</p>
+      <p><span data-i18n="g.p1">Jebkurā publiskā materiālā, kas satur EU logo, jāiekļauj pilns atbildības izslēguma teksts (skatīt sadaļu "Co-funded by the European Union" projekta lapas apakšā).</span> <a href="https://ec.europa.eu/regional_policy/information-sources/logo-download-center_en" target="_blank" rel="noopener" class="glink" data-i18n="g.eulink">Lejupielādēt oficiālos EU logotipus ↗</a></p>
+      <p><span data-i18n="g.p1b">Projektu papildus atbalstīja arī Jaunatnes starptautisko programmu aģentūra (JSPA) — arī tās logo jāiekļauj publiskajos materiālos līdzās EU emblēmai.</span> <a href="https://jaunatne.gov.lv/par-agenturu/agenturas-vizuala-identitate/" target="_blank" rel="noopener" class="glink" data-i18n="g.jspalink">Lejupielādēt JSPA logotipu ↗</a></p>
       <div class="eustrip">
         <img src="https://ik.imagekit.io/erewhile/Untu/Logo%20and%20Og/EN_Co-fundedbytheEU_RGB_NEG.png" alt="Co-funded by the EU">
         <img class="jspa-logo jspa-lv" src="https://ik.imagekit.io/colibrarian/dwcm/logo/Vienkrasu%20JSPA.png" alt="JSPA">
@@ -339,6 +350,47 @@
       <p data-i18n="g.p2">Par publicēšanas jautājumiem sazinies: Jekaterina Orlova — projects@untu.ngo</p>
       <h3 data-i18n="g.h5">5. Pilnais izplatīšanas ziņojums</h3>
       <p data-i18n="g.p3">Detalizēti dati par visām publikācijām, saitēm un oriģinālajiem parakstiem tiek uzturēti Project Dissemination Report — iekšējā tabulā, kas pieejama tikai projekta komandai (nepieciešama pieteikšanās).</p>
+    </div>
+
+    <div class="green-panel rv">
+      <span class="green-badge">🌱 <span data-i18n="gr.badge">Green Youth Work Practice</span></span>
+      <h2 class="green-h2" data-i18n="gr.h2">GREEN &amp; SUSTAINABLE PRACTICES SUMMARY</h2>
+      <p class="green-lead" data-i18n="gr.lead">Šis kopsavilkums dokumentē, kā vides ziņā atbildīgas prakses tika integrētas projekta īstenošanā, mācību procesā un turpinājumā.</p>
+
+      <div class="prose">
+        <h3 data-i18n="gr.h1">1. Ilgtspējas pieeja</h3>
+        <p data-i18n="gr.p1">Ilgtspēja tika integrēta Daily Wellness Challenge Movement projektā kā praktiska ikdienas īstenošanas daļa, nevis atsevišķa simboliska aktivitāte. Konsorcijs līdzsvaroja vides atbildību ar pieejamību, iekļaušanu un starptautiskas grupas praktiskajām vajadzībām.</p>
+
+        <h3 data-i18n="gr.h2b">2. Zaļās prakses mācību kursa laikā</h3>
+        <ul>
+          <li data-i18n="gr.li1">Digitāls mācību process un mazāka drukāšana — grafiki, materiāli un dokumenti tika koplietoti digitāli; drukāšana saglabāta tikai tur, kur fiziskais formāts sniedza mācīšanās vērtību.</li>
+          <li data-i18n="gr.li2">Atkritumu mazināšana un daudzreiz lietojami materiāli — priekšroka daudzreiz lietojamiem materiāliem, atkritumu šķirošana norises vietā.</li>
+          <li data-i18n="gr.li3">Atbildīga ēdiena plānošana — uzsvars uz veģetāro un, kur iespējams, vietējo un sezonālo pārtiku; rūpīga daudzumu plānošana ar minimāliem pārtikas atkritumiem.</li>
+          <li data-i18n="gr.li4">Ilgtspējīga ceļošana — dalībnieki tika informēti un mudināti izmantot sabiedrisko transportu un koplietošanas iespējas, kur tas bija reāli iespējams.</li>
+          <li data-i18n="gr.li5">Digitāli projekta resursi — galvenās izstrādnes (Mapping Report, divas rīkkopas, Digital Awareness Campaign materiāli, video bibliotēka un Online Learning Module) publicētas kā atvērti digitāli resursi, kas atbalsta ilgtermiņa atkalizmantošanu bez atkārtotas drukāšanas.</li>
+        </ul>
+
+        <h3 data-i18n="gr.h3b">3. Ilgtspēja mācībās un jaunatnes darba praksē</h3>
+        <p data-i18n="gr.p3">Vides atbildība tika saistīta arī ar projekta izglītojošo saturu. Wellness rīkkopā iekļautas āra un dabā balstītas mācību metodes — Silent Walk, Forest Bathing un scenāriju izstrāde —, savienojot labbūtību ar cieņpilnu dabas vides izmantošanu. Dalībnieku izstrādātie resursi, tostarp iekļaujoša vienas dienas pārgājiena ceļvedis bēgļu ģimenēm, ietver konkrētus vides principus — iezīmētu taku izmantošanu, atkritumu iznešanu, cieņu pret dzīvo dabu un vietējām kopienām.</p>
+
+        <div class="green-quote" data-i18n="gr.quote">Galvenā atziņa: vides ilgtspēja jaunatnes darbā nav atkarīga no vienas "zaļās aktivitātes". Tā veidojas caur atkārtotām praktiskām izvēlēm — ceļošanā, ēdienā, materiālos, resursu izmantošanā, uzvedībā dabā un organizatoriskajā plānošanā.</div>
+
+        <h3 data-i18n="gr.h4b">4. Kas tika pielāgots praksē</h3>
+        <ul>
+          <li data-i18n="gr.a1">Ceļošanas izvēles bija atkarīgas no dalībnieku ģeogrāfiskā novietojuma un pieejamajiem savienojumiem — zaļais ceļojums tika mudināts, bet netika izvirzīts kā dalības nosacījums.</li>
+          <li data-i18n="gr.a2">Drukāšana tika būtiski samazināta, taču atsevišķi drukāti un vizuāli materiāli joprojām tika izmantoti, kad tiem bija pedagoģiska vērtība.</li>
+          <li data-i18n="gr.a3">Projekts koncentrējās uz praktisku atkritumu mazināšanu, šķirošanu un rūpīgu ēdiena plānošanu, nevis apgalvoja par pilnīgu nulles atkritumu aktivitāti.</li>
+          <li data-i18n="gr.a4">Ilgtspējīgas izvēles tika līdzsvarotas ar iekļaušanu, veselību, uztura vajadzībām, drošību un pieejamību.</li>
+        </ul>
+
+        <h3 data-i18n="gr.h5b">5. Ilgtspēja pēc mobilitātes un Green Youth Work Practice Repository</h3>
+        <p data-i18n="gr.p5">Vides pieeja turpinās caur projekta rezultātu ilgtermiņa izmantošanu un metožu nodošanu partnerorganizācijām. Šis kopsavilkums kalpo kā projekta mājaslapas Green Youth Work Practice Repository — tas apkopo projektā izmantotos praktiskos ilgtspējas pasākumus un saista tos ar atkalizmantojamiem izglītības resursiem.</p>
+
+        <h3 data-i18n="gr.h6b">6. Secinājums</h3>
+        <p data-i18n="gr.p6">Daily Wellness Challenge Movement parādīja, ka vides ziņā atbildīga projekta īstenošana var būt praktiska, samērīga un savienojama ar iekļaušanu. Spēcīgākais ieguldījums nebija viena vides darbība, bet ilgtspējīgu izvēļu integrācija visā projekta gaitā — no mācību organizēšanas līdz rezultātu pieejamībai pēc mobilitātes.</p>
+      </div>
+
+      <a class="green-btn" href="https://docs.google.com/document/d/1QPvcocc7JKr1YbFdsITZ1nCholqiQeyp/edit" target="_blank" rel="noopener" data-i18n="gr.btn">Lasīt / Lejupielādēt ↗</a>
     </div>
   </div>
 </section>
@@ -356,7 +408,9 @@
         <a href="https://www.instagram.com/ngo_untu" target="_blank" rel="noopener">Instagram ↗</a>
       </div>
     </div>
-    <p class="ftcopy" data-i18n="footer.copy">© 2025–2026 Biedrība UNTU. Projekts Nr. 2025-1-LV02-KA153-YOU-000304266. Līdzfinansē Eiropas Savienība.</p>
+    <p class="ftcopy" data-i18n="footer.copy">© 2025–2026 Biedrība UNTU.</p>
+    <p class="ftaction" data-i18n="footer.action">Erasmus+ KA153-YOU — jaunatnes darbinieku mobilitāte · Projekts Nr. 2025-1-LV02-KA153-YOU-000304266</p>
+    <p class="ftdisclaimer" data-i18n="footer.disclaimer">Līdzfinansē Eiropas Savienība. Paustie uzskati un viedokļi atspoguļo vienīgi autoru viedokli un ne vienmēr sakrīt ar Eiropas Savienības vai Jaunatnes starptautisko programmu aģentūras viedokli. Ne Eiropas Savienība, ne piešķīrēja iestāde nav atbildīga par tiem.</p>
   </div>
 </footer>
 
@@ -432,7 +486,9 @@ var T={
   lv:{
     "nav.about":"Par projektu","nav.outcomes":"Rezultāti","nav.partners":"Partneri","nav.gallery":"Galerija","nav.guidelines":"Vadlīnijas",
     "nav.followup":"Aktivitātes","nav.media":"Mediji","nav.downloads":"Lejupielādes","nav.campaign":"Kampaņa","nav.learning":"Tests",
-    "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025\u20132026 Biedrība UNTU. Projekts Nr. 2025-1-LV02-KA153-YOU-000304266. Līdzfinansē Eiropas Savienība.",
+    "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025\u20132026 Biedrība UNTU.",
+    "footer.action":"Erasmus+ KA153-YOU — jaunatnes darbinieku mobilitāte · Projekts Nr. 2025-1-LV02-KA153-YOU-000304266",
+    "footer.disclaimer":"Līdzfinansē Eiropas Savienība. Paustie uzskati un viedokļi atspoguļo vienīgi autoru viedokli un ne vienmēr sakrīt ar Eiropas Savienības vai Jaunatnes starptautisko programmu aģentūras viedokli. Ne Eiropas Savienība, ne piešķīrēja iestāde nav atbildīga par tiem.",
     "crumb.back":"\u2190 Daily Wellness Challenge Movement",
     "gh.kicker":"Vadlīnijas","gh.h1":"Publicēšanas un izplatīšanas vadlīnijas.",
     "gh.lead":"Īss ceļvedis dalībniekiem un partneriem, kā atbildīgi publicēt un pārpublicēt projekta saturu.",
@@ -447,15 +503,41 @@ var T={
     "g.h3":"3. EU redzamība",
     "g.p1":"Jebkurā publiskā materiālā, kas satur EU logo, jāiekļauj pilns atbildības izslēguma teksts (skatīt sadaļu \"Co-funded by the European Union\" projekta lapas apakšā).",
     "g.p1b":"Projektu papildus atbalstīja arī Jaunatnes starptautisko programmu aģentūra (JSPA) — arī tās logo jāiekļauj publiskajos materiālos līdzās EU emblēmai.",
+    "g.eulink":"Lejupielādēt oficiālos EU logotipus ↗","g.jspalink":"Lejupielādēt JSPA logotipu ↗",
     "g.h4":"4. Jautājumi",
     "g.p2":"Par publicēšanas jautājumiem sazinies: Jekaterina Orlova — projects@untu.ngo",
     "g.h5":"5. Pilnais izplatīšanas ziņojums",
-    "g.p3":"Detalizēti dati par visām publikācijām, saitēm un oriģinālajiem parakstiem tiek uzturēti Project Dissemination Report — iekšējā tabulā, kas pieejama tikai projekta komandai (nepieciešama pieteikšanās)."
+    "g.p3":"Detalizēti dati par visām publikācijām, saitēm un oriģinālajiem parakstiem tiek uzturēti Project Dissemination Report — iekšējā tabulā, kas pieejama tikai projekta komandai (nepieciešama pieteikšanās).",
+    "gr.badge":"Green Youth Work Practice","gr.h2":"GREEN & SUSTAINABLE PRACTICES SUMMARY",
+    "gr.lead":"Šis kopsavilkums dokumentē, kā vides ziņā atbildīgas prakses tika integrētas projekta īstenošanā, mācību procesā un turpinājumā.",
+    "gr.h1":"1. Ilgtspējas pieeja",
+    "gr.p1":"Ilgtspēja tika integrēta Daily Wellness Challenge Movement projektā kā praktiska ikdienas īstenošanas daļa, nevis atsevišķa simboliska aktivitāte. Konsorcijs līdzsvaroja vides atbildību ar pieejamību, iekļaušanu un starptautiskas grupas praktiskajām vajadzībām.",
+    "gr.h2b":"2. Zaļās prakses mācību kursa laikā",
+    "gr.li1":"Digitāls mācību process un mazāka drukāšana — grafiki, materiāli un dokumenti tika koplietoti digitāli; drukāšana saglabāta tikai tur, kur fiziskais formāts sniedza mācīšanās vērtību.",
+    "gr.li2":"Atkritumu mazināšana un daudzreiz lietojami materiāli — priekšroka daudzreiz lietojamiem materiāliem, atkritumu šķirošana norises vietā.",
+    "gr.li3":"Atbildīga ēdiena plānošana — uzsvars uz veģetāro un, kur iespējams, vietējo un sezonālo pārtiku; rūpīga daudzumu plānošana ar minimāliem pārtikas atkritumiem.",
+    "gr.li4":"Ilgtspējīga ceļošana — dalībnieki tika informēti un mudināti izmantot sabiedrisko transportu un koplietošanas iespējas, kur tas bija reāli iespējams.",
+    "gr.li5":"Digitāli projekta resursi — galvenās izstrādnes (Mapping Report, divas rīkkopas, Digital Awareness Campaign materiāli, video bibliotēka un Online Learning Module) publicētas kā atvērti digitāli resursi, kas atbalsta ilgtermiņa atkalizmantošanu bez atkārtotas drukāšanas.",
+    "gr.h3b":"3. Ilgtspēja mācībās un jaunatnes darba praksē",
+    "gr.p3":"Vides atbildība tika saistīta arī ar projekta izglītojošo saturu. Wellness rīkkopā iekļautas āra un dabā balstītas mācību metodes — Silent Walk, Forest Bathing un scenāriju izstrāde —, savienojot labbūtību ar cieņpilnu dabas vides izmantošanu. Dalībnieku izstrādātie resursi, tostarp iekļaujoša vienas dienas pārgājiena ceļvedis bēgļu ģimenēm, ietver konkrētus vides principus — iezīmētu taku izmantošanu, atkritumu iznešanu, cieņu pret dzīvo dabu un vietējām kopienām.",
+    "gr.quote":"Galvenā atziņa: vides ilgtspēja jaunatnes darbā nav atkarīga no vienas \"zaļās aktivitātes\". Tā veidojas caur atkārtotām praktiskām izvēlēm — ceļošanā, ēdienā, materiālos, resursu izmantošanā, uzvedībā dabā un organizatoriskajā plānošanā.",
+    "gr.h4b":"4. Kas tika pielāgots praksē",
+    "gr.a1":"Ceļošanas izvēles bija atkarīgas no dalībnieku ģeogrāfiskā novietojuma un pieejamajiem savienojumiem — zaļais ceļojums tika mudināts, bet netika izvirzīts kā dalības nosacījums.",
+    "gr.a2":"Drukāšana tika būtiski samazināta, taču atsevišķi drukāti un vizuāli materiāli joprojām tika izmantoti, kad tiem bija pedagoģiska vērtība.",
+    "gr.a3":"Projekts koncentrējās uz praktisku atkritumu mazināšanu, šķirošanu un rūpīgu ēdiena plānošanu, nevis apgalvoja par pilnīgu nulles atkritumu aktivitāti.",
+    "gr.a4":"Ilgtspējīgas izvēles tika līdzsvarotas ar iekļaušanu, veselību, uztura vajadzībām, drošību un pieejamību.",
+    "gr.h5b":"5. Ilgtspēja pēc mobilitātes un Green Youth Work Practice Repository",
+    "gr.p5":"Vides pieeja turpinās caur projekta rezultātu ilgtermiņa izmantošanu un metožu nodošanu partnerorganizācijām. Šis kopsavilkums kalpo kā projekta mājaslapas Green Youth Work Practice Repository — tas apkopo projektā izmantotos praktiskos ilgtspējas pasākumus un saista tos ar atkalizmantojamiem izglītības resursiem.",
+    "gr.h6b":"6. Secinājums",
+    "gr.p6":"Daily Wellness Challenge Movement parādīja, ka vides ziņā atbildīga projekta īstenošana var būt praktiska, samērīga un savienojama ar iekļaušanu. Spēcīgākais ieguldījums nebija viena vides darbība, bet ilgtspējīgu izvēļu integrācija visā projekta gaitā — no mācību organizēšanas līdz rezultātu pieejamībai pēc mobilitātes.",
+    "gr.btn":"Lasīt / Lejupielādēt ↗"
   },
   en:{
     "nav.about":"About","nav.outcomes":"Outcomes","nav.partners":"Partners","nav.gallery":"Gallery","nav.guidelines":"Guidelines",
     "nav.followup":"Activities","nav.media":"Media","nav.downloads":"Downloads","nav.campaign":"Campaign","nav.learning":"Quiz",
-    "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025\u20132026 Biedrība UNTU. Project No. 2025-1-LV02-KA153-YOU-000304266. Co-funded by the European Union.",
+    "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025\u20132026 Biedrība UNTU.",
+    "footer.action":"Erasmus+ KA153-YOU \u2013 Mobility of Youth Workers \u00b7 Project No. 2025-1-LV02-KA153-YOU-000304266",
+    "footer.disclaimer":"Co-funded by the European Union. Views and opinions expressed are, however, those of the authors only and do not necessarily reflect those of the European Union or the Agency for International Programs for Youth. Neither the European Union nor the granting authority can be held responsible for them.",
     "crumb.back":"\u2190 Daily Wellness Challenge Movement",
     "gh.kicker":"Guidelines","gh.h1":"Publication and dissemination guidelines.",
     "gh.lead":"A short guide for participants and partners on responsibly publishing and reposting project content.",
@@ -470,10 +552,34 @@ var T={
     "g.h3":"3. EU visibility",
     "g.p1":"Any public material carrying the EU logo must include the full disclaimer text (see the \"Co-funded by the European Union\" section at the bottom of the project page).",
     "g.p1b":"The project was additionally supported by the Agency for International Programs for Youth (JSPA) — its logo should also appear on public materials alongside the EU emblem.",
+    "g.eulink":"Download official EU logos ↗","g.jspalink":"Download the JSPA logo ↗",
     "g.h4":"4. Questions",
     "g.p2":"For publication questions, contact: Jekaterina Orlova — projects@untu.ngo",
     "g.h5":"5. Full dissemination report",
-    "g.p3":"Detailed data on every publication, link and original caption is maintained in the Project Dissemination Report — an internal sheet available to the project team only (login required)."
+    "g.p3":"Detailed data on every publication, link and original caption is maintained in the Project Dissemination Report — an internal sheet available to the project team only (login required).",
+    "gr.badge":"Green Youth Work Practice","gr.h2":"GREEN & SUSTAINABLE PRACTICES SUMMARY",
+    "gr.lead":"This summary documents how environmentally responsible practices were integrated into the project's implementation, learning process and follow-up.",
+    "gr.h1":"1. Sustainability approach",
+    "gr.p1":"Sustainability was integrated into the Daily Wellness Challenge Movement as a practical part of everyday project implementation rather than a separate symbolic activity. The consortium balanced environmental responsibility with accessibility, inclusion and the practical needs of an international group.",
+    "gr.h2b":"2. Green practices during the training course",
+    "gr.li1":"Digital-first learning and reduced printing — schedules, resources and documents were shared digitally; printing was kept only where a physical format added learning value.",
+    "gr.li2":"Waste reduction and reusable materials — reusable materials were prioritised and waste was sorted at the venue.",
+    "gr.li3":"Responsible food planning — emphasis on vegetarian and, where possible, local and seasonal food; quantities were carefully planned with minimal food waste.",
+    "gr.li4":"Sustainable travel encouragement — participants were informed about and encouraged to use public and shared transport whenever realistic.",
+    "gr.li5":"Digital project resources — the main outputs (the Mapping Report, two toolkits, Digital Awareness Campaign materials, the video library and the Online Learning Module) were published as open digital resources, supporting long-term reuse without repeated printing.",
+    "gr.h3b":"3. Sustainability in learning and youth-work practice",
+    "gr.p3":"Environmental responsibility was also connected to the project's educational content. The Wellness Toolkit includes outdoor and nature-based learning methods — Silent Walk, Forest Bathing and scenario development — linking wellbeing with respectful use of natural environments. Participant-developed resources, including an inclusive one-day hike guide for refugee families, include concrete environmental principles such as using established paths, carrying out rubbish, and respecting wildlife and local communities.",
+    "gr.quote":"Key learning: environmental sustainability in youth work is not dependent on one \"green activity\". It is built through repeated practical choices in travel, food, materials, resource use, outdoor behaviour and organisational planning.",
+    "gr.h4b":"4. What was adapted in practice",
+    "gr.a1":"Travel choices depended on participants' geographical location and available connections — green travel was encouraged but not treated as a condition for participation.",
+    "gr.a2":"Printing was reduced substantially, but selected printed and visual materials were still used when pedagogically useful.",
+    "gr.a3":"The project focused on practical waste reduction, sorting and careful food planning rather than claiming a fully zero-waste activity.",
+    "gr.a4":"Sustainable choices were balanced with inclusion, health, dietary needs, safety and accessibility.",
+    "gr.h5b":"5. Sustainability beyond the mobility & Green Youth Work Practice Repository",
+    "gr.p5":"The environmental approach continues through the long-term use of project results and the transfer of methods into partner organisations. This summary serves as the project website's Green Youth Work Practice Repository — bringing together the practical sustainability measures used during the project and connecting them with reusable educational resources.",
+    "gr.h6b":"6. Conclusion",
+    "gr.p6":"The Daily Wellness Challenge Movement demonstrated that environmentally responsible project implementation can be practical, proportionate and compatible with inclusion. The strongest contribution was not a single environmental action, but the integration of sustainable choices throughout the project — from how the training was organised to how results remain accessible after the mobility.",
+    "gr.btn":"Read / Download ↗"
   }
 };
 function applyLang(lang){
