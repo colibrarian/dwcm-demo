@@ -215,6 +215,8 @@
     .ftlinks a{font-size:12px;font-weight:600;color:var(--muted);padding:6px 14px;border-radius:999px;border:1px solid var(--border);background:var(--card);transition:all .2s}
     .ftlinks a:hover{color:var(--text);border-color:var(--bh)}
     .ftcopy{font-size:11px;color:rgba(240,242,247,.22);margin-top:14px;letter-spacing:.02em}
+    .ftaction{font-size:11px;color:rgba(240,242,247,.35);margin-top:6px;letter-spacing:.02em;font-weight:700}
+    .ftdisclaimer{font-size:10.5px;color:rgba(240,242,247,.28);margin-top:10px;line-height:1.6;max-width:70ch}
 
     /* RESPONSIVE */
     @media(max-width:880px){
@@ -268,12 +270,20 @@
     .stat-card.tgt .n{color:var(--mag)}
     @media(max-width:768px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
 
-    .eqrow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;margin:34px 0 8px}
-    .eqcard{flex:1;min-width:200px;max-width:280px;text-align:center;padding:22px 18px;border-radius:16px;border:1px solid var(--border);background:var(--card)}
-    .eqcard.mag{border-color:rgba(255,45,212,.25);background:linear-gradient(135deg,rgba(255,45,212,.06),rgba(0,212,239,.03))}
-    .eqcard .eqt{font-size:13px;font-weight:800;line-height:1.4}
-    .eqsym{font-size:26px;font-weight:900;color:var(--muted);flex-shrink:0}
-    .eqsym.eq{color:var(--cyan)}
+    .dc-hero{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:center}
+    .dc-hero-text{max-width:640px}
+    .dc-hero-phone{position:relative;width:100%;max-width:320px;margin:0 auto;z-index:2}
+    .dc-hero-phone::before{content:'';position:absolute;inset:-30% -20%;background:radial-gradient(circle at 50% 42%,rgba(0,212,239,.26),rgba(255,45,212,.18) 46%,transparent 72%);filter:blur(38px);z-index:-1}
+    .dc-hero-phone img{display:block;width:100%;height:auto;filter:drop-shadow(0 30px 54px rgba(0,0,0,.55))}
+    @media(min-width:1200px){
+      .dc-hero{grid-template-columns:1fr 380px;gap:56px}
+      .dc-hero-phone{max-width:400px}
+    }
+    @media(max-width:900px){
+      .dc-hero{grid-template-columns:1fr;text-align:center}
+      .dc-hero-text{max-width:none;margin:0 auto}
+      .dc-hero-phone{order:-1;max-width:230px;margin:0 auto 8px}
+    }
     .ccentral{display:block;text-decoration:none;color:inherit;margin-top:8px;padding:32px;border-radius:var(--r);border:1px solid rgba(255,45,212,.25);background:linear-gradient(135deg,rgba(255,45,212,.06),rgba(0,212,239,.04));transition:border-color .25s,transform .25s}
     .ccentral:hover{border-color:rgba(255,45,212,.5);transform:translateY(-2px)}
     .ccbadge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mag);background:var(--md);border:1px solid rgba(255,45,212,.28);padding:5px 12px;border-radius:999px;margin-bottom:14px}
@@ -342,16 +352,15 @@
 
 <section class="phero sec0">
   <div class="container">
-    <p class="kicker rv" data-i18n="dc.kicker">Digital Awareness Campaign</p>
-    <h1 class="rv" data-i18n="dc.h1">Centrālā kampaņa. Vietējie koncepti. Viens rezultāts.</h1>
-    <p class="sdesc rv" style="--d:.05s" data-i18n="dc.lead">Turpinājuma procesa ietvaros dalībnieki un nacionālās komandas tika aicināti pielietot projektā apgūtās digitālās komunikācijas un labbūtības kompetences savā organizācijas kontekstā. Tā vietā, lai visās partnervalstīs atkārtotu vienu un to pašu kampaņu, komandas izstrādāja vietējus konceptus, kas atspoguļo to auditoriju vajadzības un regulārās jaunatnes darba aktivitātes.</p>
-
-    <div class="eqrow rv" style="--d:.1s">
-      <div class="eqcard"><div class="eqt" data-i18n="dc.eq1">Central Daily Wellness Challenge Campaign</div></div>
-      <span class="eqsym">+</span>
-      <div class="eqcard"><div class="eqt" data-i18n="dc.eq2">National / local campaign concepts developed by participants</div></div>
-      <span class="eqsym eq">=</span>
-      <div class="eqcard mag"><div class="eqt" data-i18n="dc.eq3">Digital Awareness Campaign — project result</div></div>
+    <div class="dc-hero">
+      <div class="dc-hero-text">
+        <p class="kicker rv" data-i18n="dc.kicker">Digital Awareness Campaign</p>
+        <h1 class="rv" data-i18n="dc.h1">Centrālā kampaņa. Vietējie koncepti. Viens rezultāts.</h1>
+        <p class="sdesc rv" style="--d:.05s" data-i18n="dc.lead">Turpinājuma procesa ietvaros dalībnieki un nacionālās komandas tika aicināti pielietot projektā apgūtās digitālās komunikācijas un labbūtības kompetences savā organizācijas kontekstā. Tā vietā, lai visās partnervalstīs atkārtotu vienu un to pašu kampaņu, komandas izstrādāja vietējus konceptus, kas atspoguļo to auditoriju vajadzības un regulārās jaunatnes darba aktivitātes.</p>
+      </div>
+      <div class="dc-hero-phone rv" style="--d:.1s">
+        <img src="https://ik.imagekit.io/colibrarian/dwcm/dwcm%20phone.png" alt="Digital Awareness Campaign — phone preview">
+      </div>
     </div>
   </div>
 </section>
@@ -428,7 +437,6 @@
       </div>
     </div>
 
-    <p class="prose rv" style="margin-top:24px" data-i18n="dc.note"><span class="ph">Plēholders</span> — reālās kampaņu saites un lejupielādes faili jāpievieno pēc materiālu saņemšanas.</p>
   </div>
 </section>
 <!-- FOOTER -->
@@ -445,7 +453,9 @@
         <a href="https://www.instagram.com/ngo_untu" target="_blank" rel="noopener">Instagram ↗</a>
       </div>
     </div>
-    <p class="ftcopy" data-i18n="footer.copy">© 2025–2026 Biedrība UNTU. Projekts Nr. 2025-1-LV02-KA153-YOU-000304266. Līdzfinansē Eiropas Savienība.</p>
+    <p class="ftcopy" data-i18n="footer.copy">© 2025–2026 Biedrība UNTU.</p>
+    <p class="ftaction" data-i18n="footer.action">Erasmus+ KA153-YOU — jaunatnes darbinieku mobilitāte · Projekts Nr. 2025-1-LV02-KA153-YOU-000304266</p>
+    <p class="ftdisclaimer" data-i18n="footer.disclaimer">Līdzfinansē Eiropas Savienība. Paustie uzskati un viedokļi atspoguļo vienīgi autoru viedokli un ne vienmēr sakrīt ar Eiropas Savienības vai Jaunatnes starptautisko programmu aģentūras viedokli. Ne Eiropas Savienība, ne piešķīrēja iestāde nav atbildīga par tiem.</p>
   </div>
 </footer>
 
@@ -674,6 +684,13 @@
     if(e.key === 'ArrowRight'){ var nb=document.getElementById('slideNext'); if(nb && !nb.disabled) nb.click(); }
     if(e.key === 'ArrowLeft'){ var pb=document.getElementById('slidePrev'); if(pb && !pb.disabled) pb.click(); }
   });
+
+  /* Auto-open a document's popup when the page loads with a matching #hash,
+     e.g. dwcm-digital-campaign.html#central opens the central document automatically. */
+  var autoKey = window.location.hash.replace('#', '');
+  if(autoKey && DOC_TITLES[autoKey]){
+    setTimeout(function(){ window.openDocModal(autoKey); }, 300);
+  }
 })();
 
 /* ===== 1. REVEAL ===== */
@@ -720,11 +737,12 @@ var T={
   lv:{
     "nav.about":"Par projektu","nav.outcomes":"Rezultāti","nav.partners":"Partneri","nav.gallery":"Galerija",
     "nav.followup":"Aktivitātes","nav.media":"Mediji","nav.downloads":"Lejupielādes","nav.campaign":"Kampaņa","nav.learning":"Tests","nav.guidelines":"Vadlīnijas",
-    "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025\u20132026 Biedrība UNTU. Projekts Nr. 2025-1-LV02-KA153-YOU-000304266. Līdzfinansē Eiropas Savienība.",
+    "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025\u20132026 Biedrība UNTU.",
+    "footer.action":"Erasmus+ KA153-YOU — jaunatnes darbinieku mobilitāte · Projekts Nr. 2025-1-LV02-KA153-YOU-000304266",
+    "footer.disclaimer":"Līdzfinansē Eiropas Savienība. Paustie uzskati un viedokļi atspoguļo vienīgi autoru viedokli un ne vienmēr sakrīt ar Eiropas Savienības vai Jaunatnes starptautisko programmu aģentūras viedokli. Ne Eiropas Savienība, ne piešķīrēja iestāde nav atbildīga par tiem.",
     "crumb.back":"\u2190 Daily Wellness Challenge Movement",
     "dc.kicker":"Digital Awareness Campaign","dc.h1":"Centrālā kampaņa. Vietējie koncepti. Viens rezultāts.",
     "dc.lead":"Turpinājuma procesa ietvaros dalībnieki un nacionālās komandas tika aicināti pielietot projektā apgūtās digitālās komunikācijas un labbūtības kompetences savā organizācijas kontekstā. Tā vietā, lai visās partnervalstīs atkārtotu vienu un to pašu kampaņu, komandas izstrādāja vietējus konceptus, kas atspoguļo to auditoriju vajadzības un regulārās jaunatnes darba aktivitātes.",
-    "dc.eq1":"Central Daily Wellness Challenge Campaign","dc.eq2":"National / local campaign concepts developed by participants","dc.eq3":"Digital Awareness Campaign — project result",
     "dc.c.kicker":"Galvenais rezultāts","dc.c.h2":"Centrālais dokuments.",
     "dc.c.lead":"Dokuments, kas apkopo visu kampaņu — no stratēģijas līdz gūtajām atziņām — un noslēdz projekta solīto Digital Awareness Campaign rezultātu.",
     "camp.central.badge":"Centrālais dokuments","dc.view":"Skatīt →","dc.download":"Lejupielādēt ↓",
@@ -732,17 +750,17 @@ var T={
     "dc.local.lead":"Katra nacionālā komanda pielāgoja kampaņu savai auditorijai un ikdienas darba formātam.",
     "camp.c1.type":"🇪🇪 Igaunija","dc.k1.d":"Praktisks ietvars organizācijas satura izstrādei un popularizēšanai — auditorijas analīze, pozicionēšana, satura plānošana, kanālu izvēle, izaugsmes taktikas un rezultātu mērīšana.",
     "camp.c2.type":"🇩🇪 Vācija","dc.k2.d":"Ikmēneša sociālo tīklu koncepts, kas apvieno labbūtības padomus ar kultūras identitāti, radošumu, integrāciju un kopienas atbalstu.",
-    "camp.c3.type":"🇳🇴 Norvēģija","dc.k3.d":"Digitāla informatīvā kampaņa, kas ik nedēļu prezentē kāpšanu kā rīku labbūtībai, pašapziņai, piederībai, sociālajai iekļaušanai un integrācijai.",
-    "dc.note":"Plēholders — reālās kampaņu saites un lejupielādes faili jāpievieno pēc materiālu saņemšanas."
+    "camp.c3.type":"🇳🇴 Norvēģija","dc.k3.d":"Digitāla informatīvā kampaņa, kas ik nedēļu prezentē kāpšanu kā rīku labbūtībai, pašapziņai, piederībai, sociālajai iekļaušanai un integrācijai."
   },
   en:{
     "nav.about":"About","nav.outcomes":"Outcomes","nav.partners":"Partners","nav.gallery":"Gallery",
     "nav.followup":"Activities","nav.media":"Media","nav.downloads":"Downloads","nav.campaign":"Campaign","nav.learning":"Quiz","nav.guidelines":"Guidelines",
-    "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025\u20132026 Biedrība UNTU. Project No. 2025-1-LV02-KA153-YOU-000304266. Co-funded by the European Union.",
+    "footer.back":"\u2190 untu.ngo","footer.copy":"\u00a9 2025\u20132026 Biedrība UNTU.",
+    "footer.action":"Erasmus+ KA153-YOU \u2013 Mobility of Youth Workers \u00b7 Project No. 2025-1-LV02-KA153-YOU-000304266",
+    "footer.disclaimer":"Co-funded by the European Union. Views and opinions expressed are, however, those of the authors only and do not necessarily reflect those of the European Union or the Agency for International Programs for Youth. Neither the European Union nor the granting authority can be held responsible for them.",
     "crumb.back":"\u2190 Daily Wellness Challenge Movement",
     "dc.kicker":"Digital Awareness Campaign","dc.h1":"Central campaign. Local concepts. One result.",
     "dc.lead":"As part of the follow-up process, participants and national teams were encouraged to apply the digital communication and wellness competences developed during the project to their own organisational contexts. Rather than reproducing one identical campaign in all partner countries, teams developed local concepts reflecting the needs of their audiences and regular youth-work activities.",
-    "dc.eq1":"Central Daily Wellness Challenge Campaign","dc.eq2":"National / local campaign concepts developed by participants","dc.eq3":"Digital Awareness Campaign — project result",
     "dc.c.kicker":"Main Output","dc.c.h2":"Central document.",
     "dc.c.lead":"The document that ties the whole campaign together — from strategy to lessons learned — and closes the project's promised Digital Awareness Campaign result.",
     "camp.central.badge":"Central document","dc.view":"View →","dc.download":"Download ↓",
@@ -750,8 +768,7 @@ var T={
     "dc.local.lead":"Each national team adapted the campaign to its own audience and everyday work format.",
     "camp.c1.type":"🇪🇪 Estonia","dc.k1.d":"A practical framework for developing and promoting organisational content, covering audience analysis, positioning, content planning, channel selection, growth tactics and performance measurement.",
     "camp.c2.type":"🇩🇪 Germany","dc.k2.d":"A monthly social-media concept combining wellness tips with cultural identity, creativity, integration and community support.",
-    "camp.c3.type":"🇳🇴 Norway","dc.k3.d":"A digital awareness campaign presenting weekly climbing as a tool for well-being, confidence, belonging, social inclusion and integration.",
-    "dc.note":"Placeholder — real campaign links and downloadable files to be added once materials are received."
+    "camp.c3.type":"🇳🇴 Norway","dc.k3.d":"A digital awareness campaign presenting weekly climbing as a tool for well-being, confidence, belonging, social inclusion and integration."
   }
 };
 function applyLang(lang){
