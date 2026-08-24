@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="lv">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -39,6 +39,7 @@
     .navlinks{display:flex;align-items:center;gap:4px}
     .navlinks a{font-size:12px;font-weight:600;color:var(--muted);padding:7px 13px;border-radius:999px;border:1px solid transparent;transition:all .2s;white-space:nowrap}
     .navlinks a:hover{color:var(--text);border-color:var(--border);background:var(--card)}
+    .navlinks a.active{color:var(--cyan);border-color:var(--cg);background:var(--cd)}
     .lsw{display:flex;align-items:center;gap:2px;padding:3px;border-radius:999px;border:1px solid var(--border);background:var(--card);margin-left:4px}
     .lbtn{appearance:none;border:none;background:transparent;color:var(--muted);font-family:inherit;font-size:11.5px;font-weight:800;letter-spacing:.04em;padding:5px 10px;border-radius:999px;cursor:pointer;transition:all .2s}
     .lbtn:hover{color:var(--text)}
@@ -53,6 +54,7 @@
       .navlinks{position:absolute;top:100%;left:16px;right:16px;flex-direction:column;align-items:stretch;gap:6px;background:rgba(10,11,18,.97);backdrop-filter:blur(18px);border:1px solid var(--border);border-radius:16px;padding:12px;margin-top:8px;max-height:0;opacity:0;overflow:hidden;pointer-events:none;transition:max-height .3s ease,opacity .25s ease;z-index:200}
       .navlinks.open{max-height:420px;opacity:1;pointer-events:auto}
       .navlinks a{padding:12px 14px;border-radius:10px;text-align:left;width:100%}
+      .navlinks a.active{color:var(--muted);border-color:transparent;background:transparent}
       .navlinks .lsw{margin:6px 2px 2px;align-self:flex-start}
     }
 
@@ -364,16 +366,12 @@
         UNTU<span class="nav-sep">/</span><span class="nav-proj">Daily Wellness Challenge</span>
       </a>
       <nav class="navlinks" id="navlinks">
-        <a href="dwcm.html" data-i18n="nav.about">Par projektu</a>
-        <a href="dwcm-outputs-followup.html" data-i18n="nav.outcomes">Rezultāti</a>
-        <a href="dwcm-media.html" data-i18n="nav.media">Mediji</a>
-        <a href="dwcm-digital-campaign.html" data-i18n="nav.campaign">Kampaņa</a>
-        <a href="dwcm-learning-module.html" data-i18n="nav.learning">Tests</a>
-        <a href="dwcm-publication-guidelines.html" data-i18n="nav.guidelines">Vadlīnijas</a>
-        <div class="lsw">
-          <button class="lbtn" data-lang="lv">LV</button>
-          <button class="lbtn" data-lang="en">EN</button>
-        </div>
+        <a href="dwcm.html" data-i18n="nav.about">About</a>
+        <a href="dwcm-outputs-followup.html" data-i18n="nav.outcomes">Outcomes</a>
+        <a href="dwcm-media.html" data-i18n="nav.media">Media</a>
+        <a href="dwcm-digital-campaign.html" data-i18n="nav.campaign">Campaign</a>
+        <a href="dwcm-learning-module.html" data-i18n="nav.learning">Quiz</a>
+        <a href="dwcm-publication-guidelines.html" data-i18n="nav.guidelines">Guidelines</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
         <span></span><span></span><span></span>
@@ -390,29 +388,29 @@
         <div class="eyebrow"><span class="edot"></span><span data-i18n="hero.kicker">Erasmus+ KA153-YOU – Mobility of Youth Workers</span></div>
         <div class="oa-badge"><span>🌐</span><span data-i18n="hero.oa">Open-Access Resource Hub</span></div>
         <h1>Daily<br><span class="hg" data-t="Wellness">Wellness</span><br>Challenge<br><em style="font-style:italic;color:rgba(240,242,247,.85)">Movement</em></h1>
-        <p class="hero-projectno" data-i18n="hero.projectno">Projekts Nr. 2025-1-LV02-KA153-YOU-000304266</p>
-        <p class="hero-lead" data-i18n="hero.lead">Starptautiska apmācība, kas pulcēja jaunatnes darbiniekus no četrām valstīm, lai izzinātu pieejamas pieejas izdegšanas profilaksei, garīgajai labbūtībai un ilgtspējīgai labbūtības kultūrai jaunatnes darbā — ar somatiskām metodēm, āra izglītību, refleksiju un digitālo stāstniecību.</p>
+        <p class="hero-projectno" data-i18n="hero.projectno">Project No. 2025-1-LV02-KA153-YOU-000304266</p>
+        <p class="hero-lead" data-i18n="hero.lead">An international training that brought together youth workers from four countries to explore accessible approaches to burnout prevention, mental well-being and a sustainable well-being culture in youth work — through somatic methods, outdoor education, reflection and digital storytelling.</p>
         <div class="flags">
-          <span class="fc" data-i18n="flag.lv">🇱🇻 Latvija</span>
-          <span class="fc" data-i18n="flag.no">🇳🇴 Norvēģija</span>
-          <span class="fc" data-i18n="flag.de">🇩🇪 Vācija</span>
-          <span class="fc" data-i18n="flag.ee">🇪🇪 Igaunija</span>
+          <span class="fc" data-i18n="flag.lv">🇱🇻 Latvia</span>
+          <span class="fc" data-i18n="flag.no">🇳🇴 Norway</span>
+          <span class="fc" data-i18n="flag.de">🇩🇪 Germany</span>
+          <span class="fc" data-i18n="flag.ee">🇪🇪 Estonia</span>
         </div>
         <div class="ctas">
-          <a class="btn btn-c" href="#about" data-i18n="hero.explore">Izpētīt projektu</a>
-          <a class="btn" href="#outcomes" data-i18n="hero.downloads">Lejupielādēt rezultātus</a>
+          <a class="btn btn-c" href="#about" data-i18n="hero.explore">Explore Project</a>
+          <a class="btn" href="#outcomes" data-i18n="hero.downloads">Download Outputs</a>
         </div>
         <button class="snudge" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
           <span class="sarrow">↓</span>
-          <span data-i18n="hero.scroll">Ritināt</span>
+          <span data-i18n="hero.scroll">Scroll</span>
         </button>
       </div>
       <div class="hpanel">
         <img class="hlogo" src="https://ik.imagekit.io/erewhile/Untu/dwcm%20logo.png" alt="Daily Wellness Challenge Movement">
         <div class="hstats">
-          <div class="hs"><span class="hn">4</span><span class="hl" data-i18n="stat.countries">Valstis</span></div>
-          <div class="hs"><span class="hn">KA153</span><span class="hl" data-i18n="stat.program">Programma</span></div>
-          <div class="hs"><span class="hn">2025</span><span class="hl" data-i18n="stat.year">Gads</span></div>
+          <div class="hs"><span class="hn">4</span><span class="hl" data-i18n="stat.countries">Countries</span></div>
+          <div class="hs"><span class="hn">KA153</span><span class="hl" data-i18n="stat.program">Programme</span></div>
+          <div class="hs"><span class="hn">2025</span><span class="hl" data-i18n="stat.year">Year</span></div>
         </div>
       </div>
     </div>
@@ -431,59 +429,59 @@
 <section id="about" class="sec">
   <div class="container">
     <div class="sh rv">
-      <p class="kicker" data-i18n="about.kicker">Par projektu</p>
+      <p class="kicker" data-i18n="about.kicker">Project overview</p>
       <h2 data-i18n="about.h2">Daily Wellness Challenge Movement</h2>
-      <p class="about-meta" data-i18n="about.meta">Erasmus+ KA153-YOU – jaunatnes darbinieku mobilitāte</p>
+      <p class="about-meta" data-i18n="about.meta">Erasmus+ KA153-YOU – Mobility of Youth Workers</p>
     </div>
     <div class="g3">
       <div class="ac rv" style="--d:0s">
         <span class="ai">🌍</span>
-        <div class="at" data-i18n="about.c1.t">Projekts</div>
-        <p class="ad" data-i18n="about.c1.d">Daily Wellness Challenge Movement bija Erasmus+ projekts, kas apvienoja jaunatnes darbiniekus no Latvijas, Norvēģijas, Vācijas un Igaunijas, lai izzinātu labbūtības izglītību, digitālo iesaisti un starptautisko sadarbību.</p>
+        <div class="at" data-i18n="about.c1.t">The Project</div>
+        <p class="ad" data-i18n="about.c1.d">Daily Wellness Challenge Movement was an Erasmus+ project bringing together youth workers from Latvia, Norway, Germany and Estonia to explore wellbeing education, digital engagement and international cooperation.</p>
       </div>
       <div class="ac rv" style="--d:.08s">
         <span class="ai">🏔️</span>
-        <div class="at" data-i18n="about.c2.t">Mācību kurss</div>
-        <p class="ad" data-i18n="about.c2.d">Starptautiskais mācību kurss notika Vircavā, Latvijā, no 2025. gada 21. līdz 30. oktobrim. Dalībnieki izzināja praktiskas pieejas labbūtībai un neformālajai izglītībai — apzinātību, kustībā balstītu mācīšanos, jogu un skaņu terapijas praksi —, vienlaikus stiprinot prasmes digitālajā stāstniecībā un satura veidošanā.</p>
+        <div class="at" data-i18n="about.c2.t">The Training Course</div>
+        <p class="ad" data-i18n="about.c2.d">The international training course took place in Vircava, Latvia. Mobility period: 21–30 October 2025, including arrival/departure days; 8-day learning programme: 22–29 October 2025. Participants explored practical approaches to wellbeing and non-formal education, including mindfulness, movement-based learning, yoga and sound-based practices, while strengthening their skills in digital storytelling and content creation.</p>
       </div>
       <div class="ac rv" style="--d:.16s">
         <span class="ai">🔄</span>
-        <div class="at" data-i18n="about.c3.t">Ietekme un ilgtspēja</div>
-        <p class="ad" data-i18n="about.c3.d">Projekts atbalstīja metožu un labās prakses apmaiņu starp dalīborganizācijām un iedrošināja jaunatnes darbiniekus pārnest apgūto uz savām organizācijām un vietējām kopienām. Tas arī veicināja praktisku un mērogojamu resursu izstrādi, kas turpina būt izmantojami arī pēc mobilitātes noslēguma.</p>
+        <div class="at" data-i18n="about.c3.t">Impact &amp; Sustainability</div>
+        <p class="ad" data-i18n="about.c3.d">The project supported the exchange of methods and good practices between participating organisations and encouraged youth workers to transfer their learning to their organisations and local communities. It also contributed to the development of practical and scalable resources that can continue to be used beyond the mobility.</p>
       </div>
     </div>
 
     <div class="pfpanel rv" id="partners" style="--d:.22s">
-      <p class="pflabel" data-i18n="pf.label">Partnerorganizācijas</p>
+      <p class="pflabel" data-i18n="pf.label">Partner Organizations</p>
       <div class="pflogos">
         <div class="pfpartner cr">
           <img src="https://ik.imagekit.io/colibrarian/dwcm/logo/untu%20logo.jpg" alt="UNTU">
-          <div class="pfpname"><b data-i18n="p.lv.org">Biedrība UNTU</b><small data-i18n="p.lv.role">Latvija · koordinējošā</small></div>
+          <div class="pfpname"><b data-i18n="p.lv.org">Biedrība UNTU</b><small data-i18n="p.lv.role">Latvia · Coordinator</small></div>
         </div>
         <div class="pfpartner">
           <img src="https://ik.imagekit.io/colibrarian/dwcm/logo/volda%20logo.jpg" alt="International Volda">
-          <div class="pfpname"><b data-i18n="p.no.org">International Volda</b><small data-i18n="p.no.role">Norvēģija · partneris</small></div>
+          <div class="pfpname"><b data-i18n="p.no.org">International Volda</b><small data-i18n="p.no.role">Norway · Partner</small></div>
         </div>
         <div class="pfpartner">
           <img src="https://ik.imagekit.io/colibrarian/dwcm/logo/rubikus%20logo.jpg" alt="Rubikus e. V.">
-          <div class="pfpname"><b data-i18n="p.de.org">Rubikus e. V.</b><small data-i18n="p.de.role">Vācija · partneris</small></div>
+          <div class="pfpname"><b data-i18n="p.de.org">Rubikus e. V.</b><small data-i18n="p.de.role">Germany · Partner</small></div>
         </div>
         <div class="pfpartner">
           <img src="https://ik.imagekit.io/colibrarian/dwcm/logo/kambuka%20logo.jpg" alt="Kambuka Kids MTÜ">
-          <div class="pfpname"><b data-i18n="p.ee.org">Kambuka Kids MTÜ</b><small data-i18n="p.ee.role">Igaunija · partneris</small></div>
+          <div class="pfpname"><b data-i18n="p.ee.org">Kambuka Kids MTÜ</b><small data-i18n="p.ee.role">Estonia · Partner</small></div>
         </div>
       </div>
 
       <div class="pfwhen">
-        <span class="pfwhen-label" data-i18n="pf.whenLabel">📅 Norises laiks un vieta</span>
+        <span class="pfwhen-label" data-i18n="pf.whenLabel">📅 When &amp; Where</span>
         <span class="pfwhen-pill" style="cursor:default">
-          <span data-i18n="pf.period">Projekta periods: 2025. gada jūlijs – 2026. gada jūnijs</span>
+          <span data-i18n="pf.period">Project period: July 2025 – June 2026</span>
         </span>
         <a class="pfwhen-pill" href="https://www.google.com/maps?q=56.510,23.858" target="_blank" rel="noopener">
-          <span data-i18n="pf.whenDate">21.–30.10.2025</span>
+          <span data-i18n="pf.whenDate">21–30 Oct 2025</span>
           <span class="pfwhen-sep">·</span>
           <span>📍</span>
-          <span data-i18n="map.pin">Vircava, Latvija</span>
+          <span data-i18n="map.pin">Vircava, Latvia</span>
           <span class="pfwhen-go">↗</span>
         </a>
       </div>
@@ -495,11 +493,11 @@
           <span class="kabadge">KA153</span>
         </div>
         <div class="pfsplit">
-          <p class="pfdisclaimer" data-i18n="about.eu">Līdzfinansē Eiropas Savienība. Paustie uzskati un viedokļi atspoguļo vienīgi autoru viedokli un ne vienmēr sakrīt ar Eiropas Savienības vai Jaunatnes starptautisko programmu aģentūras viedokli. Ne Eiropas Savienība, ne piešķīrēja iestāde nav atbildīga par tiem.</p>
+          <p class="pfdisclaimer" data-i18n="about.eu">Co-funded by the European Union. Views and opinions expressed are, however, those of the authors only and do not necessarily reflect those of the European Union or the Agency for International Programs for Youth. Neither the European Union nor the granting authority can be held responsible for them.</p>
           <div class="pfsplit-divider"></div>
           <div class="pfprojectno">
             <span class="pfpn-label" data-i18n="pf.pnLabel">Erasmus+ KA153-YOU</span>
-            <span class="pfpn-value" data-i18n="pf.pnValue">Projekts Nr. 2025-1-LV02-KA153-YOU-000304266</span>
+            <span class="pfpn-value" data-i18n="pf.pnValue">Project No. 2025-1-LV02-KA153-YOU-000304266</span>
           </div>
         </div>
       </div>
@@ -507,33 +505,33 @@
 
     <!-- TIMELINE -->
     <div class="sh rv" style="margin-top:56px;--d:.1s">
-      <p class="kicker" data-i18n="timeline.kicker">Kā tas notika</p>
-      <h2 data-i18n="timeline.h2">Projekta gaita.</h2>
+      <p class="kicker" data-i18n="timeline.kicker">How it worked</p>
+      <h2 data-i18n="timeline.h2">Project journey.</h2>
     </div>
     <div class="timeline rv" style="--d:.15s">
       <div class="titem">
         <div class="tdot">🤝</div>
-        <div class="tstep" data-i18n="tl.s1">01 — Sagatavošanās</div>
-        <div class="ttitle" data-i18n="tl.t1">Online sagatavošanās</div>
-        <p class="tdesc" data-i18n="tl.d1">Sagatavošanās notika tiešsaistē — četras organizācijas attālināti koordinēja mērķus un metodes, veica nacionālo kontekstu apzināšanu (mapping) un sagatavoja materiālus mobilitātei.</p>
+        <div class="tstep" data-i18n="tl.s1">01 — Preparation</div>
+        <div class="ttitle" data-i18n="tl.t1">Online preparation</div>
+        <p class="tdesc" data-i18n="tl.d1">Preparation took place online — the four organisations remotely coordinated goals and methods, carried out national context mapping, and prepared materials for the mobility.</p>
       </div>
       <div class="titem">
         <div class="tdot">🏕️</div>
-        <div class="tstep" data-i18n="tl.s2">02 — Mācību kurss</div>
-        <div class="ttitle" data-i18n="tl.t2">Mobilitāte, 21.–30.10.2025</div>
-        <p class="tdesc" data-i18n="tl.d2">Jaunatnes darbinieki no četrām valstīm kopā apguva labbūtības metodes Latvijā.</p>
+        <div class="tstep" data-i18n="tl.s2">02 — Training</div>
+        <div class="ttitle" data-i18n="tl.t2">Mobility, 21–30 Oct 2025</div>
+        <p class="tdesc" data-i18n="tl.d2">Mobility period: 21–30 October 2025, including arrival/departure days; 8-day learning programme: 22–29 October 2025.</p>
       </div>
       <div class="titem">
         <div class="tdot">📱</div>
-        <div class="tstep" data-i18n="tl.s3">03 — Rezultāti un kampaņas</div>
-        <div class="ttitle" data-i18n="tl.t3">Video, rīkkopas un kampaņas</div>
-        <p class="tdesc" data-i18n="tl.d3">513 video visā projekta ciklā, trīs izstrādnes rīkkopas un starptautiska digitāla kampaņa.</p>
+        <div class="tstep" data-i18n="tl.s3">03 — Results &amp; campaigns</div>
+        <div class="ttitle" data-i18n="tl.t3">Videos, toolkits &amp; campaigns</div>
+        <p class="tdesc" data-i18n="tl.d3">513 videos across the full project cycle, three production outputs and an international digital campaign.</p>
       </div>
       <div class="titem">
         <div class="tdot">🌐</div>
-        <div class="tstep" data-i18n="tl.s4">04 — Turpinājums</div>
-        <div class="ttitle" data-i18n="tl.t4">Izplatīšana un turpmākās aktivitātes</div>
-        <p class="tdesc" data-i18n="tl.d4">Vismaz 11 aktivitātes Latvijā, Norvēģijā, Vācijā un Igaunijā turpina projekta ietekmi.</p>
+        <div class="tstep" data-i18n="tl.s4">04 — Follow-up</div>
+        <div class="ttitle" data-i18n="tl.t4">Dissemination &amp; follow-up activities</div>
+        <p class="tdesc" data-i18n="tl.d4">At least 11 activities across Latvia, Norway, Germany and Estonia continue the project's impact.</p>
       </div>
     </div>
   </div>
@@ -543,9 +541,9 @@
 <section id="outcomes" class="sec sec0">
   <div class="container">
     <div class="sh rv">
-      <p class="kicker" data-i18n="outcomes.kicker">Rezultāti</p>
-      <h2 data-i18n="outcomes.h2">Projekta rezultāti un resursi.</h2>
-      <p class="sdesc" data-i18n="outcomes.desc">Projekts radīja praktiskus resursus, kas palīdz jaunatnes darbiniekiem, treneriem, NVO un citiem neformālās izglītības speciālistiem pielietot labbūtības pieejas un stiprināt digitālās komunikācijas prasmes.</p>
+      <p class="kicker" data-i18n="outcomes.kicker">Results</p>
+      <h2 data-i18n="outcomes.h2">Project results and resources.</h2>
+      <p class="sdesc" data-i18n="outcomes.desc">The project produced practical resources designed to support youth workers, trainers, NGOs and other non-formal education practitioners in applying wellbeing approaches and strengthening their digital communication skills.</p>
     </div>
 
     <div class="og">
@@ -553,24 +551,24 @@
         <div class="oth oth--photo"><img class="oth-cover" src="https://ik.imagekit.io/colibrarian/dwcm/follow%20up%20and%20outputs%20page/int%20map%20report.jpg" alt=""><span class="obi">🗺️</span></div>
         <div class="ob">
           <div class="otitle" data-i18n="outcome.map.t">International Comparative Mapping Report</div>
-          <p class="odesc" data-i18n="outcome.map.d">Labbūtības izaicinājumi, digitālā labbūtība un ilgtspējīgas prakses Eiropas jaunatnes darbā.</p>
-          <a class="olink" href="https://drive.google.com/file/d/1Luurrq9JsieYuNZIwr9qwCTaX8H4K3qi/view" target="_blank" rel="noopener"><span data-i18n="outcome.map.l">Lasīt / Lejupielādēt ziņojumu</span> ↗</a>
+          <p class="odesc" data-i18n="outcome.map.d">Wellness Challenges, Digital Well-being and Sustainable Practices in European Youth Work.</p>
+          <a class="olink" href="https://drive.google.com/file/d/1Luurrq9JsieYuNZIwr9qwCTaX8H4K3qi/view" target="_blank" rel="noopener"><span data-i18n="outcome.map.l">Read / Download report</span> ↗</a>
         </div>
       </div>
       <div class="oc rv" style="--d:.08s">
         <div class="oth oth--photo"><img class="oth-cover" src="https://ik.imagekit.io/colibrarian/dwcm/follow%20up%20and%20outputs%20page/toolkit%20outdoor.jpg" alt=""><span class="obi">🧰</span></div>
         <div class="ob">
           <div class="otitle" data-i18n="outcome.kit.t">Daily Wellness Challenge Movement Toolkit</div>
-          <p class="odesc" data-i18n="outcome.kit.d">Praktiskas metodes un aktivitātes labbūtībai un darbam ar jaunatni.</p>
-          <a class="olink" href="https://drive.google.com/file/d/1HMSqIzvAxaFwlRAHh0wJQYSrq-_Oezo5/view" target="_blank" rel="noopener"><span data-i18n="outcome.kit.l">Lasīt / Lejupielādēt rīkkopu</span> ↗</a>
+          <p class="odesc" data-i18n="outcome.kit.d">Practical methods and activities for wellbeing and youth work.</p>
+          <a class="olink" href="https://drive.google.com/file/d/1HMSqIzvAxaFwlRAHh0wJQYSrq-_Oezo5/view" target="_blank" rel="noopener"><span data-i18n="outcome.kit.l">Read / Download toolkit</span> ↗</a>
         </div>
       </div>
       <div class="oc rv" style="--d:.16s">
         <div class="oth oth--photo"><img class="oth-cover" src="https://ik.imagekit.io/colibrarian/dwcm/follow%20up%20and%20outputs%20page/baked%20content.jpg" alt=""><span class="obi">🎬</span></div>
         <div class="ob">
           <div class="otitle" data-i18n="outcome.dig.t">Freshly Baked Content – Digital Content Creation Toolkit</div>
-          <p class="odesc" data-i18n="outcome.dig.d">Praktisks ceļvedis digitālajā stāstniecībā, filmēšanā, ar MI atbalstītu scenāriju rakstīšanu, montāžu un sociālo tīklu satura veidošanu.</p>
-          <a class="olink" href="https://drive.google.com/file/d/1QwL06e0kSPj1JYc855_U0o5ZczL4m2Bw/view" target="_blank" rel="noopener"><span data-i18n="outcome.dig.l">Lasīt / Lejupielādēt rīkkopu</span> ↗</a>
+          <p class="odesc" data-i18n="outcome.dig.d">A practical guide to digital storytelling, filming, AI-assisted scripting, editing and social-media content creation.</p>
+          <a class="olink" href="https://drive.google.com/file/d/1QwL06e0kSPj1JYc855_U0o5ZczL4m2Bw/view" target="_blank" rel="noopener"><span data-i18n="outcome.dig.l">Read / Download toolkit</span> ↗</a>
         </div>
       </div>
     </div>
@@ -583,9 +581,9 @@
     <div class="epale-panel rv">
       <div class="epale-head">
         <span class="epale-badge">🇪🇺 EPALE</span>
-        <h3 class="epale-h3" data-i18n="epale.h3">EPALE – Eiropas Pieaugušo izglītības elektroniskā platforma</h3>
+        <h3 class="epale-h3" data-i18n="epale.h3">EPALE – Electronic Platform for Adult Learning in Europe</h3>
       </div>
-      <p class="epale-desc" data-i18n="epale.desc">Lai nodrošinātu plašu starptautisko izplatīšanu un rezultātu ilgtspēju, projekta Daily Wellness Challenge Movement materiāli ir pieejami oficiālajā EPALE resursu centrā. EPALE (Eiropas Pieaugušo izglītības elektroniskā platforma) ir Eiropas Savienības Erasmus+ programmas iniciatīva, kas apvieno izglītotājus, NVO un pētniekus visā Eiropā. Ar mūsu materiāliem var iepazīties un tos lejupielādēt EPALE platformā.</p>
+      <p class="epale-desc" data-i18n="epale.desc">To ensure broad international dissemination and long-term sustainability, the results of the Daily Wellness Challenge Movement project have been made available in the official EPALE Resource Centre. EPALE (Electronic Platform for Adult Learning in Europe) is an initiative funded by the European Union under the Erasmus+ programme, connecting educators, trainers, NGOs, and researchers across Europe. You can explore and download our materials directly via the EPALE platform.</p>
       <div class="epale-links">
         <a class="epale-row" href="https://epale.ec.europa.eu/en/resource-centre/content/international-comparative-mapping-report#" target="_blank" rel="noopener">
           <span class="epale-icon">🗺️</span>
@@ -612,37 +610,37 @@
   <div class="container">
     <div class="sh rv">
       <p class="kicker" data-i18n="camp.kicker">Digital Awareness Campaign</p>
-      <h2 data-i18n="camp.h2">Centrālā kampaņa + vietējie koncepti.</h2>
-      <p class="sdesc" data-i18n="camp.lead">Turpinājuma procesa ietvaros dalībnieki un nacionālās komandas tika aicināti pielietot projektā apgūtās digitālās komunikācijas un labbūtības kompetences savā organizācijas kontekstā. Tā vietā, lai visās partnervalstīs atkārtotu vienu un to pašu kampaņu, komandas izstrādāja vietējus konceptus, kas atspoguļo to auditoriju vajadzības un regulārās jaunatnes darba aktivitātes.</p>
+      <h2 data-i18n="camp.h2">Central campaign + local concepts.</h2>
+      <p class="sdesc" data-i18n="camp.lead">As part of the follow-up process, participants and national teams were encouraged to apply the digital communication and wellness competences developed during the project to their own organisational contexts. Rather than reproducing one identical campaign in all partner countries, teams developed local concepts reflecting the needs of their audiences and regular youth-work activities.</p>
     </div>
     <div class="campchaos">
       <a class="campcard cc1 rv" style="--d:0s" href="dwcm-digital-campaign.html#kambuka">
         <span class="ccicon">📱</span>
-        <span class="cctag" data-i18n="camp.c1.type">🇪🇪 Igaunija</span>
+        <span class="cctag" data-i18n="camp.c1.type">🇪🇪 Estonia</span>
         <div class="ccname">Content Promotion Strategy</div>
         <div class="ccorg">Kambuka Kids</div>
-        <span class="ccgo" data-i18n="camp.view">Skatīt kampaņu →</span>
+        <span class="ccgo" data-i18n="camp.view">View campaign →</span>
       </a>
       <a class="campcard cc2 rv" style="--d:.08s" href="dwcm-digital-campaign.html#wiesbaden">
         <span class="ccicon">🤝</span>
-        <span class="cctag" data-i18n="camp.c2.type">🇩🇪 Vācija</span>
+        <span class="cctag" data-i18n="camp.c2.type">🇩🇪 Germany</span>
         <div class="ccname">Identity Through Community</div>
         <div class="ccorg">Wiesbaden</div>
-        <span class="ccgo" data-i18n="camp.view">Skatīt kampaņu →</span>
+        <span class="ccgo" data-i18n="camp.view">View campaign →</span>
       </a>
       <a class="campcard cc3 rv" style="--d:.16s" href="dwcm-digital-campaign.html#norway">
         <span class="ccicon">🧗</span>
-        <span class="cctag" data-i18n="camp.c3.type">🇳🇴 Norvēģija</span>
+        <span class="cctag" data-i18n="camp.c3.type">🇳🇴 Norway</span>
         <div class="ccname">Friday Climbing Activities</div>
         <div class="ccorg">Norway</div>
-        <span class="ccgo" data-i18n="camp.view">Skatīt kampaņu →</span>
+        <span class="ccgo" data-i18n="camp.view">View campaign →</span>
       </a>
     </div>
     <a class="ccentral rv" style="--d:.24s" href="dwcm-digital-campaign.html#central">
-      <span class="ccbadge" data-i18n="camp.central.badge">Centrālais dokuments</span>
+      <span class="ccbadge" data-i18n="camp.central.badge">Central document</span>
       <div class="cctitle">Daily Wellness Challenge Movement</div>
       <div class="ccsub">Digital Awareness Campaign — Strategy, Implementation, Results &amp; Lessons Learned</div>
-      <span class="olink" data-i18n="camp.central.view">Skatīt dokumentu →</span>
+      <span class="olink" data-i18n="camp.central.view">View document →</span>
     </a>
   </div>
 </section>
@@ -654,10 +652,10 @@
       <div class="lt-left">
         <div class="lt-dots"><span></span><span></span><span></span><span></span></div>
         <p class="lt-kicker" data-i18n="lt.kicker">Online Learning Module</p>
-        <h3 data-i18n="lt.h3">Izlasi. Atbildi. Uzzini rezultātu.</h3>
-        <p class="lt-desc" data-i18n="lt.desc">8 raundi, 24 jautājumi — pārbaudi, cik labi iepazini projektu, un saņem savu rezultātu.</p>
+        <h3 data-i18n="lt.h3">Read. Answer. Get your result.</h3>
+        <p class="lt-desc" data-i18n="lt.desc">8 rounds, 24 questions — test how well you know the project and get your score.</p>
       </div>
-      <span class="lt-cta" data-i18n="lt.cta">Sākt testu →</span>
+      <span class="lt-cta" data-i18n="lt.cta">Start quiz →</span>
     </a>
   </div>
 </section>
@@ -667,9 +665,9 @@
 <section id="gallery" class="sec sec0">
   <div class="container">
     <div class="sh rv">
-      <p class="kicker" data-i18n="gallery.kicker">Foto galerija</p>
-      <h2 data-i18n="gallery.h2">Mirkļi no projekta.</h2>
-      <p class="sdesc" data-i18n="gallery.desc">Fotogrāfijas no semināriem, āra aktivitātēm un komandas brīžiem visā projekta laikā.</p>
+      <p class="kicker" data-i18n="gallery.kicker">Photo Gallery</p>
+      <h2 data-i18n="gallery.h2">Moments from the project.</h2>
+      <p class="sdesc" data-i18n="gallery.desc">Photos from workshops, outdoor activities, and team moments throughout the project.</p>
     </div>
     <div class="gg">
       <div class="gi rv" style="--d:0s"><img class="gi-cover" src="https://ik.imagekit.io/colibrarian/dwcm/photo%20gallery/5.jpg" alt="" loading="lazy"></div>
@@ -692,10 +690,10 @@
 
     <div class="ig-promo rv" style="margin-top:36px">
       <div>
-        <p class="ig-promo-kicker" data-i18n="igp.kicker">Mediju saturs</p>
-        <h3 data-i18n="igp.h3">Video, kas tapa pirms, projekta laikā un pēc tā.</h3>
-        <p data-i18n="igp.p">Sagatavošanās posmā, mobilitātes laikā un turpinājuma aktivitātēs tapis plašs un daudzveidīgs video materiāls. Iepazīsties ar to Mediju sadaļā — standartizētie video ar reāliem Instagram priekšskatiem un pilns arhīvs Google Drive.</p>
-        <a class="ig-promo-btn" href="dwcm-media.html" data-i18n="igp.btn">Atvērt Mediju sadaļu →</a>
+        <p class="ig-promo-kicker" data-i18n="igp.kicker">Media Content</p>
+        <h3 data-i18n="igp.h3">Videos created before, during and after the project.</h3>
+        <p data-i18n="igp.p">During preparation, throughout the mobility, and across the follow-up activities, a wide and varied range of video material was created. Explore it in our Media section — standardised videos with real Instagram previews, and the complete archive on Google Drive.</p>
+        <a class="ig-promo-btn" href="dwcm-media.html" data-i18n="igp.btn">Open the Media Section →</a>
       </div>
       <div class="ig-phone-slot">
         <img src="https://ik.imagekit.io/colibrarian/dwcm/wall%20papers/transp%202.png" alt="Instagram lapas priekšskats">
@@ -718,13 +716,22 @@
       </div>
     </div>
     <p class="ftcopy" data-i18n="footer.copy">© 2025–2026 Biedrība UNTU.</p>
-    <p class="ftaction" data-i18n="footer.action">Erasmus+ KA153-YOU — jaunatnes darbinieku mobilitāte · Projekts Nr. 2025-1-LV02-KA153-YOU-000304266</p>
-    <p class="ftdisclaimer" data-i18n="footer.disclaimer">Līdzfinansē Eiropas Savienība. Paustie uzskati un viedokļi atspoguļo vienīgi autoru viedokli un ne vienmēr sakrīt ar Eiropas Savienības vai Jaunatnes starptautisko programmu aģentūras viedokli. Ne Eiropas Savienība, ne piešķīrēja iestāde nav atbildīga par tiem.</p>
+    <p class="ftaction" data-i18n="footer.action">Erasmus+ KA153-YOU – Mobility of Youth Workers · Project No. 2025-1-LV02-KA153-YOU-000304266</p>
+    <p class="ftdisclaimer" data-i18n="footer.disclaimer">Co-funded by the European Union. Views and opinions expressed are, however, those of the authors only and do not necessarily reflect those of the European Union or the Agency for International Programs for Youth. Neither the European Union nor the granting authority can be held responsible for them.</p>
   </div>
 </footer>
 
 </div>
 <script>
+/* ===== 0b. ACTIVE NAV LINK (desktop only, home page excluded) ===== */
+(function(){
+  var here=(location.pathname.split('/').pop()||'').split('?')[0];
+  document.querySelectorAll('.navlinks a[href]').forEach(function(a){
+    var href=a.getAttribute('href').split('#')[0];
+    if(href!=='dwcm.html'&&href===here)a.classList.add('active');
+  });
+})();
+
 /* ===== 0. HAMBURGER MENU ===== */
 (function(){
   var h=document.getElementById('hamburger');
@@ -812,12 +819,12 @@ var T={
     "about.kicker":"Par projektu","about.h2":"Daily Wellness Challenge Movement",
     "about.meta":"Erasmus+ KA153-YOU – jaunatnes darbinieku mobilitāte",
     "about.c1.t":"Projekts","about.c1.d":"Daily Wellness Challenge Movement bija Erasmus+ projekts, kas apvienoja jaunatnes darbiniekus no Latvijas, Norvēģijas, Vācijas un Igaunijas, lai izzinātu labbūtības izglītību, digitālo iesaisti un starptautisko sadarbību.",
-    "about.c2.t":"Mācību kurss","about.c2.d":"Starptautiskais mācību kurss notika Vircavā, Latvijā, no 2025. gada 21. līdz 30. oktobrim. Dalībnieki izzināja praktiskas pieejas labbūtībai un neformālajai izglītībai — apzinātību, kustībā balstītu mācīšanos, jogu un skaņu terapijas praksi —, vienlaikus stiprinot prasmes digitālajā stāstniecībā un satura veidošanā.",
+    "about.c2.t":"Mācību kurss","about.c2.d":"Starptautiskais mācību kurss notika Vircavā, Latvijā. Mobilitātes periods: 2025. gada 21.–30. oktobris, ieskaitot ierašanās un aizbraukšanas dienas; 8 dienu mācību programma: 2025. gada 22.–29. oktobris. Dalībnieki izzināja praktiskas pieejas labbūtībai un neformālajai izglītībai — apzinātību, kustībā balstītu mācīšanos, jogu un skaņu terapijas praksi —, vienlaikus stiprinot prasmes digitālajā stāstniecībā un satura veidošanā.",
     "about.c3.t":"Ietekme un ilgtspēja","about.c3.d":"Projekts atbalstīja metožu un labās prakses apmaiņu starp dalīborganizācijām un iedrošināja jaunatnes darbiniekus pārnest apgūto uz savām organizācijām un vietējām kopienām. Tas arī veicināja praktisku un mērogojamu resursu izstrādi, kas turpina būt izmantojami arī pēc mobilitātes noslēguma.",
     "about.eu":"Līdzfinansē Eiropas Savienība. Paustie uzskati un viedokļi atspoguļo vienīgi autoru viedokli un ne vienmēr sakrīt ar Eiropas Savienības vai Jaunatnes starptautisko programmu aģentūras viedokli. Ne Eiropas Savienība, ne piešķīrēja iestāde nav atbildīga par tiem.",
     "timeline.kicker":"Kā tas notika","timeline.h2":"Projekta gaita.",
     "tl.s1":"01 — Sagatavošanās","tl.t1":"Online sagatavošanās","tl.d1":"Sagatavošanās notika tiešsaistē — četras organizācijas attālināti koordinēja mērķus un metodes, veica nacionālo kontekstu apzināšanu (mapping) un sagatavoja materiālus mobilitātei.",
-    "tl.s2":"02 — Mācību kurss","tl.t2":"Mobilitāte, 21.–30.10.2025","tl.d2":"Jaunatnes darbinieki no četrām valstīm kopā apguva labbūtības metodes Latvijā.",
+    "tl.s2":"02 — Mācību kurss","tl.t2":"Mobilitāte, 21.–30.10.2025","tl.d2":"Mobilitātes periods: 21.–30. oktobris, ieskaitot ierašanās un aizbraukšanas dienas; 8 dienu mācību programma: 22.–29. oktobris.",
     "tl.s3":"03 — Rezultāti un kampaņas","tl.t3":"Video, rīkkopas un kampaņas","tl.d3":"513 video visā projekta ciklā, trīs izstrādnes rīkkopas un starptautiska digitāla kampaņa.",
     "tl.s4":"04 — Turpinājums","tl.t4":"Izplatīšana un turpmākās aktivitātes","tl.d4":"Vismaz 11 aktivitātes Latvijā, Norvēģijā, Vācijā un Igaunijā turpina projekta ietekmi.",
     "outcomes.kicker":"Rezultāti","outcomes.h2":"Projekta rezultāti un resursi.",
@@ -870,12 +877,12 @@ var T={
     "about.kicker":"Project overview","about.h2":"Daily Wellness Challenge Movement",
     "about.meta":"Erasmus+ KA153-YOU – Mobility of Youth Workers",
     "about.c1.t":"The Project","about.c1.d":"Daily Wellness Challenge Movement was an Erasmus+ project bringing together youth workers from Latvia, Norway, Germany and Estonia to explore wellbeing education, digital engagement and international cooperation.",
-    "about.c2.t":"The Training Course","about.c2.d":"The international training course took place in Vircava, Latvia, from 21 to 30 October 2025. Participants explored practical approaches to wellbeing and non-formal education, including mindfulness, movement-based learning, yoga and sound-based practices, while strengthening their skills in digital storytelling and content creation.",
+    "about.c2.t":"The Training Course","about.c2.d":"The international training course took place in Vircava, Latvia. Mobility period: 21–30 October 2025, including arrival/departure days; 8-day learning programme: 22–29 October 2025. Participants explored practical approaches to wellbeing and non-formal education, including mindfulness, movement-based learning, yoga and sound-based practices, while strengthening their skills in digital storytelling and content creation.",
     "about.c3.t":"Impact & Sustainability","about.c3.d":"The project supported the exchange of methods and good practices between participating organisations and encouraged youth workers to transfer their learning to their organisations and local communities. It also contributed to the development of practical and scalable resources that can continue to be used beyond the mobility.",
     "about.eu":"Co-funded by the European Union. Views and opinions expressed are, however, those of the authors only and do not necessarily reflect those of the European Union or the Agency for International Programs for Youth. Neither the European Union nor the granting authority can be held responsible for them.",
     "timeline.kicker":"How it worked","timeline.h2":"Project journey.",
     "tl.s1":"01 — Preparation","tl.t1":"Online preparation","tl.d1":"Preparation took place online — the four organisations remotely coordinated goals and methods, carried out national context mapping, and prepared materials for the mobility.",
-    "tl.s2":"02 — Training","tl.t2":"Mobility, 21–30 Oct 2025","tl.d2":"Youth workers from four countries trained together in Latvia to explore well-being methods.",
+    "tl.s2":"02 — Training","tl.t2":"Mobility, 21–30 Oct 2025","tl.d2":"Mobility period: 21–30 October 2025, including arrival/departure days; 8-day learning programme: 22–29 October 2025.",
     "tl.s3":"03 — Results & campaigns","tl.t3":"Videos, toolkits & campaigns","tl.d3":"513 videos across the full project cycle, three production outputs and an international digital campaign.",
     "tl.s4":"04 — Follow-up","tl.t4":"Dissemination & follow-up activities","tl.d4":"At least 11 activities across Latvia, Norway, Germany and Estonia continue the project's impact.",
     "outcomes.kicker":"Results","outcomes.h2":"Project results and resources.",
@@ -925,8 +932,7 @@ function applyLang(lang){
   document.querySelectorAll('.lbtn').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang)});
   try{localStorage.setItem('dwcm_lang',lang)}catch(e){}
 }
-document.querySelectorAll('.lbtn').forEach(function(b){b.addEventListener('click',function(){applyLang(b.dataset.lang)})});
-try{applyLang(localStorage.getItem('dwcm_lang')||'lv')}catch(e){applyLang('lv')}
+applyLang('en');
 })();
 </script>
 </body>
