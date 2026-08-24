@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Digital Awareness Campaign — Daily Wellness Challenge Movement</title>
-  <meta name="description" content="The Digital Awareness Campaign result of the Daily Wellness Challenge Movement project: the central campaign document plus local concepts developed by participants in Estonia, Germany and Norway.">
+  <meta name="description" content="The Digital Awareness Campaign result of the Daily Wellness Challenge Movement project: the central campaign document plus local concepts developed by participants in Estonia, Germany, Norway and Latvia.">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <style>
@@ -40,6 +40,7 @@
     .navlinks{display:flex;align-items:center;gap:4px}
     .navlinks a{font-size:12px;font-weight:600;color:var(--muted);padding:7px 13px;border-radius:999px;border:1px solid transparent;transition:all .2s;white-space:nowrap}
     .navlinks a:hover{color:var(--text);border-color:var(--border);background:var(--card)}
+    .navlinks a.active{color:var(--cyan);border-color:var(--cg);background:var(--cd)}
     .lsw{display:flex;align-items:center;gap:2px;padding:3px;border-radius:999px;border:1px solid var(--border);background:var(--card);margin-left:4px}
     .lbtn{appearance:none;border:none;background:transparent;color:var(--muted);font-family:inherit;font-size:11.5px;font-weight:800;letter-spacing:.04em;padding:5px 10px;border-radius:999px;cursor:pointer;transition:all .2s}
     .lbtn:hover{color:var(--text)}
@@ -54,6 +55,7 @@
       .navlinks{position:absolute;top:100%;left:16px;right:16px;flex-direction:column;align-items:stretch;gap:6px;background:rgba(10,11,18,.97);backdrop-filter:blur(18px);border:1px solid var(--border);border-radius:16px;padding:12px;margin-top:8px;max-height:0;opacity:0;overflow:hidden;pointer-events:none;transition:max-height .3s ease,opacity .25s ease;z-index:200}
       .navlinks.open{max-height:420px;opacity:1;pointer-events:auto}
       .navlinks a{padding:12px 14px;border-radius:10px;text-align:left;width:100%}
+      .navlinks a.active{color:var(--muted);border-color:transparent;background:transparent}
       .navlinks .lsw{margin:6px 2px 2px;align-self:flex-start}
     }
 
@@ -331,16 +333,12 @@
         UNTU<span class="nav-sep">/</span><span class="nav-proj">Daily Wellness Challenge</span>
       </a>
       <nav class="navlinks" id="navlinks">
-        <a href="dwcm.html" data-i18n="nav.about">Par projektu</a>
-        <a href="dwcm-outputs-followup.html" data-i18n="nav.outcomes">Rezultāti</a>
-        <a href="dwcm-media.html" data-i18n="nav.media">Mediji</a>
-        <a href="dwcm-digital-campaign.html" data-i18n="nav.campaign">Kampaņa</a>
-        <a href="dwcm-learning-module.html" data-i18n="nav.learning">Tests</a>
-        <a href="dwcm-publication-guidelines.html" data-i18n="nav.guidelines">Vadlīnijas</a>
-        <div class="lsw">
-          <button class="lbtn" data-lang="lv">LV</button>
-          <button class="lbtn" data-lang="en">EN</button>
-        </div>
+        <a href="dwcm.html" data-i18n="nav.about">About</a>
+        <a href="dwcm-outputs-followup.html" data-i18n="nav.outcomes">Outcomes</a>
+        <a href="dwcm-media.html" data-i18n="nav.media">Media</a>
+        <a href="dwcm-digital-campaign.html" data-i18n="nav.campaign">Campaign</a>
+        <a href="dwcm-learning-module.html" data-i18n="nav.learning">Quiz</a>
+        <a href="dwcm-publication-guidelines.html" data-i18n="nav.guidelines">Guidelines</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
         <span></span><span></span><span></span>
@@ -355,8 +353,8 @@
     <div class="dc-hero">
       <div class="dc-hero-text">
         <p class="kicker rv" data-i18n="dc.kicker">Digital Awareness Campaign</p>
-        <h1 class="rv" data-i18n="dc.h1">Centrālā kampaņa. Vietējie koncepti. Viens rezultāts.</h1>
-        <p class="sdesc rv" style="--d:.05s" data-i18n="dc.lead">Turpinājuma procesa ietvaros dalībnieki un nacionālās komandas tika aicināti pielietot projektā apgūtās digitālās komunikācijas un labbūtības kompetences savā organizācijas kontekstā. Tā vietā, lai visās partnervalstīs atkārtotu vienu un to pašu kampaņu, komandas izstrādāja vietējus konceptus, kas atspoguļo to auditoriju vajadzības un regulārās jaunatnes darba aktivitātes.</p>
+        <h1 class="rv" data-i18n="dc.h1">Central campaign. Local concepts. One result.</h1>
+        <p class="sdesc rv" style="--d:.05s" data-i18n="dc.lead">As part of the follow-up process, participants and national teams were encouraged to apply the digital communication and wellness competences developed during the project to their own organisational contexts. Rather than reproducing one identical campaign in all partner countries, teams developed local concepts reflecting the needs of their audiences and regular youth-work activities.</p>
       </div>
       <div class="dc-hero-phone rv" style="--d:.1s">
         <img src="https://ik.imagekit.io/colibrarian/dwcm/dwcm%20phone.png" alt="Digital Awareness Campaign — phone preview">
@@ -368,17 +366,17 @@
 <section class="sec sec0" id="central">
   <div class="container">
     <div class="sh rv">
-      <p class="kicker" data-i18n="dc.c.kicker">Galvenais rezultāts</p>
-      <h2 data-i18n="dc.c.h2">Centrālais dokuments.</h2>
-      <p class="sdesc" data-i18n="dc.c.lead">Dokuments, kas apkopo visu kampaņu — no stratēģijas līdz gūtajām atziņām — un noslēdz projekta solīto Digital Awareness Campaign rezultātu.</p>
+      <p class="kicker" data-i18n="dc.c.kicker">Main Output</p>
+      <h2 data-i18n="dc.c.h2">Central document.</h2>
+      <p class="sdesc" data-i18n="dc.c.lead">The document that ties the whole campaign together — from strategy to lessons learned — and closes the project's promised Digital Awareness Campaign result.</p>
     </div>
     <div class="ccentral rv">
-      <span class="ccbadge" data-i18n="camp.central.badge">Centrālais dokuments</span>
+      <span class="ccbadge" data-i18n="camp.central.badge">Central document</span>
       <div class="cctitle">Daily Wellness Challenge Movement</div>
       <div class="ccsub">Digital Awareness Campaign — Strategy, Implementation, Results &amp; Lessons Learned</div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <button type="button" class="olink" data-i18n="dc.view" onclick="openDocModal('central')">Skatīt →</button>
-        <span class="olink dis" data-i18n="dc.download">Lejupielādēt ↓</span>
+        <button type="button" class="olink" data-i18n="dc.view" onclick="openDocModal('central')">View →</button>
+        <span class="olink dis" data-i18n="dc.download">Download ↓</span>
       </div>
     </div>
   </div>
@@ -387,21 +385,21 @@
 <section class="sec sec0">
   <div class="container">
     <div class="sh rv">
-      <p class="kicker" data-i18n="dc.local.kicker">Vietējie koncepti</p>
-      <h2 data-i18n="dc.local.h2">Trīs valstis. Trīs pieejas.</h2>
-      <p class="sdesc" data-i18n="dc.local.lead">Katra nacionālā komanda pielāgoja kampaņu savai auditorijai un ikdienas darba formātam.</p>
+      <p class="kicker" data-i18n="dc.local.kicker">Local Concepts</p>
+      <h2 data-i18n="dc.local.h2">Four countries. Four approaches.</h2>
+      <p class="sdesc" data-i18n="dc.local.lead">Each national team adapted the campaign to its own audience and everyday work format.</p>
     </div>
 
     <div class="og" style="grid-template-columns:1fr" id="kambuka">
       <div class="oc rv" style="--d:0s;flex-direction:row;align-items:stretch">
         <div class="oth" style="aspect-ratio:auto;width:190px;flex-shrink:0"><span class="obi">📱</span></div>
         <div class="ob">
-          <div class="otype" data-i18n="camp.c1.type">🇪🇪 Igaunija</div>
+          <div class="otype" data-i18n="camp.c1.type">🇪🇪 Estonia</div>
           <div class="otitle">Content Promotion Strategy — Kambuka Kids</div>
           <p class="odesc" data-i18n="dc.k1.d">A practical framework for developing and promoting organisational content, covering audience analysis, positioning, content planning, channel selection, growth tactics and performance measurement.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <button type="button" class="olink" data-i18n="dc.view" onclick="openDocModal('kambuka')">Skatīt →</button>
-            <span class="olink dis" data-i18n="dc.download">Lejupielādēt ↓</span>
+            <button type="button" class="olink" data-i18n="dc.view" onclick="openDocModal('kambuka')">View →</button>
+            <span class="olink dis" data-i18n="dc.download">Download ↓</span>
           </div>
         </div>
       </div>
@@ -411,12 +409,12 @@
       <div class="oc rv" style="--d:.06s;flex-direction:row;align-items:stretch">
         <div class="oth" style="aspect-ratio:auto;width:190px;flex-shrink:0"><span class="obi">🤝</span></div>
         <div class="ob">
-          <div class="otype" data-i18n="camp.c2.type">🇩🇪 Vācija</div>
+          <div class="otype" data-i18n="camp.c2.type">🇩🇪 Germany</div>
           <div class="otitle">Identity Through Community — Wiesbaden</div>
           <p class="odesc" data-i18n="dc.k2.d">A monthly social-media concept combining wellness tips with cultural identity, creativity, integration and community support.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <button type="button" class="olink" data-i18n="dc.view" onclick="openDocModal('wiesbaden')">Skatīt →</button>
-            <span class="olink dis" data-i18n="dc.download">Lejupielādēt ↓</span>
+            <button type="button" class="olink" data-i18n="dc.view" onclick="openDocModal('wiesbaden')">View →</button>
+            <span class="olink dis" data-i18n="dc.download">Download ↓</span>
           </div>
         </div>
       </div>
@@ -426,12 +424,26 @@
       <div class="oc rv" style="--d:.12s;flex-direction:row;align-items:stretch">
         <div class="oth" style="aspect-ratio:auto;width:190px;flex-shrink:0"><span class="obi">🧗</span></div>
         <div class="ob">
-          <div class="otype" data-i18n="camp.c3.type">🇳🇴 Norvēģija</div>
+          <div class="otype" data-i18n="camp.c3.type">🇳🇴 Norway</div>
           <div class="otitle">Friday Climbing Activities — Norway</div>
           <p class="odesc" data-i18n="dc.k3.d">A digital awareness campaign presenting weekly climbing as a tool for well-being, confidence, belonging, social inclusion and integration.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <button type="button" class="olink" data-i18n="dc.view" onclick="openDocModal('norway')">Skatīt →</button>
-            <span class="olink dis" data-i18n="dc.download">Lejupielādēt ↓</span>
+            <button type="button" class="olink" data-i18n="dc.view" onclick="openDocModal('norway')">View →</button>
+            <span class="olink dis" data-i18n="dc.download">Download ↓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="og" style="grid-template-columns:1fr;margin-top:14px" id="latvia">
+      <div class="oc rv" style="--d:.18s;flex-direction:row;align-items:stretch">
+        <div class="oth" style="aspect-ratio:auto;width:190px;flex-shrink:0"><span class="obi">🧠</span></div>
+        <div class="ob">
+          <div class="otype" data-i18n="camp.c4.type">🇱🇻 Latvia</div>
+          <div class="otitle">TikTok Channel on Critical Thinking &amp; Media Literacy</div>
+          <p class="odesc" data-i18n="dc.k4.d">A new TikTok account was created in Latvia, dedicated to critical thinking and media literacy, continuing to apply the project's digital communication skills in practice.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="olink" href="https://www.tiktok.com/@fromthinkingtospeaking" target="_blank" rel="noopener" data-i18n="dc.visit">Visit TikTok ↗</a>
           </div>
         </div>
       </div>
@@ -454,8 +466,8 @@
       </div>
     </div>
     <p class="ftcopy" data-i18n="footer.copy">© 2025–2026 Biedrība UNTU.</p>
-    <p class="ftaction" data-i18n="footer.action">Erasmus+ KA153-YOU — jaunatnes darbinieku mobilitāte · Projekts Nr. 2025-1-LV02-KA153-YOU-000304266</p>
-    <p class="ftdisclaimer" data-i18n="footer.disclaimer">Līdzfinansē Eiropas Savienība. Paustie uzskati un viedokļi atspoguļo vienīgi autoru viedokli un ne vienmēr sakrīt ar Eiropas Savienības vai Jaunatnes starptautisko programmu aģentūras viedokli. Ne Eiropas Savienība, ne piešķīrēja iestāde nav atbildīga par tiem.</p>
+    <p class="ftaction" data-i18n="footer.action">Erasmus+ KA153-YOU – Mobility of Youth Workers · Project No. 2025-1-LV02-KA153-YOU-000304266</p>
+    <p class="ftdisclaimer" data-i18n="footer.disclaimer">Co-funded by the European Union. Views and opinions expressed are, however, those of the authors only and do not necessarily reflect those of the European Union or the Agency for International Programs for Youth. Neither the European Union nor the granting authority can be held responsible for them.</p>
   </div>
 </footer>
 
@@ -559,6 +571,15 @@
 
 </div>
 <script>
+/* ===== 0b. ACTIVE NAV LINK (desktop only, home page excluded) ===== */
+(function(){
+  var here=(location.pathname.split('/').pop()||'').split('?')[0];
+  document.querySelectorAll('.navlinks a[href]').forEach(function(a){
+    var href=a.getAttribute('href').split('#')[0];
+    if(href!=='dwcm.html'&&href===here)a.classList.add('active');
+  });
+})();
+
 /* ===== 0. HAMBURGER MENU ===== */
 (function(){
   var h=document.getElementById('hamburger');
@@ -746,11 +767,12 @@ var T={
     "dc.c.kicker":"Galvenais rezultāts","dc.c.h2":"Centrālais dokuments.",
     "dc.c.lead":"Dokuments, kas apkopo visu kampaņu — no stratēģijas līdz gūtajām atziņām — un noslēdz projekta solīto Digital Awareness Campaign rezultātu.",
     "camp.central.badge":"Centrālais dokuments","dc.view":"Skatīt →","dc.download":"Lejupielādēt ↓",
-    "dc.local.kicker":"Vietējie koncepti","dc.local.h2":"Trīs valstis. Trīs pieejas.",
+    "dc.local.kicker":"Vietējie koncepti","dc.local.h2":"Četras valstis. Četras pieejas.",
     "dc.local.lead":"Katra nacionālā komanda pielāgoja kampaņu savai auditorijai un ikdienas darba formātam.",
     "camp.c1.type":"🇪🇪 Igaunija","dc.k1.d":"Praktisks ietvars organizācijas satura izstrādei un popularizēšanai — auditorijas analīze, pozicionēšana, satura plānošana, kanālu izvēle, izaugsmes taktikas un rezultātu mērīšana.",
     "camp.c2.type":"🇩🇪 Vācija","dc.k2.d":"Ikmēneša sociālo tīklu koncepts, kas apvieno labbūtības padomus ar kultūras identitāti, radošumu, integrāciju un kopienas atbalstu.",
-    "camp.c3.type":"🇳🇴 Norvēģija","dc.k3.d":"Digitāla informatīvā kampaņa, kas ik nedēļu prezentē kāpšanu kā rīku labbūtībai, pašapziņai, piederībai, sociālajai iekļaušanai un integrācijai."
+    "camp.c3.type":"🇳🇴 Norvēģija","dc.k3.d":"Digitāla informatīvā kampaņa, kas ik nedēļu prezentē kāpšanu kā rīku labbūtībai, pašapziņai, piederībai, sociālajai iekļaušanai un integrācijai.",
+    "camp.c4.type":"🇱🇻 Latvija","dc.k4.d":"Latvijā tika izveidots jauns TikTok konts, kas veltīts kritiskajai domāšanai un mediju pratībai, turpinot praktiski pielietot projektā apgūtās digitālās komunikācijas prasmes.","dc.visit":"Apmeklēt TikTok ↗"
   },
   en:{
     "nav.about":"About","nav.outcomes":"Outcomes","nav.partners":"Partners","nav.gallery":"Gallery",
@@ -764,11 +786,12 @@ var T={
     "dc.c.kicker":"Main Output","dc.c.h2":"Central document.",
     "dc.c.lead":"The document that ties the whole campaign together — from strategy to lessons learned — and closes the project's promised Digital Awareness Campaign result.",
     "camp.central.badge":"Central document","dc.view":"View →","dc.download":"Download ↓",
-    "dc.local.kicker":"Local Concepts","dc.local.h2":"Three countries. Three approaches.",
+    "dc.local.kicker":"Local Concepts","dc.local.h2":"Four countries. Four approaches.",
     "dc.local.lead":"Each national team adapted the campaign to its own audience and everyday work format.",
     "camp.c1.type":"🇪🇪 Estonia","dc.k1.d":"A practical framework for developing and promoting organisational content, covering audience analysis, positioning, content planning, channel selection, growth tactics and performance measurement.",
     "camp.c2.type":"🇩🇪 Germany","dc.k2.d":"A monthly social-media concept combining wellness tips with cultural identity, creativity, integration and community support.",
-    "camp.c3.type":"🇳🇴 Norway","dc.k3.d":"A digital awareness campaign presenting weekly climbing as a tool for well-being, confidence, belonging, social inclusion and integration."
+    "camp.c3.type":"🇳🇴 Norway","dc.k3.d":"A digital awareness campaign presenting weekly climbing as a tool for well-being, confidence, belonging, social inclusion and integration.",
+    "camp.c4.type":"🇱🇻 Latvia","dc.k4.d":"A new TikTok account was created in Latvia, dedicated to critical thinking and media literacy, continuing to apply the project's digital communication skills in practice.","dc.visit":"Visit TikTok ↗"
   }
 };
 function applyLang(lang){
@@ -780,8 +803,7 @@ function applyLang(lang){
   document.querySelectorAll('.lbtn').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang)});
   try{localStorage.setItem('dwcm_lang',lang)}catch(e){}
 }
-document.querySelectorAll('.lbtn').forEach(function(b){b.addEventListener('click',function(){applyLang(b.dataset.lang)})});
-try{applyLang(localStorage.getItem('dwcm_lang')||'lv')}catch(e){applyLang('lv')}
+applyLang('en');
 })();
 
 /* ===== 5. MAP (isolated, cannot break other JS) ===== */
